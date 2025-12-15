@@ -1,0 +1,57 @@
+# AI Resume Analyzer - Python Dependencies
+# Install with: pip install -r requirements.txt
+
+# Core LangChain packages
+langchain==0.1.20
+langchain-core==0.1.52
+langchain-openai==0.1.15
+langchain-community==0.0.38
+
+# LLM and API
+openai==1.14.0
+
+# Data validation and parsing
+pydantic==2.6.1
+
+# Environment management
+python-dotenv==1.0.0
+
+# Data analysis and manipulation
+pandas==2.1.4
+numpy==1.26.3
+
+# PDF processing
+PyPDF2==4.0.1
+
+# Built-in modules (no installation needed)
+# - os
+# - json
+# - re
+# - csv
+# - pathlib
+
+# Optional packages for extended functionality
+# Uncomment if needed:
+
+# For Streamlit web interface
+# streamlit==1.31.0
+
+# For async processing
+# asyncio-contextmanager==1.0.0
+
+# For progress bars
+# tqdm==4.66.1
+
+# For database storage
+# sqlalchemy==2.0.24
+# psycopg2-binary==2.9.9
+
+# For email notifications
+# python-dotenv==1.0.0
+
+# For Slack integration
+# slack-sdk==3.26.0
+
+# For visualization
+# matplotlib==3.8.2
+# plotly==5.18.0
