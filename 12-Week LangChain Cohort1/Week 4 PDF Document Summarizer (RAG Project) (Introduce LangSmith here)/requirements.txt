@@ -1,0 +1,25 @@
+# Core LangChain Libraries
+langchain==0.1.0
+langchain-openai==0.0.5
+langchain-community==0.0.10
+langchain-text-splitters==0.0.1
+
+# PDF Processing
+pypdf==4.0.1
+
+# Vector Database
+faiss-cpu==1.7.4
+# Note: Use faiss-gpu if you have CUDA support for faster embeddings
+
+# OpenAI API
+openai==1.3.0
+
+# Environment Variables
+python-dotenv==1.0.0
+
+# Data Processing
+numpy==1.24.3
+
+# Optional: For Streamlit UI (if doing UI extension)
+# streamlit==1.28.0
+# streamlit-chat==0.0.1
