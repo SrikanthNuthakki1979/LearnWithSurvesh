@@ -1,0 +1,56 @@
+{
+  "name": "Emily Carter",
+  "email": "user8@email.com",
+  "phone": "+91-9876500008",
+  "skills": [
+    "Python",
+    "R",
+    "SQL",
+    "TensorFlow",
+    "Scikit-learn",
+    "Linux",
+    "GCP",
+    "Git",
+    "Machine Learning",
+    "Statistics"
+  ],
+  "missing_skills": [
+    "PySpark",
+    "distributed computing",
+    "AWS",
+    "ETL pipeline design",
+    "Pandas",
+    "NumPy",
+    "Apache Airflow",
+    "orchestration",
+    "Docker",
+    "Kafka",
+    "Scala",
+    "PyTorch"
+  ],
+  "recommendations": {
+    "PySpark": "Consider taking an online course or tutorial on PySpark to understand its integration with big data processing.",
+    "distributed computing": "Explore resources on distributed computing concepts and frameworks like Apache Spark.",
+    "AWS": "Familiarize yourself with AWS services, particularly those related to data processing and machine learning.",
+    "ETL pipeline design": "Learn about ETL processes and tools, focusing on best practices for designing efficient pipelines.",
+    "Pandas": "Practice data manipulation and analysis using Pandas through projects or exercises.",
+    "NumPy": "Strengthen your understanding of numerical computing with NumPy by working on mathematical and statistical problems.",
+    "Apache Airflow": "Study Apache Airflow for workflow orchestration and scheduling of data pipelines.",
+    "orchestration": "Gain knowledge in orchestration tools and techniques for managing complex workflows.",
+    "Docker": "Learn Docker for containerization, focusing on how to create and manage containers for applications.",
+    "Kafka": "Understand Kafka for real-time data streaming and messaging systems.",
+    "Scala": "Consider learning Scala, especially if you plan to work with Apache Spark or functional programming.",
+    "PyTorch": "Explore PyTorch for deep learning applications and its differences from TensorFlow."
+  },
+  "experience_summary": "Cloud engineer with AWS expertise, focusing on cost optimization and scalability.",
+  "education": [
+    {
+      "degree": "B.Sc in Data Science",
+      "institution": "Delhi University",
+      "years": "2016 \u2013 2019",
+      "cgpa": "8.1/10"
+    }
+  ],
+  "overall_score": 65,
+  "short_recommendation": "Emily has a strong foundation in data science and machine learning but should focus on bridging her skill gaps in big data technologies and cloud services."
+}

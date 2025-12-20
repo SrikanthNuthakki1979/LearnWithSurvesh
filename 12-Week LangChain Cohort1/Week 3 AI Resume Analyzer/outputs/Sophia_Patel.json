@@ -1,0 +1,56 @@
+{
+  "name": "Sophia Patel",
+  "email": "user6@email.com",
+  "phone": "+91-9876500006",
+  "skills": [
+    "Python",
+    "R",
+    "SQL",
+    "TensorFlow",
+    "Scikit-learn",
+    "Linux",
+    "GCP",
+    "Git",
+    "Machine Learning",
+    "Statistics"
+  ],
+  "missing_skills": [
+    "PySpark",
+    "distributed computing",
+    "AWS",
+    "ETL pipeline design",
+    "Pandas",
+    "NumPy",
+    "Apache Airflow",
+    "orchestration",
+    "Docker",
+    "Kafka",
+    "Scala",
+    "PyTorch"
+  ],
+  "recommendations": {
+    "PySpark": "Consider taking an online course or tutorial on PySpark to understand its integration with big data processing.",
+    "distributed computing": "Explore resources on distributed computing concepts and frameworks to enhance your understanding.",
+    "AWS": "Familiarize yourself with AWS services, particularly those related to data processing and machine learning.",
+    "ETL pipeline design": "Learn about ETL processes and tools to design efficient data pipelines.",
+    "Pandas": "Practice using Pandas for data manipulation and analysis through hands-on projects.",
+    "NumPy": "Strengthen your skills in NumPy for numerical computing by working on mathematical problems.",
+    "Apache Airflow": "Study Apache Airflow for workflow orchestration and scheduling of data pipelines.",
+    "orchestration": "Understand orchestration tools and their role in managing complex workflows.",
+    "Docker": "Get comfortable with Docker for containerization and deployment of applications.",
+    "Kafka": "Learn about Kafka for real-time data streaming and messaging.",
+    "Scala": "Consider learning Scala, especially if you are working with big data technologies like Apache Spark.",
+    "PyTorch": "Explore PyTorch for deep learning applications and practice building models."
+  },
+  "experience_summary": "Results-driven software engineer with 3 years of experience in developing scalable applications.",
+  "education": [
+    {
+      "degree": "B.Tech in Computer Science",
+      "institution": "Anna University",
+      "years": null,
+      "cgpa": "8.4/10"
+    }
+  ],
+  "overall_score": 75,
+  "short_recommendation": "Sophia has a strong foundation in data science and machine learning but should focus on bridging her skill gaps in big data technologies and cloud services."
+}

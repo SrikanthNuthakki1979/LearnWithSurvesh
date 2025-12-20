@@ -1,0 +1,17 @@
+# Week 2: Prompts, Chains & Memory - LangChain
+# Requirements for running the notebook
+
+# Core LangChain packages
+langchain-core>=0.1.0
+langchain-openai>=0.0.1
+langchain-community>=0.0.1
+
+# OpenAI API
+openai>=1.0.0
+
+# Environment management
+python-dotenv>=1.0.0
+
+# Optional: For Jupyter notebook support
+ipython>=8.0.0
+jupyter>=1.0.0

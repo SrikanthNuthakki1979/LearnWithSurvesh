@@ -1,0 +1,56 @@
+{
+  "name": "Arjun Nair",
+  "email": "user7@email.com",
+  "phone": "+91-9876500007",
+  "skills": [
+    "Python",
+    "R",
+    "SQL",
+    "TensorFlow",
+    "Scikit-learn",
+    "Linux",
+    "GCP",
+    "Git",
+    "Machine Learning",
+    "Statistics"
+  ],
+  "missing_skills": [
+    "PySpark",
+    "distributed computing",
+    "AWS",
+    "ETL pipeline design",
+    "Pandas",
+    "NumPy",
+    "Apache Airflow",
+    "orchestration",
+    "Docker",
+    "Kafka",
+    "Scala",
+    "PyTorch"
+  ],
+  "recommendations": {
+    "PySpark": "Consider taking an online course or tutorial on PySpark to understand its integration with big data processing.",
+    "distributed computing": "Explore resources on distributed computing concepts and frameworks like Apache Spark.",
+    "AWS": "Familiarize yourself with AWS services, particularly those related to data processing and machine learning.",
+    "ETL pipeline design": "Learn about ETL processes and tools, focusing on best practices for designing efficient pipelines.",
+    "Pandas": "Practice using Pandas for data manipulation and analysis through hands-on projects.",
+    "NumPy": "Strengthen your understanding of NumPy for numerical computing by working on mathematical problems.",
+    "Apache Airflow": "Study Apache Airflow for workflow orchestration and consider building sample workflows.",
+    "orchestration": "Gain knowledge in orchestration tools and techniques for managing complex data workflows.",
+    "Docker": "Learn Docker for containerization, focusing on how to create and manage containers for applications.",
+    "Kafka": "Understand Kafka for real-time data streaming and messaging, and try building a simple producer/consumer application.",
+    "Scala": "Consider learning Scala, especially if you plan to work with Apache Spark or functional programming.",
+    "PyTorch": "Explore PyTorch for deep learning applications, focusing on its dynamic computation graph capabilities."
+  },
+  "experience_summary": "Cloud engineer with AWS expertise, focusing on cost optimization and scalability.",
+  "education": [
+    {
+      "degree": "B.Tech in Computer Science",
+      "institution": "Anna University",
+      "years": null,
+      "cgpa": null
+    }
+  ],
+  "overall_score": 70,
+  "short_recommendation": "Arjun has a strong foundation in data science and machine learning but should focus on bridging the skill gaps in big data technologies and cloud services."
+}

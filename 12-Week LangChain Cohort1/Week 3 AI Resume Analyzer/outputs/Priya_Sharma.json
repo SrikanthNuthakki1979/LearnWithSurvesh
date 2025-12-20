@@ -1,0 +1,59 @@
+{
+  "name": "Priya Sharma",
+  "email": "user2@email.com",
+  "phone": "+91-9876500002",
+  "skills": [
+    "Python",
+    "Java",
+    "SQL",
+    "Django",
+    "Flask",
+    "React",
+    "Git",
+    "Docker",
+    "AWS",
+    "Data Analysis",
+    "REST APIs"
+  ],
+  "missing_skills": [
+    "PySpark",
+    "distributed computing",
+    "GCP",
+    "ETL pipeline design",
+    "Pandas",
+    "NumPy",
+    "Apache Airflow",
+    "orchestration",
+    "Machine Learning",
+    "Kafka",
+    "Scala",
+    "TensorFlow",
+    "PyTorch"
+  ],
+  "recommendations": {
+    "PySpark": "Consider taking an online course or tutorial on PySpark to understand its application in big data processing.",
+    "distributed computing": "Explore resources on distributed computing concepts and frameworks to enhance your understanding.",
+    "GCP": "Familiarize yourself with Google Cloud Platform through their official documentation and hands-on labs.",
+    "ETL pipeline design": "Learn about ETL processes and tools to design efficient data pipelines.",
+    "Pandas": "Practice data manipulation and analysis using the Pandas library through projects or exercises.",
+    "NumPy": "Study NumPy for numerical computing and array manipulation in Python.",
+    "Apache Airflow": "Get hands-on experience with Apache Airflow for workflow orchestration.",
+    "orchestration": "Understand orchestration tools and their role in managing complex workflows.",
+    "Machine Learning": "Take a course on machine learning to grasp its principles and applications.",
+    "Kafka": "Learn about Apache Kafka for real-time data streaming and messaging.",
+    "Scala": "Consider learning Scala, especially if you are interested in functional programming and big data frameworks.",
+    "TensorFlow": "Explore TensorFlow for building and deploying machine learning models.",
+    "PyTorch": "Familiarize yourself with PyTorch for deep learning applications."
+  },
+  "experience_summary": "Results-driven software engineer with 3 years of experience in developing scalable applications.",
+  "education": [
+    {
+      "degree": "B.E in Information Technology",
+      "institution": "Pune University",
+      "years": "2017 \u2013 2021",
+      "cgpa": "8.5/10"
+    }
+  ],
+  "overall_score": 75,
+  "short_recommendation": "Priya has a solid foundation in software development but should focus on bridging the skill gaps in data engineering and machine learning."
+}

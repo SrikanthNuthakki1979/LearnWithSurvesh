@@ -1,0 +1,56 @@
+{
+  "name": "Alex Johnson",
+  "email": "user3@email.com",
+  "phone": "+91-9876500003",
+  "skills": [
+    "Python",
+    "R",
+    "SQL",
+    "TensorFlow",
+    "Scikit-learn",
+    "Linux",
+    "GCP",
+    "Git",
+    "Machine Learning",
+    "Statistics"
+  ],
+  "missing_skills": [
+    "PySpark",
+    "distributed computing",
+    "AWS",
+    "ETL pipeline design",
+    "Pandas",
+    "NumPy",
+    "Apache Airflow",
+    "orchestration",
+    "Docker",
+    "Kafka",
+    "Scala",
+    "PyTorch"
+  ],
+  "recommendations": {
+    "PySpark": "Consider taking an online course or tutorial on PySpark to understand its integration with big data processing.",
+    "distributed computing": "Explore resources on distributed computing concepts and frameworks like Apache Spark.",
+    "AWS": "Familiarize yourself with AWS services, particularly those related to data processing and machine learning.",
+    "ETL pipeline design": "Learn about ETL processes and tools, focusing on best practices for designing efficient pipelines.",
+    "Pandas": "Practice data manipulation and analysis using Pandas through hands-on projects.",
+    "NumPy": "Strengthen your understanding of numerical computing with NumPy by working on mathematical and statistical problems.",
+    "Apache Airflow": "Study Apache Airflow for workflow orchestration and consider building sample workflows.",
+    "orchestration": "Gain knowledge in orchestration tools and techniques for managing complex data workflows.",
+    "Docker": "Learn Docker basics to understand containerization and how it can be used in data projects.",
+    "Kafka": "Explore Kafka for real-time data streaming and messaging systems.",
+    "Scala": "Consider learning Scala, especially if you plan to work with Apache Spark.",
+    "PyTorch": "Get familiar with PyTorch for deep learning applications through tutorials and projects."
+  },
+  "experience_summary": "Full-stack developer skilled in frontend and backend frameworks, delivering user-friendly products.",
+  "education": [
+    {
+      "degree": "B.Sc in Data Science",
+      "institution": "Delhi University",
+      "years": "2016 \u2013 2019",
+      "cgpa": "8.1/10"
+    }
+  ],
+  "overall_score": 75,
+  "short_recommendation": "Alex has a strong foundation in data science and machine learning but should focus on bridging the skill gaps in big data technologies and cloud services."
+}

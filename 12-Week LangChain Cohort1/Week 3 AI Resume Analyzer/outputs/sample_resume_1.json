@@ -1,0 +1,56 @@
+{
+  "name": "John Doe",
+  "email": "user1@email.com",
+  "phone": "+91-9876500001",
+  "skills": [
+    "Python",
+    "R",
+    "SQL",
+    "TensorFlow",
+    "Scikit-learn",
+    "Linux",
+    "GCP",
+    "Git",
+    "Machine Learning",
+    "Statistics"
+  ],
+  "missing_skills": [
+    "PySpark",
+    "distributed computing",
+    "AWS",
+    "ETL pipeline design",
+    "Pandas",
+    "NumPy",
+    "Apache Airflow",
+    "orchestration",
+    "Docker",
+    "Kafka",
+    "Scala",
+    "PyTorch"
+  ],
+  "recommendations": {
+    "PySpark": "Consider taking an online course or tutorial on PySpark to understand its integration with big data processing.",
+    "distributed computing": "Explore resources on distributed computing concepts and frameworks like Apache Spark.",
+    "AWS": "Familiarize yourself with AWS services, especially those related to data processing and machine learning.",
+    "ETL pipeline design": "Learn about ETL processes and tools, focusing on best practices for designing efficient pipelines.",
+    "Pandas": "Practice data manipulation and analysis using Pandas through projects or exercises.",
+    "NumPy": "Strengthen your understanding of numerical computing with NumPy by working on mathematical and statistical problems.",
+    "Apache Airflow": "Get hands-on experience with Apache Airflow for workflow orchestration and scheduling.",
+    "orchestration": "Study orchestration tools and techniques to manage complex workflows effectively.",
+    "Docker": "Learn Docker basics to understand containerization and how it can be used in data projects.",
+    "Kafka": "Explore Kafka for real-time data streaming and messaging systems.",
+    "Scala": "Consider learning Scala, especially if you plan to work with Apache Spark.",
+    "PyTorch": "Familiarize yourself with PyTorch for deep learning applications and projects."
+  },
+  "experience_summary": "AI enthusiast with experience in ML pipelines, model deployment, and cloud integration.",
+  "education": [
+    {
+      "degree": "B.Tech in Computer Science",
+      "institution": "Anna University",
+      "years": null,
+      "cgpa": "8.4/10"
+    }
+  ],
+  "overall_score": 75,
+  "short_recommendation": "Strong candidate with solid foundational skills; should focus on bridging the skill gaps for enhanced opportunities."
+}
