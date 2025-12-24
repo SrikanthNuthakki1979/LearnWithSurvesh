@@ -1,0 +1,1001 @@
+Date,Product,Category,Quantity,Price,Discount
+2023-04-13,Product_40,Books,15.0,483.59,0.29
+2023-06-29,Product_83,Books,,116.03,0.29
+2023-04-03,Product_42,Electronics,15.0,333.21,0.12
+2023-01-15,Product_41,Clothing,14.0,372.24,0.22
+2023-04-17,Product_6,Clothing,9.0,424.97,0.1
+2023-03-13,Product_52,Books,8.0,214.2,0.2
+2023-07-08,Product_26,Electronics,17.0,154.95,0.24
+2023-01-21,Product_64,Clothing,2.0,166.02,0.28
+2023-04-13,Product_98,Electronics,3.0,357.75,0.12
+2023-05-02,Product_59,Electronics,8.0,409.31,0.23
+2023-03-16,Product_56,Electronics,12.0,94.9,0.08
+2023-03-29,Product_59,Toys,1.0,188.62,0.3
+2023-04-27,Product_70,Electronics,10.0,451.46,0.01
+2023-04-10,Product_33,Toys,3.0,404.31,0.18
+2023-04-14,Product_53,Books,6.0,492.5,0.2
+2023-06-01,Product_22,Clothing,7.0,378.35,0.21
+2023-05-11,Product_21,Clothing,18.0,199.63,0.04
+2023-05-30,Product_70,Clothing,11.0,297.37,0.28
+2023-02-22,Product_70,Clothing,19.0,332.2,0.05
+2023-01-02,Product_4,Clothing,5.0,43.84,0.19
+2023-03-29,Product_94,Clothing,,274.53,0.07
+2023-06-07,Product_75,Clothing,11.0,356.11,0.09
+2023-02-07,,Books,12.0,87.82,0.16
+2023-05-10,Product_62,Electronics,10.0,391.41,0.13
+2023-07-11,Product_94,Home & Kitchen,8.0,293.97,0.05
+2023-07-07,Product_95,Toys,9.0,476.35,0.05
+2023-01-21,Product_24,Home & Kitchen,,26.0,0.13
+2023-06-10,Product_55,Home & Kitchen,5.0,136.34,0.23
+2023-02-27,Product_9,Electronics,8.0,302.77,0.27
+2023-01-22,Product_3,Electronics,9.0,151.8,0.03
+2023-03-30,Product_31,Electronics,15.0,358.64,0.12
+2023-02-18,,Clothing,15.0,380.71,0.03
+2023-02-28,Product_36,Books,16.0,55.75,0.0
+2023-06-19,Product_24,Clothing,14.0,259.36,0.2
+2023-07-07,Product_95,Books,8.0,256.9,0.18
+2023-01-15,Product_6,Books,18.0,187.79,0.05
+2023-07-09,Product_66,Home & Kitchen,10.0,466.8,0.07
+2023-07-09,Product_84,Home & Kitchen,6.0,414.62,0.01
+2023-06-24,Product_92,Books,12.0,350.12,0.25
+2023-07-09,Product_75,Books,,358.59,0.29
+2023-02-20,Product_4,Clothing,7.0,233.55,0.04
+2023-04-18,Product_79,Clothing,16.0,460.89,0.07
+2023-02-24,Product_6,Home & Kitchen,3.0,348.82,0.26
+2023-03-05,Product_94,Electronics,13.0,365.85,0.28
+2023-05-11,Product_51,Books,3.0,431.54,0.13
+2023-02-20,Product_62,Clothing,18.0,140.67,0.02
+2023-05-15,Product_57,Home & Kitchen,11.0,404.5,0.01
+2023-01-21,Product_66,Clothing,8.0,101.64,0.17
+2023-03-14,Product_79,Books,6.0,175.94,0.12
+2023-06-16,,Books,,171.13,0.01
+2023-01-18,Product_8,Toys,1.0,489.37,0.17
+2023-05-12,Product_26,Electronics,8.0,428.99,0.0
+2023-03-30,Product_51,Toys,5.0,352.08,0.24
+2023-03-01,Product_45,Home & Kitchen,16.0,364.89,0.09
+2023-01-14,Product_44,Clothing,11.0,283.23,0.01
+2023-01-09,Product_5,Home & Kitchen,5.0,473.81,0.18
+2023-03-31,Product_70,Books,4.0,250.65,0.12
+2023-02-22,Product_26,Toys,6.0,193.36,0.29
+2023-05-10,Product_68,Toys,14.0,85.7,0.16
+2023-03-25,,Toys,19.0,394.17,0.08
+2023-04-02,Product_84,Home & Kitchen,,368.55,0.21
+2023-04-21,Product_97,Books,12.0,195.26,0.08
+2023-07-07,Product_20,Clothing,11.0,17.47,0.27
+2023-07-18,Product_12,Clothing,14.0,420.3,0.11
+2023-06-21,,Home & Kitchen,16.0,10.65,0.16
+2023-01-08,Product_1,Toys,1.0,353.33,0.02
+2023-06-24,Product_90,Electronics,,485.28,0.13
+2023-02-04,Product_14,Home & Kitchen,13.0,221.64,0.25
+2023-03-22,Product_64,Home & Kitchen,2.0,121.31,0.24
+2023-06-13,Product_38,Books,4.0,353.91,0.07
+2023-02-19,Product_37,Clothing,6.0,409.48,0.07
+2023-04-14,Product_11,Home & Kitchen,5.0,275.48,0.25
+2023-05-12,Product_100,Home & Kitchen,3.0,483.68,0.28
+2023-01-02,Product_77,Toys,1.0,30.58,0.03
+2023-05-14,Product_3,Toys,4.0,254.87,0.14
+2023-02-23,Product_33,Electronics,2.0,360.63,0.1
+2023-04-16,Product_6,Books,5.0,432.01,0.26
+2023-01-04,Product_50,Electronics,3.0,93.73,0.03
+2023-02-23,Product_10,Toys,9.0,401.0,0.06
+2023-07-10,Product_5,Clothing,6.0,278.59,0.23
+2023-05-26,Product_23,Toys,18.0,201.29,0.02
+2023-02-13,Product_10,Books,6.0,70.2,0.15
+2023-06-11,,Toys,19.0,433.32,0.13
+2023-07-09,Product_2,Books,12.0,82.85,0.1
+2023-01-14,Product_13,Books,11.0,158.34,0.12
+2023-04-05,Product_40,Books,2.0,148.57,0.16
+2023-02-17,Product_2,Books,15.0,436.35,0.05
+2023-01-15,Product_84,Books,12.0,337.99,0.17
+2023-07-19,Product_65,Clothing,12.0,399.36,0.24
+2023-07-09,Product_63,Electronics,9.0,128.98,0.23
+2023-02-09,Product_73,Home & Kitchen,2.0,314.31,0.05
+2023-03-23,Product_17,Electronics,3.0,288.01,0.04
+2023-04-21,Product_9,Books,12.0,417.25,0.08
+2023-02-22,Product_75,Clothing,16.0,453.51,0.11
+2023-01-24,Product_15,Toys,1.0,11.02,0.12
+2023-06-03,Product_24,Clothing,3.0,338.64,0.2
+2023-07-07,Product_38,Books,2.0,30.66,0.02
+2023-05-04,Product_35,Clothing,,276.69,0.01
+2023-02-10,Product_94,Clothing,19.0,147.38,0.12
+2023-06-06,Product_95,Books,15.0,156.85,0.21
+2023-01-15,Product_49,Clothing,18.0,179.71,0.06
+2023-02-14,Product_69,Home & Kitchen,11.0,312.54,0.19
+2023-03-06,Product_62,Home & Kitchen,16.0,170.35,0.08
+2023-03-30,Product_60,Clothing,17.0,367.69,0.27
+2023-03-12,Product_50,Toys,5.0,205.24,0.27
+2023-01-09,Product_78,Books,12.0,38.83,0.09
+2023-03-29,Product_75,Home & Kitchen,11.0,392.96,0.07
+2023-05-09,Product_9,Toys,15.0,146.45,0.12
+2023-05-16,Product_34,Clothing,3.0,219.22,0.07
+2023-03-04,Product_76,Toys,1.0,344.29,0.2
+2023-05-19,Product_99,Electronics,16.0,169.57,0.25
+2023-03-22,Product_35,Home & Kitchen,2.0,33.01,0.2
+2023-05-16,Product_1,,2.0,190.09,0.25
+2023-06-12,Product_40,Books,3.0,472.5,0.12
+2023-06-12,Product_64,Clothing,8.0,322.66,0.05
+2023-02-02,Product_22,Books,15.0,337.38,0.22
+2023-05-03,Product_60,Clothing,7.0,317.98,0.11
+2023-01-05,Product_64,Toys,6.0,103.5,0.2
+2023-02-10,Product_93,Toys,9.0,212.08,0.08
+2023-01-28,Product_72,Toys,1.0,376.72,0.02
+2023-05-15,Product_11,Electronics,,55.18,0.3
+2023-03-13,Product_14,Books,3.0,142.54,0.05
+2023-01-12,Product_60,Toys,4.0,141.78,0.3
+2023-06-11,Product_30,Electronics,,218.85,0.29
+2023-02-02,Product_35,Books,6.0,490.28,0.24
+2023-02-17,Product_85,Clothing,15.0,38.41,0.2
+2023-05-31,Product_37,Electronics,3.0,261.76,0.17
+2023-03-03,Product_5,,14.0,93.79,0.26
+2023-02-06,Product_83,Electronics,14.0,485.48,0.09
+2023-04-09,Product_78,Electronics,4.0,61.09,0.14
+2023-06-21,Product_26,Books,,204.78,0.19
+2023-04-14,Product_62,Clothing,17.0,370.25,0.12
+2023-02-04,Product_4,Home & Kitchen,7.0,353.75,0.13
+2023-07-12,Product_89,Toys,9.0,214.25,0.1
+2023-04-11,Product_42,Toys,3.0,176.53,0.17
+2023-06-24,,Electronics,13.0,201.82,0.26
+2023-05-11,Product_18,Books,15.0,135.82,0.06
+2023-01-01,Product_40,Books,18.0,106.64,0.28
+2023-01-05,Product_72,Toys,19.0,244.1,0.21
+2023-05-22,Product_39,Home & Kitchen,1.0,137.92,0.25
+2023-04-13,Product_14,Clothing,6.0,147.29,0.17
+2023-01-27,,Home & Kitchen,2.0,330.09,0.23
+2023-05-17,Product_51,Clothing,14.0,484.43,0.0
+2023-01-15,Product_38,Toys,6.0,303.8,0.25
+2023-03-31,Product_97,,14.0,43.1,0.01
+2023-02-11,Product_23,Books,4.0,42.41,0.27
+2023-05-04,Product_63,Electronics,8.0,475.95,0.3
+2023-06-28,Product_15,Electronics,3.0,152.16,0.09
+2023-03-04,Product_97,Toys,19.0,50.57,0.06
+2023-04-06,Product_25,Books,14.0,301.53,0.23
+2023-02-21,Product_17,Home & Kitchen,17.0,313.71,0.08
+2023-04-06,Product_97,,8.0,326.01,0.26
+2023-05-12,Product_66,Electronics,14.0,137.36,0.03
+2023-05-31,Product_78,Electronics,6.0,12.48,0.04
+2023-05-23,Product_53,Books,16.0,482.68,0.29
+2023-06-20,Product_51,Books,19.0,129.19,0.2
+2023-01-29,Product_39,Electronics,14.0,339.63,0.25
+2023-02-05,Product_51,Home & Kitchen,19.0,354.78,0.1
+2023-01-13,Product_70,Toys,3.0,306.95,0.2
+2023-06-09,,Toys,10.0,159.89,0.18
+2023-03-12,Product_67,Books,19.0,139.19,0.18
+2023-07-06,Product_7,Toys,9.0,300.85,0.2
+2023-03-27,Product_51,Electronics,13.0,433.72,0.17
+2023-01-28,Product_72,Electronics,7.0,473.63,0.13
+2023-03-07,Product_42,Books,14.0,57.42,0.08
+2023-06-19,Product_64,Books,9.0,81.64,0.23
+2023-02-14,Product_15,Books,19.0,472.64,0.07
+2023-03-03,Product_29,Home & Kitchen,15.0,369.58,0.21
+2023-07-04,Product_33,Toys,14.0,442.08,0.07
+2023-05-14,Product_94,,6.0,105.3,0.19
+2023-01-28,Product_27,Clothing,4.0,295.86,0.22
+2023-01-28,Product_36,Clothing,8.0,352.06,0.07
+2023-04-18,Product_29,Electronics,17.0,341.66,0.02
+2023-02-13,Product_38,Toys,9.0,207.04,0.04
+2023-03-25,,Books,1.0,12.62,0.18
+2023-01-30,Product_97,Clothing,14.0,293.55,0.25
+2023-07-09,Product_27,Toys,11.0,130.29,0.01
+2023-03-16,Product_55,Electronics,3.0,227.88,0.22
+2023-05-08,Product_33,,9.0,479.0,0.1
+2023-04-02,Product_68,Toys,14.0,202.52,0.14
+2023-07-09,Product_86,Toys,9.0,420.7,0.28
+2023-05-09,Product_66,Home & Kitchen,4.0,98.33,0.1
+2023-05-01,Product_10,Toys,4.0,337.87,0.14
+2023-01-27,Product_5,Electronics,8.0,488.62,0.0
+2023-07-09,Product_74,Electronics,2.0,55.44,0.02
+2023-05-01,Product_97,Home & Kitchen,9.0,9.12,0.08
+2023-04-26,Product_38,Books,14.0,219.62,0.01
+2023-01-03,Product_13,Clothing,9.0,50.85,0.19
+2023-04-13,Product_31,Books,16.0,375.45,0.13
+2023-07-17,Product_47,,,457.7,0.16
+2023-07-19,Product_100,Clothing,16.0,219.84,0.05
+2023-06-04,Product_88,Home & Kitchen,12.0,133.06,0.09
+2023-05-17,Product_52,Home & Kitchen,3.0,220.03,0.2
+2023-03-03,Product_56,Clothing,11.0,363.11,0.29
+2023-06-14,,Electronics,,9.48,0.02
+2023-02-20,Product_29,Clothing,18.0,296.78,0.27
+2023-06-21,Product_8,Toys,5.0,308.58,0.17
+2023-06-01,Product_5,Electronics,16.0,320.66,0.17
+2023-02-28,Product_29,Home & Kitchen,5.0,124.8,0.15
+2023-04-28,Product_47,Clothing,3.0,358.46,0.02
+2023-06-09,Product_68,Books,12.0,50.24,0.03
+2023-04-06,Product_76,Books,1.0,103.64,0.18
+2023-06-29,Product_45,,9.0,439.35,0.1
+2023-04-23,Product_2,Books,9.0,370.67,0.28
+2023-03-03,Product_27,Clothing,4.0,11.8,0.12
+2023-07-05,Product_95,Clothing,,127.95,0.04
+2023-02-21,Product_36,Books,17.0,111.13,0.21
+2023-01-12,,Clothing,2.0,139.05,0.09
+2023-02-08,Product_26,Toys,1.0,127.54,0.16
+2023-05-10,Product_43,Electronics,8.0,35.95,0.21
+2023-05-11,Product_27,Toys,13.0,232.18,0.27
+2023-04-23,Product_69,Toys,15.0,367.7,0.24
+2023-04-11,Product_20,,8.0,305.33,0.2
+2023-04-23,Product_11,Electronics,12.0,338.07,0.2
+2023-07-03,Product_74,Clothing,12.0,45.17,0.28
+2023-03-22,Product_38,Home & Kitchen,14.0,475.99,0.09
+2023-07-06,Product_6,Clothing,15.0,420.05,0.0
+2023-04-23,Product_72,Clothing,15.0,403.52,0.08
+2023-01-02,Product_23,Clothing,9.0,412.38,0.07
+2023-05-10,Product_47,Electronics,19.0,466.69,0.2
+2023-02-23,Product_90,Clothing,8.0,274.41,0.19
+2023-03-28,Product_46,Electronics,19.0,104.14,0.18
+2023-05-09,Product_12,Books,6.0,310.31,0.0
+2023-05-27,Product_90,Home & Kitchen,19.0,372.73,0.22
+2023-05-06,Product_13,Electronics,4.0,370.27,0.1
+2023-05-10,Product_62,Books,7.0,263.12,0.2
+2023-02-22,Product_82,Electronics,4.0,38.89,0.17
+2023-06-21,Product_89,Electronics,12.0,188.7,0.1
+2023-06-09,Product_97,Home & Kitchen,13.0,460.78,0.04
+2023-07-17,Product_60,Toys,3.0,294.3,0.03
+2023-06-09,Product_43,Toys,12.0,271.47,0.25
+2023-03-09,Product_76,Electronics,2.0,138.08,0.28
+2023-07-02,Product_100,Clothing,2.0,187.38,0.19
+2023-07-03,,Books,9.0,448.2,0.03
+2023-05-03,Product_5,Clothing,1.0,334.9,0.12
+2023-05-25,Product_37,Clothing,8.0,394.76,0.22
+2023-02-07,Product_72,Electronics,6.0,229.9,0.23
+2023-01-24,Product_92,Electronics,6.0,316.97,0.04
+2023-03-10,Product_31,,18.0,127.95,0.0
+2023-04-26,Product_9,,17.0,354.2,0.21
+2023-04-08,Product_51,Toys,12.0,216.66,0.11
+2023-07-17,Product_29,Electronics,6.0,224.06,0.08
+2023-05-19,Product_78,Toys,8.0,326.41,0.0
+2023-05-24,Product_40,Toys,19.0,468.46,0.16
+2023-04-07,Product_41,Electronics,10.0,36.68,0.26
+2023-05-04,Product_86,Home & Kitchen,1.0,413.25,0.29
+2023-07-06,Product_11,Books,13.0,149.73,0.17
+2023-03-11,Product_23,Clothing,17.0,224.74,0.15
+2023-04-03,Product_1,Toys,3.0,15.85,0.03
+2023-01-03,Product_46,Books,8.0,154.02,0.16
+2023-05-28,Product_21,Home & Kitchen,14.0,253.8,0.11
+2023-07-06,Product_90,,3.0,32.81,0.18
+2023-06-13,Product_36,Clothing,16.0,248.09,0.12
+2023-05-27,Product_54,Toys,13.0,463.92,0.07
+2023-03-31,Product_87,Electronics,,57.17,0.03
+2023-07-14,Product_57,Home & Kitchen,,383.4,0.09
+2023-05-27,,Toys,6.0,207.79,0.03
+2023-05-28,Product_63,Home & Kitchen,17.0,329.31,0.05
+2023-04-06,Product_54,Electronics,14.0,133.82,0.3
+2023-07-18,Product_55,Electronics,,83.95,0.13
+2023-02-21,Product_40,Toys,8.0,84.43,0.16
+2023-06-10,Product_15,Electronics,11.0,39.89,0.26
+2023-06-17,Product_21,Books,1.0,96.9,0.3
+2023-05-08,Product_47,Clothing,,333.79,0.17
+2023-02-08,Product_73,,17.0,441.44,0.24
+2023-03-23,Product_53,,10.0,407.99,0.1
+2023-04-14,Product_9,Books,11.0,344.14,0.09
+2023-05-09,Product_74,Toys,9.0,59.66,0.12
+2023-01-11,Product_52,Electronics,9.0,148.15,0.2
+2023-07-04,,Electronics,5.0,158.35,0.2
+2023-06-27,Product_26,Electronics,17.0,128.73,0.09
+2023-05-31,Product_41,Electronics,9.0,259.93,0.04
+2023-06-08,Product_35,Home & Kitchen,17.0,270.1,0.19
+2023-02-11,Product_63,,19.0,181.66,0.04
+2023-04-09,Product_25,Clothing,7.0,180.13,0.17
+2023-01-07,Product_90,Home & Kitchen,9.0,415.14,0.21
+2023-05-24,Product_75,Home & Kitchen,7.0,395.7,0.21
+2023-03-31,Product_38,Clothing,13.0,157.36,0.23
+2023-04-22,Product_2,Clothing,,457.33,0.26
+2023-03-01,,Electronics,,476.64,0.15
+2023-04-23,Product_82,Home & Kitchen,19.0,166.74,0.22
+2023-01-02,Product_91,Toys,,180.44,0.19
+2023-05-09,Product_34,Clothing,13.0,255.29,0.06
+2023-02-17,Product_91,Clothing,14.0,470.85,0.01
+2023-05-20,Product_17,Books,13.0,438.78,0.09
+2023-07-16,Product_43,Toys,1.0,55.77,0.13
+2023-02-06,Product_59,Toys,8.0,199.4,0.19
+2023-06-09,Product_51,Clothing,12.0,278.92,0.25
+2023-01-09,Product_54,Electronics,19.0,254.05,0.06
+2023-04-09,Product_24,Books,12.0,100.96,0.04
+2023-05-27,,Toys,8.0,430.11,0.29
+2023-02-17,Product_71,Clothing,8.0,340.09,0.03
+2023-05-11,Product_52,Toys,13.0,419.76,0.14
+2023-05-28,Product_70,Books,,430.09,0.18
+2023-06-01,Product_88,Books,16.0,375.44,0.16
+2023-02-23,Product_33,Home & Kitchen,1.0,222.41,0.03
+2023-04-30,Product_49,Clothing,13.0,307.22,0.02
+2023-06-10,Product_29,Books,7.0,84.38,0.03
+2023-06-01,Product_63,Home & Kitchen,5.0,338.45,0.18
+2023-04-26,Product_22,Home & Kitchen,8.0,93.73,0.16
+2023-03-16,Product_26,Toys,14.0,348.51,0.07
+2023-04-23,Product_28,Toys,13.0,118.65,0.19
+2023-07-19,Product_85,Home & Kitchen,15.0,63.19,0.25
+2023-06-13,Product_49,Toys,17.0,86.82,0.01
+2023-06-15,Product_71,Books,15.0,5.99,0.15
+2023-04-14,Product_81,Electronics,18.0,360.78,0.21
+2023-03-25,Product_84,Books,18.0,367.54,0.08
+2023-04-22,Product_49,Home & Kitchen,2.0,259.89,0.09
+2023-04-09,Product_20,Home & Kitchen,4.0,84.87,0.18
+2023-06-02,Product_86,Books,1.0,46.36,0.27
+2023-04-03,Product_92,Toys,4.0,14.47,0.24
+2023-05-26,Product_63,Toys,,87.05,0.17
+2023-05-08,Product_61,Home & Kitchen,5.0,445.97,0.22
+2023-04-20,,Clothing,19.0,124.56,0.11
+2023-03-23,Product_71,Toys,15.0,180.36,0.19
+2023-07-13,Product_1,Books,8.0,57.15,0.14
+2023-02-23,Product_96,Toys,17.0,115.07,0.06
+2023-06-12,,Books,1.0,262.02,0.21
+2023-07-08,Product_94,Home & Kitchen,12.0,305.84,0.17
+2023-06-18,Product_87,Toys,19.0,126.45,0.11
+2023-06-10,Product_51,Books,15.0,33.58,0.27
+2023-03-09,Product_56,Home & Kitchen,9.0,198.56,0.01
+2023-02-02,Product_83,Clothing,7.0,120.93,0.09
+2023-05-22,Product_62,Books,2.0,113.68,0.02
+2023-01-21,Product_32,Clothing,9.0,480.13,0.23
+2023-02-17,Product_30,Clothing,10.0,310.07,0.21
+2023-05-28,Product_29,Electronics,2.0,280.65,0.1
+2023-05-08,,Toys,19.0,210.81,0.2
+2023-05-16,Product_45,Books,11.0,217.33,0.12
+2023-05-15,Product_93,Clothing,13.0,272.75,0.23
+2023-07-14,Product_30,Electronics,10.0,349.73,0.14
+2023-05-25,Product_16,Home & Kitchen,14.0,352.56,0.12
+2023-05-08,Product_40,Books,18.0,89.99,0.28
+2023-02-02,Product_19,Clothing,19.0,252.56,0.08
+2023-06-25,Product_18,Toys,9.0,208.92,0.04
+2023-07-06,Product_1,Electronics,7.0,435.91,0.18
+2023-04-25,Product_78,Clothing,3.0,317.55,0.29
+2023-04-29,Product_47,Toys,6.0,268.59,0.11
+2023-01-22,Product_66,Clothing,2.0,62.12,0.02
+2023-06-07,Product_92,Books,6.0,304.79,0.1
+2023-02-07,Product_94,Books,3.0,63.02,0.15
+2023-04-19,Product_38,Books,16.0,171.92,0.05
+2023-02-20,Product_51,Electronics,8.0,75.71,0.2
+2023-07-01,,Books,2.0,347.58,0.3
+2023-01-08,Product_4,Toys,17.0,107.09,0.14
+2023-01-27,Product_1,Clothing,9.0,198.97,0.11
+2023-01-27,Product_8,Home & Kitchen,12.0,448.36,0.12
+2023-01-21,,Toys,3.0,106.14,0.03
+2023-01-30,Product_55,Toys,11.0,256.36,0.26
+2023-04-07,Product_3,Books,1.0,212.54,0.12
+2023-01-28,Product_32,Electronics,13.0,13.97,0.12
+2023-04-21,Product_10,Clothing,15.0,397.42,0.2
+2023-07-11,Product_74,Electronics,5.0,39.18,0.13
+2023-07-16,Product_83,Clothing,17.0,239.76,0.19
+2023-03-02,Product_34,Clothing,6.0,282.54,0.02
+2023-02-17,Product_97,Electronics,11.0,316.07,0.24
+2023-05-27,Product_87,Toys,18.0,345.87,0.28
+2023-01-04,Product_55,Clothing,,130.37,0.19
+2023-02-04,Product_92,Electronics,3.0,9.94,0.29
+2023-07-11,Product_32,Clothing,13.0,363.1,0.05
+2023-02-18,Product_50,Home & Kitchen,9.0,270.15,0.14
+2023-01-17,Product_7,Toys,6.0,418.88,0.18
+2023-06-21,,Books,12.0,411.59,0.17
+2023-06-07,Product_8,,2.0,422.45,0.12
+2023-02-15,Product_65,Home & Kitchen,3.0,245.12,0.1
+2023-04-27,Product_57,Books,3.0,170.15,0.04
+2023-01-06,Product_67,Books,12.0,396.82,0.12
+2023-04-09,Product_88,Clothing,15.0,228.39,0.05
+2023-05-04,Product_87,Electronics,9.0,95.8,0.22
+2023-02-06,Product_59,Clothing,8.0,428.21,0.06
+2023-01-24,Product_72,Home & Kitchen,11.0,441.87,0.02
+2023-04-03,Product_54,Books,16.0,235.82,0.17
+2023-02-15,Product_67,Clothing,4.0,42.47,0.18
+2023-06-30,Product_51,Electronics,1.0,196.97,0.26
+2023-04-05,Product_97,Clothing,7.0,402.75,0.17
+2023-04-09,Product_92,Toys,2.0,451.38,0.1
+2023-07-07,Product_8,Electronics,5.0,105.72,0.24
+2023-04-26,Product_34,,7.0,38.15,0.16
+2023-07-10,Product_35,Books,4.0,439.29,0.02
+2023-06-09,Product_96,Clothing,5.0,197.76,0.17
+2023-06-10,Product_88,Electronics,1.0,273.17,0.27
+2023-03-08,Product_78,Toys,1.0,484.19,0.12
+2023-05-08,Product_32,Electronics,15.0,37.95,0.09
+2023-01-18,Product_46,Toys,19.0,325.92,0.04
+2023-01-25,Product_16,Home & Kitchen,10.0,41.68,0.05
+2023-02-23,Product_68,Books,18.0,190.86,0.13
+2023-02-27,Product_37,Home & Kitchen,3.0,402.89,0.18
+2023-03-08,,Clothing,11.0,219.57,0.02
+2023-04-14,,Electronics,15.0,498.61,0.28
+2023-06-23,Product_14,Toys,11.0,281.73,0.23
+2023-01-24,Product_95,Toys,17.0,163.98,0.18
+2023-04-24,Product_55,Electronics,17.0,113.96,0.25
+2023-02-01,Product_48,Electronics,6.0,178.51,0.02
+2023-06-24,Product_82,Clothing,5.0,189.4,0.14
+2023-03-27,,Home & Kitchen,8.0,39.01,0.19
+2023-05-31,Product_74,Toys,2.0,187.94,0.25
+2023-07-13,Product_7,Clothing,16.0,234.8,0.24
+2023-05-07,Product_33,Home & Kitchen,12.0,362.76,0.08
+2023-06-04,Product_23,Clothing,6.0,330.08,0.28
+2023-05-10,Product_85,Toys,1.0,355.84,0.04
+2023-01-17,Product_19,Electronics,4.0,9.14,0.26
+2023-04-14,Product_19,Electronics,17.0,112.75,0.29
+2023-06-10,Product_36,Home & Kitchen,13.0,332.53,0.05
+2023-05-17,Product_29,Books,18.0,244.57,0.22
+2023-02-12,Product_60,Home & Kitchen,5.0,7.63,0.01
+2023-06-25,Product_82,Books,3.0,403.22,0.12
+2023-02-08,Product_2,Clothing,11.0,387.54,0.15
+2023-06-19,Product_1,Clothing,13.0,276.47,0.17
+2023-01-26,Product_47,Toys,4.0,37.9,0.28
+2023-04-09,Product_69,Books,14.0,384.42,0.2
+2023-02-19,Product_20,,11.0,293.94,0.14
+2023-06-02,Product_11,Electronics,10.0,392.07,0.24
+2023-06-01,Product_2,Books,19.0,377.11,0.29
+2023-01-13,Product_67,Home & Kitchen,18.0,402.49,0.01
+2023-03-01,Product_87,Electronics,6.0,261.41,0.29
+2023-05-15,Product_12,Electronics,15.0,74.46,0.03
+2023-02-26,Product_20,Home & Kitchen,10.0,337.22,0.24
+2023-02-05,Product_5,Electronics,5.0,312.13,0.08
+2023-06-22,Product_37,Books,5.0,372.42,0.04
+2023-01-20,Product_38,Toys,,89.09,0.13
+2023-03-06,Product_94,Electronics,5.0,101.51,0.19
+2023-01-08,Product_9,Books,3.0,445.75,0.11
+2023-05-24,Product_98,Clothing,6.0,376.24,0.02
+2023-05-22,Product_53,Books,4.0,454.57,0.18
+2023-04-25,Product_44,Toys,18.0,380.56,0.27
+2023-05-23,Product_99,Books,9.0,300.59,0.11
+2023-04-02,Product_86,Home & Kitchen,17.0,328.8,0.06
+2023-04-08,Product_24,Toys,13.0,445.12,0.13
+2023-03-07,Product_81,Clothing,15.0,291.51,0.01
+2023-02-01,Product_74,Home & Kitchen,17.0,318.03,0.25
+2023-07-10,,Books,13.0,82.46,0.25
+2023-03-27,,Toys,16.0,239.59,0.18
+2023-02-20,Product_87,Clothing,4.0,359.62,0.11
+2023-06-02,Product_96,Home & Kitchen,5.0,139.12,0.24
+2023-07-05,Product_81,Clothing,5.0,105.12,0.17
+2023-03-04,Product_81,Books,9.0,160.34,0.25
+2023-07-09,Product_14,Clothing,17.0,124.54,0.19
+2023-05-05,Product_9,Electronics,13.0,111.38,0.24
+2023-05-30,Product_40,Home & Kitchen,2.0,215.3,0.18
+2023-02-27,Product_66,,13.0,454.38,0.12
+2023-02-27,Product_25,Books,19.0,255.99,0.29
+2023-03-27,Product_73,Books,3.0,98.02,0.16
+2023-02-18,Product_22,Clothing,10.0,43.1,0.18
+2023-06-29,Product_4,Books,2.0,349.6,0.07
+2023-06-19,Product_26,Toys,13.0,194.49,0.19
+2023-03-11,Product_58,Toys,19.0,411.81,0.17
+2023-01-15,Product_29,Toys,17.0,331.46,0.06
+2023-02-23,Product_98,Electronics,14.0,399.14,0.02
+2023-07-07,Product_87,Clothing,12.0,139.61,0.18
+2023-04-11,Product_37,Electronics,,347.72,0.23
+2023-01-08,Product_75,Books,11.0,135.71,0.16
+2023-02-22,Product_70,Electronics,7.0,469.84,0.07
+2023-03-01,Product_18,Books,4.0,320.01,0.2
+2023-04-18,Product_85,Books,19.0,165.63,0.02
+2023-01-05,Product_42,Home & Kitchen,1.0,138.41,0.13
+2023-04-13,Product_100,Toys,3.0,99.51,0.05
+2023-07-15,Product_41,,13.0,348.85,0.06
+2023-01-06,Product_38,Home & Kitchen,15.0,113.26,0.06
+2023-04-19,Product_34,Toys,2.0,299.68,0.12
+2023-04-26,Product_17,Books,11.0,135.99,0.02
+2023-04-04,Product_37,Books,4.0,332.67,0.12
+2023-02-16,Product_25,Electronics,19.0,408.4,0.15
+2023-04-09,Product_76,,17.0,390.12,0.14
+2023-02-24,Product_87,Toys,3.0,381.62,0.11
+2023-06-17,Product_86,Books,18.0,97.92,0.25
+2023-02-21,Product_85,Clothing,8.0,48.75,0.04
+2023-05-24,Product_27,Electronics,19.0,350.98,0.15
+2023-01-13,Product_57,Toys,5.0,187.33,0.02
+2023-04-24,Product_31,Books,7.0,219.01,0.02
+2023-05-04,Product_6,Books,8.0,20.42,0.17
+2023-04-16,Product_91,Clothing,5.0,133.49,0.17
+2023-06-07,Product_40,Toys,17.0,21.67,0.26
+2023-05-27,Product_98,,5.0,440.2,0.17
+2023-05-25,Product_12,Electronics,4.0,125.48,0.29
+2023-04-30,Product_53,Clothing,19.0,280.88,0.01
+2023-03-04,Product_71,,2.0,24.29,0.03
+2023-01-19,Product_10,Clothing,11.0,335.09,0.01
+2023-04-02,Product_45,Electronics,13.0,164.9,0.06
+2023-02-27,Product_17,Toys,15.0,449.47,0.16
+2023-07-02,Product_26,Clothing,12.0,444.62,0.19
+2023-03-31,,Home & Kitchen,11.0,166.02,0.01
+2023-04-27,Product_92,Electronics,7.0,450.98,0.28
+2023-03-03,Product_62,Electronics,5.0,498.1,0.25
+2023-01-23,,Electronics,17.0,413.58,0.09
+2023-05-07,Product_64,Home & Kitchen,9.0,423.21,0.02
+2023-05-17,Product_2,Home & Kitchen,14.0,128.26,0.05
+2023-05-20,Product_54,Books,12.0,290.47,0.04
+2023-05-09,Product_65,Clothing,6.0,38.29,0.04
+2023-02-27,Product_51,Books,17.0,51.98,0.16
+2023-05-02,Product_53,,19.0,499.45,0.07
+2023-01-01,Product_36,Home & Kitchen,19.0,166.69,0.11
+2023-02-03,Product_26,Home & Kitchen,,375.35,0.3
+2023-04-06,Product_29,Books,12.0,404.3,0.21
+2023-05-06,Product_21,Toys,12.0,429.72,0.28
+2023-04-28,Product_11,Books,6.0,498.83,0.04
+2023-02-17,Product_40,Clothing,4.0,124.54,0.11
+2023-03-30,Product_11,Books,6.0,24.97,0.17
+2023-04-27,Product_36,Electronics,11.0,208.54,0.02
+2023-05-09,Product_59,Clothing,1.0,69.39,0.0
+2023-01-16,Product_39,Clothing,15.0,16.1,0.2
+2023-07-08,Product_99,Toys,11.0,183.41,0.19
+2023-07-11,Product_54,Home & Kitchen,19.0,392.95,0.12
+2023-07-10,Product_98,Clothing,18.0,285.26,0.15
+2023-03-10,Product_55,Home & Kitchen,17.0,159.83,0.12
+2023-01-22,Product_24,Books,19.0,328.9,0.01
+2023-04-03,Product_22,Electronics,14.0,119.85,0.1
+2023-07-14,,Toys,18.0,12.12,0.05
+2023-03-17,Product_56,Home & Kitchen,19.0,383.35,0.03
+2023-06-03,Product_33,Clothing,15.0,313.75,0.29
+2023-05-24,Product_36,Home & Kitchen,15.0,382.34,0.18
+2023-06-28,Product_20,Clothing,,24.27,0.22
+2023-03-27,Product_83,Home & Kitchen,7.0,419.37,0.09
+2023-07-04,Product_99,Clothing,13.0,311.67,0.12
+2023-01-29,Product_81,Books,3.0,283.88,0.07
+2023-03-10,,Clothing,16.0,314.18,0.03
+2023-02-16,Product_98,Clothing,,432.89,0.05
+2023-04-04,Product_73,Electronics,8.0,295.53,0.24
+2023-07-09,Product_26,Clothing,13.0,292.57,0.2
+2023-07-16,Product_66,Electronics,17.0,495.39,0.16
+2023-05-24,Product_73,Toys,17.0,379.58,0.14
+2023-06-25,Product_73,Electronics,17.0,223.94,0.28
+2023-03-26,Product_40,Books,1.0,355.16,0.02
+2023-02-08,Product_17,Electronics,8.0,197.67,0.08
+2023-04-10,Product_1,Toys,19.0,118.29,0.1
+2023-02-02,Product_89,Books,6.0,300.44,0.23
+2023-04-11,Product_61,Home & Kitchen,3.0,464.45,0.3
+2023-01-23,Product_43,Home & Kitchen,5.0,464.92,0.07
+2023-01-10,Product_42,Electronics,13.0,174.24,0.26
+2023-03-10,Product_25,Electronics,15.0,266.2,0.25
+2023-04-10,Product_39,Toys,14.0,109.76,0.07
+2023-02-03,Product_35,Toys,16.0,497.84,0.12
+2023-06-29,Product_3,Clothing,18.0,490.65,0.12
+2023-05-18,Product_44,Toys,11.0,326.51,0.29
+2023-05-27,Product_51,Clothing,3.0,403.18,0.05
+2023-07-05,Product_94,Books,10.0,358.97,0.24
+2023-04-06,Product_98,Electronics,10.0,298.61,0.1
+2023-01-01,Product_12,Books,16.0,31.41,0.22
+2023-03-10,Product_19,Toys,12.0,230.11,0.13
+2023-01-04,Product_44,Books,2.0,339.02,0.17
+2023-01-16,,Books,9.0,340.38,0.25
+2023-01-24,Product_49,Books,,189.7,0.24
+2023-03-21,Product_61,Toys,15.0,471.14,0.26
+2023-01-02,Product_17,Books,3.0,87.84,0.02
+2023-05-08,Product_74,Clothing,19.0,252.68,0.21
+2023-06-09,Product_57,Toys,18.0,346.99,0.04
+2023-03-25,Product_55,Books,8.0,350.08,0.12
+2023-06-01,Product_47,Toys,17.0,326.08,0.16
+2023-05-20,Product_12,Home & Kitchen,8.0,141.27,0.12
+2023-06-27,Product_62,Clothing,7.0,82.32,0.16
+2023-06-12,Product_80,Books,7.0,319.79,0.3
+2023-05-04,Product_88,Home & Kitchen,3.0,301.65,0.04
+2023-02-02,Product_83,Home & Kitchen,1.0,93.78,0.2
+2023-06-10,Product_8,,4.0,354.04,0.12
+2023-07-08,Product_95,Home & Kitchen,5.0,230.31,0.04
+2023-06-28,Product_21,Clothing,1.0,335.54,0.05
+2023-06-20,Product_81,Clothing,15.0,419.5,0.28
+2023-04-11,Product_87,Electronics,5.0,89.02,0.26
+2023-01-12,Product_80,Clothing,13.0,14.48,0.27
+2023-03-08,Product_70,Home & Kitchen,8.0,390.66,0.3
+2023-03-06,Product_72,,8.0,306.8,0.06
+2023-06-10,Product_25,Toys,5.0,351.32,0.11
+2023-06-17,Product_82,Electronics,,419.89,0.2
+2023-03-15,Product_89,Home & Kitchen,1.0,402.39,0.15
+2023-02-12,Product_12,Electronics,4.0,480.66,0.13
+2023-02-13,Product_15,Home & Kitchen,3.0,270.29,0.11
+2023-01-29,Product_59,Toys,2.0,246.81,0.18
+2023-05-21,Product_26,Electronics,8.0,203.93,0.17
+2023-01-12,Product_26,Books,9.0,81.08,0.05
+2023-04-05,Product_47,,2.0,288.44,0.14
+2023-02-15,Product_32,Books,14.0,142.12,0.17
+2023-05-10,,Electronics,14.0,461.05,0.17
+2023-02-04,Product_16,Books,4.0,293.68,0.06
+2023-03-22,Product_71,Books,6.0,298.46,0.22
+2023-03-31,Product_17,Electronics,11.0,180.69,0.01
+2023-01-08,Product_23,Toys,3.0,30.73,0.11
+2023-04-03,Product_26,Books,8.0,20.71,0.23
+2023-06-03,Product_85,Books,3.0,214.55,0.17
+2023-03-31,Product_86,Toys,14.0,46.86,0.08
+2023-06-11,Product_7,Books,13.0,305.39,0.21
+2023-04-25,Product_14,Books,13.0,441.08,0.17
+2023-04-15,Product_79,Books,2.0,442.04,0.24
+2023-05-15,Product_7,Clothing,13.0,331.23,0.22
+2023-07-15,,Toys,19.0,109.56,0.18
+2023-02-27,Product_48,Books,6.0,432.18,0.15
+2023-04-24,Product_72,Toys,16.0,443.62,0.04
+2023-03-16,Product_59,Home & Kitchen,2.0,102.34,0.08
+2023-06-06,Product_87,Home & Kitchen,8.0,370.03,0.13
+2023-04-30,Product_93,Books,17.0,146.83,0.18
+2023-06-13,Product_82,Toys,2.0,402.31,0.15
+2023-01-21,Product_95,Toys,10.0,498.63,0.09
+2023-06-13,Product_94,Toys,16.0,19.86,0.0
+2023-05-18,Product_39,Clothing,6.0,449.2,0.15
+2023-04-11,Product_99,Home & Kitchen,2.0,313.2,0.09
+2023-06-01,Product_18,Toys,2.0,486.82,0.22
+2023-07-11,Product_59,Toys,13.0,235.18,0.01
+2023-06-26,Product_17,Clothing,15.0,424.46,0.18
+2023-04-09,Product_14,Clothing,2.0,35.89,0.28
+2023-02-05,Product_31,,7.0,170.96,0.05
+2023-04-06,Product_24,Electronics,3.0,38.17,0.14
+2023-06-01,,Toys,8.0,487.79,0.03
+2023-05-31,Product_60,Toys,14.0,409.4,0.19
+2023-07-09,Product_45,Clothing,7.0,427.01,0.17
+2023-02-06,Product_98,Clothing,7.0,469.29,0.12
+2023-01-12,Product_3,Toys,1.0,47.13,0.16
+2023-04-23,Product_37,Toys,17.0,195.87,0.27
+2023-07-02,Product_43,Toys,9.0,40.16,0.06
+2023-01-13,Product_40,Clothing,13.0,109.34,0.01
+2023-01-23,Product_90,Toys,19.0,118.54,0.26
+2023-04-09,Product_55,Toys,19.0,237.21,0.17
+2023-04-15,Product_87,Books,17.0,137.94,0.27
+2023-01-30,Product_39,,10.0,54.98,0.18
+2023-01-17,Product_15,Home & Kitchen,10.0,87.91,0.24
+2023-04-23,Product_4,Electronics,4.0,77.9,0.13
+2023-03-03,Product_93,Books,8.0,486.67,0.22
+2023-03-25,Product_86,Home & Kitchen,18.0,380.85,0.27
+2023-04-22,Product_25,Toys,14.0,484.04,0.17
+2023-03-27,Product_13,Books,18.0,222.67,0.05
+2023-05-21,Product_82,Toys,,142.79,0.08
+2023-07-06,Product_33,Clothing,15.0,400.16,0.06
+2023-01-19,Product_16,,4.0,166.5,0.07
+2023-06-26,,Clothing,13.0,153.19,0.09
+2023-04-10,Product_66,Books,8.0,120.09,0.17
+2023-05-20,Product_55,Books,18.0,69.19,0.18
+2023-07-08,,Clothing,12.0,131.95,0.13
+2023-05-27,Product_42,Home & Kitchen,14.0,180.88,0.18
+2023-03-17,,Electronics,2.0,338.63,0.02
+2023-01-09,Product_30,Toys,18.0,35.97,0.03
+2023-07-18,Product_13,Books,2.0,109.2,0.05
+2023-01-28,Product_13,Toys,11.0,405.47,0.16
+2023-05-08,Product_18,,9.0,77.73,0.06
+2023-02-21,Product_32,Toys,12.0,174.61,0.08
+2023-03-24,Product_96,Clothing,17.0,433.01,0.12
+2023-04-21,Product_99,Toys,15.0,81.69,0.24
+2023-05-24,Product_39,,17.0,45.95,0.0
+2023-04-27,Product_46,Electronics,18.0,244.85,0.19
+2023-03-10,Product_29,Electronics,6.0,154.7,0.2
+2023-04-09,Product_62,Electronics,17.0,283.89,0.24
+2023-05-20,Product_93,Electronics,18.0,402.88,0.28
+2023-01-25,Product_62,Electronics,8.0,72.89,0.01
+2023-06-29,Product_57,Clothing,9.0,292.45,0.05
+2023-05-03,Product_16,Books,6.0,255.23,0.27
+2023-02-22,Product_56,Toys,5.0,76.32,0.14
+2023-05-31,Product_10,Electronics,12.0,313.88,0.17
+2023-05-24,Product_30,Clothing,11.0,140.45,0.2
+2023-02-26,Product_25,Clothing,1.0,246.48,0.2
+2023-02-08,Product_84,Clothing,11.0,45.72,0.28
+2023-04-19,Product_5,Books,19.0,232.49,0.3
+2023-06-30,Product_65,,9.0,156.7,0.22
+2023-02-11,Product_94,Books,2.0,412.08,0.09
+2023-07-05,Product_49,Home & Kitchen,12.0,33.2,0.26
+2023-06-16,Product_3,Clothing,4.0,212.21,0.01
+2023-05-22,Product_45,Home & Kitchen,4.0,231.92,0.07
+2023-05-02,Product_14,Electronics,18.0,363.88,0.27
+2023-05-13,Product_30,Electronics,15.0,289.27,0.08
+2023-06-12,Product_68,Books,19.0,335.27,0.07
+2023-03-16,Product_18,Toys,13.0,389.64,0.04
+2023-05-26,Product_62,Home & Kitchen,19.0,431.79,0.26
+2023-03-17,Product_37,Toys,17.0,160.37,0.15
+2023-01-09,Product_25,Books,6.0,271.32,0.2
+2023-03-15,Product_48,Electronics,,420.85,0.07
+2023-07-05,Product_65,Toys,12.0,494.78,0.23
+2023-05-25,Product_53,Toys,19.0,445.31,0.23
+2023-01-07,Product_79,Electronics,5.0,188.88,0.09
+2023-06-23,Product_73,Home & Kitchen,17.0,101.61,0.12
+2023-05-21,Product_15,Electronics,1.0,247.25,0.06
+2023-06-17,Product_49,Toys,10.0,372.11,0.29
+2023-06-19,Product_88,Home & Kitchen,15.0,248.82,0.19
+2023-05-17,Product_68,Home & Kitchen,11.0,244.17,0.28
+2023-06-27,Product_12,Electronics,13.0,419.92,0.09
+2023-01-27,Product_59,Toys,5.0,183.89,0.23
+2023-05-02,Product_37,Books,1.0,430.6,0.23
+2023-07-13,Product_61,Toys,12.0,206.37,0.21
+2023-01-05,Product_43,Clothing,11.0,167.48,0.29
+2023-01-29,Product_70,Books,17.0,229.73,0.12
+2023-06-14,Product_39,Home & Kitchen,4.0,382.41,0.04
+2023-06-15,Product_56,Books,15.0,67.37,0.2
+2023-03-24,Product_63,Home & Kitchen,9.0,102.23,0.22
+2023-05-16,Product_46,Home & Kitchen,19.0,475.97,0.17
+2023-04-19,Product_88,Books,19.0,91.87,0.06
+2023-03-06,Product_11,Home & Kitchen,12.0,286.03,0.15
+2023-03-27,Product_62,Home & Kitchen,5.0,291.76,0.09
+2023-05-25,Product_77,Clothing,10.0,247.36,0.13
+2023-03-12,Product_98,Toys,17.0,324.15,0.19
+2023-02-14,Product_25,,5.0,118.76,0.22
+2023-05-12,Product_71,Clothing,16.0,278.57,0.07
+2023-02-05,Product_52,Books,7.0,189.23,0.12
+2023-03-11,Product_4,Electronics,9.0,332.53,0.08
+2023-06-08,Product_59,Electronics,3.0,74.91,0.06
+2023-01-19,Product_72,Electronics,15.0,287.58,0.24
+2023-07-08,Product_20,Clothing,16.0,96.71,0.27
+2023-04-18,Product_93,Clothing,18.0,142.93,0.11
+2023-07-01,Product_63,Home & Kitchen,14.0,113.26,0.23
+2023-06-16,Product_54,Electronics,3.0,95.5,0.27
+2023-04-01,Product_74,Books,12.0,413.73,0.25
+2023-03-31,Product_98,Books,9.0,146.43,0.05
+2023-01-19,Product_57,Electronics,7.0,463.93,0.29
+2023-02-08,Product_90,Electronics,9.0,485.11,0.11
+2023-05-06,Product_41,Electronics,13.0,287.77,0.1
+2023-07-14,Product_3,Clothing,18.0,75.79,0.02
+2023-06-22,Product_6,Clothing,5.0,190.4,0.15
+2023-05-21,Product_5,Clothing,13.0,399.88,0.03
+2023-05-06,Product_5,Toys,4.0,186.86,0.07
+2023-02-27,Product_54,Books,2.0,48.07,0.1
+2023-05-28,Product_47,Books,16.0,280.61,0.24
+2023-07-19,Product_87,Home & Kitchen,9.0,423.33,0.26
+2023-03-02,Product_49,Clothing,9.0,398.98,0.09
+2023-05-07,Product_9,Toys,6.0,91.69,0.26
+2023-04-15,Product_99,Toys,11.0,338.02,0.26
+2023-06-16,Product_20,Books,1.0,114.15,0.23
+2023-01-01,Product_61,Clothing,4.0,113.01,0.04
+2023-05-11,Product_35,Home & Kitchen,13.0,437.67,0.21
+2023-04-02,Product_50,Clothing,13.0,128.59,0.28
+2023-07-09,Product_82,Electronics,13.0,135.31,0.2
+2023-07-10,Product_62,Clothing,2.0,5.32,0.1
+2023-04-23,Product_17,Electronics,9.0,435.98,0.15
+2023-06-02,Product_88,Electronics,8.0,397.33,0.19
+2023-02-25,Product_3,Home & Kitchen,7.0,315.53,0.15
+2023-06-10,Product_32,Books,4.0,376.38,0.04
+2023-06-15,Product_99,Clothing,18.0,80.26,0.09
+2023-04-27,Product_13,Electronics,3.0,231.87,0.24
+2023-05-14,Product_89,Clothing,,178.85,0.26
+2023-02-27,Product_73,Books,12.0,51.42,0.04
+2023-02-13,Product_68,Books,,245.63,0.29
+2023-06-22,Product_14,Toys,8.0,460.77,0.1
+2023-06-09,Product_98,Books,1.0,24.83,0.2
+2023-06-22,Product_11,Home & Kitchen,,149.27,0.23
+2023-03-02,Product_56,Electronics,11.0,107.73,0.24
+2023-02-16,Product_67,Toys,3.0,122.88,0.28
+2023-05-29,Product_92,Home & Kitchen,13.0,454.68,0.09
+2023-03-21,Product_29,Clothing,17.0,236.69,0.26
+2023-04-28,Product_9,Electronics,10.0,235.82,0.04
+2023-06-13,Product_67,,,381.48,0.21
+2023-05-27,Product_25,Electronics,15.0,81.47,0.22
+2023-01-20,Product_98,Clothing,10.0,246.2,0.2
+2023-07-04,Product_76,Toys,14.0,217.84,0.08
+2023-05-26,Product_42,Toys,13.0,300.47,0.26
+2023-02-16,Product_9,,5.0,499.78,0.05
+2023-02-18,Product_79,Books,6.0,385.88,0.02
+2023-01-14,Product_40,Home & Kitchen,2.0,201.94,0.22
+2023-05-23,Product_25,Home & Kitchen,17.0,414.64,0.14
+2023-06-08,Product_5,Electronics,4.0,89.5,0.25
+2023-01-01,Product_11,Books,14.0,20.08,0.12
+2023-04-27,Product_59,Toys,,106.2,0.05
+2023-02-23,Product_98,Toys,3.0,173.5,0.25
+2023-04-28,Product_88,Clothing,3.0,257.74,0.16
+2023-01-03,Product_79,Clothing,15.0,309.49,0.06
+2023-05-24,Product_38,Toys,6.0,455.75,0.22
+2023-07-04,Product_72,Toys,17.0,257.38,0.15
+2023-01-12,Product_5,Books,12.0,253.13,0.18
+2023-03-15,Product_48,Home & Kitchen,11.0,29.87,0.14
+2023-01-16,Product_90,Clothing,,22.28,0.25
+2023-07-19,Product_18,Home & Kitchen,6.0,277.82,0.25
+2023-04-12,Product_70,Books,1.0,221.9,0.21
+2023-06-01,Product_37,Toys,16.0,420.39,0.03
+2023-06-05,,Home & Kitchen,15.0,84.54,0.25
+2023-04-27,Product_48,Toys,17.0,17.36,0.2
+2023-01-08,Product_77,Toys,8.0,227.27,0.21
+2023-05-02,Product_28,Electronics,,122.55,0.11
+2023-04-02,Product_69,Home & Kitchen,10.0,29.56,0.26
+2023-06-13,Product_77,Home & Kitchen,15.0,363.68,0.22
+2023-03-31,Product_81,Toys,,60.24,0.03
+2023-05-16,Product_40,Books,2.0,306.12,0.12
+2023-07-05,Product_45,Electronics,5.0,144.12,0.27
+2023-03-01,Product_96,Toys,,90.88,0.01
+2023-06-27,Product_62,Clothing,7.0,192.98,0.29
+2023-01-28,Product_93,Clothing,1.0,401.72,0.2
+2023-04-11,Product_58,Electronics,7.0,199.09,0.19
+2023-02-10,Product_67,Books,12.0,376.63,0.08
+2023-07-11,Product_56,Toys,16.0,67.12,0.07
+2023-06-04,,Home & Kitchen,,387.52,0.28
+2023-07-10,Product_98,Electronics,11.0,122.28,0.09
+2023-05-25,Product_40,Books,,340.31,0.23
+2023-06-10,Product_91,Home & Kitchen,13.0,285.06,0.12
+2023-06-06,Product_77,Clothing,7.0,464.93,0.04
+2023-05-21,Product_33,Clothing,4.0,196.72,0.0
+2023-02-15,Product_6,Home & Kitchen,15.0,37.75,0.16
+2023-02-04,,Electronics,19.0,14.48,0.29
+2023-05-14,Product_19,Clothing,9.0,414.29,0.11
+2023-03-23,Product_80,Toys,11.0,264.74,0.11
+2023-04-25,Product_40,Home & Kitchen,8.0,388.75,0.1
+2023-07-16,Product_92,Home & Kitchen,1.0,121.04,0.16
+2023-02-16,Product_97,Clothing,8.0,175.82,0.13
+2023-06-02,Product_59,Electronics,,19.9,0.26
+2023-07-13,Product_59,Toys,4.0,480.94,0.15
+2023-01-10,Product_48,Electronics,8.0,335.59,0.15
+2023-02-25,Product_41,Books,,466.94,0.04
+2023-01-30,Product_13,Books,9.0,136.42,0.29
+2023-04-19,Product_45,Clothing,2.0,307.67,0.07
+2023-01-05,Product_89,Clothing,2.0,340.86,0.02
+2023-04-29,Product_53,Clothing,13.0,162.19,0.2
+2023-02-02,Product_42,Books,15.0,424.81,0.18
+2023-04-28,Product_100,Electronics,12.0,473.84,0.12
+2023-03-06,Product_63,Electronics,4.0,443.0,0.13
+2023-05-26,Product_27,Clothing,8.0,370.84,0.24
+2023-06-26,Product_38,Toys,9.0,142.35,0.06
+2023-01-11,Product_60,Electronics,5.0,144.4,0.25
+2023-03-26,,Books,18.0,481.86,0.19
+2023-01-26,Product_5,Home & Kitchen,11.0,10.09,0.13
+2023-03-04,Product_45,Home & Kitchen,15.0,359.44,0.14
+2023-03-27,Product_58,Home & Kitchen,9.0,354.59,0.08
+2023-02-28,Product_31,Toys,17.0,313.23,0.23
+2023-01-27,Product_23,Clothing,12.0,495.1,0.15
+2023-06-26,Product_42,Books,7.0,159.38,0.1
+2023-06-10,Product_10,Toys,10.0,173.29,0.18
+2023-04-08,Product_32,Books,10.0,44.08,0.3
+2023-04-15,Product_53,Books,13.0,224.19,0.13
+2023-04-09,Product_30,Clothing,19.0,134.22,0.28
+2023-05-09,Product_39,,11.0,174.98,0.1
+2023-05-29,Product_31,Clothing,13.0,418.11,0.02
+2023-02-24,Product_82,Toys,8.0,468.06,0.06
+2023-01-06,Product_100,Toys,8.0,96.94,0.13
+2023-07-16,Product_2,Toys,4.0,189.39,0.07
+2023-04-05,Product_78,Clothing,15.0,464.67,0.0
+2023-05-13,Product_77,Books,11.0,35.6,0.27
+2023-04-12,Product_93,Books,11.0,50.72,0.25
+2023-01-03,Product_12,Electronics,1.0,85.58,0.22
+2023-06-30,Product_39,Toys,17.0,299.63,0.05
+2023-01-23,Product_66,,15.0,79.48,0.04
+2023-02-22,Product_96,Electronics,6.0,484.2,0.02
+2023-06-14,Product_13,Books,15.0,226.12,0.22
+2023-03-24,Product_46,Toys,9.0,253.25,0.28
+2023-05-25,Product_27,Home & Kitchen,14.0,127.1,0.13
+2023-03-26,Product_17,Toys,18.0,238.13,0.04
+2023-03-19,Product_95,Clothing,17.0,332.65,0.15
+2023-04-20,Product_98,Books,18.0,376.83,0.1
+2023-01-01,Product_60,Books,5.0,378.16,0.11
+2023-02-20,Product_64,Clothing,9.0,291.06,0.19
+2023-06-22,Product_88,Clothing,11.0,452.66,0.22
+2023-01-04,Product_35,Home & Kitchen,1.0,409.62,0.03
+2023-07-09,Product_70,Books,18.0,379.74,0.01
+2023-07-12,Product_83,Books,6.0,32.52,0.3
+2023-04-23,Product_30,Home & Kitchen,2.0,8.4,0.07
+2023-02-01,Product_71,Electronics,15.0,110.16,0.02
+2023-02-03,Product_74,Home & Kitchen,14.0,333.44,0.06
+2023-04-02,Product_96,Toys,5.0,208.54,0.01
+2023-04-05,Product_98,Books,,204.19,0.12
+2023-03-13,Product_63,Clothing,6.0,442.87,0.24
+2023-02-08,Product_28,Toys,18.0,448.3,0.1
+2023-06-03,Product_60,Books,14.0,455.04,0.13
+2023-06-11,Product_79,Home & Kitchen,10.0,160.37,0.2
+2023-07-01,Product_94,Toys,14.0,347.07,0.15
+2023-04-28,Product_37,Books,13.0,139.46,0.26
+2023-01-03,Product_93,Electronics,3.0,99.35,0.26
+2023-05-03,,Electronics,6.0,96.39,0.0
+2023-02-19,Product_68,Clothing,8.0,174.34,0.23
+2023-01-12,Product_20,Books,12.0,217.83,0.14
+2023-07-12,Product_96,Electronics,13.0,416.32,0.3
+2023-02-23,Product_100,Home & Kitchen,11.0,64.35,0.14
+2023-05-13,Product_68,Books,12.0,368.79,0.3
+2023-02-26,Product_91,Home & Kitchen,1.0,268.07,0.23
+2023-05-25,Product_64,Home & Kitchen,17.0,147.53,0.07
+2023-04-22,Product_17,Electronics,16.0,248.95,0.16
+2023-02-16,,Books,11.0,153.47,0.3
+2023-05-31,Product_22,,13.0,300.06,0.26
+2023-03-26,Product_17,Electronics,18.0,219.75,0.03
+2023-05-22,Product_10,Electronics,11.0,86.38,0.21
+2023-03-07,Product_65,Books,12.0,62.71,0.1
+2023-03-16,Product_22,Books,6.0,275.61,0.0
+2023-06-28,Product_90,Home & Kitchen,9.0,451.69,0.12
+2023-04-13,Product_82,Books,16.0,175.26,0.07
+2023-06-15,Product_50,Home & Kitchen,4.0,367.84,0.25
+2023-07-11,Product_14,Electronics,3.0,331.04,0.1
+2023-02-07,Product_64,Clothing,16.0,466.12,0.25
+2023-02-19,Product_47,,12.0,411.39,0.0
+2023-04-08,Product_29,Electronics,11.0,285.47,0.09
+2023-03-23,Product_76,Books,5.0,330.23,0.07
+2023-01-30,Product_36,,18.0,449.7,0.07
+2023-03-20,Product_99,Clothing,19.0,202.76,0.02
+2023-04-01,Product_52,Clothing,6.0,166.76,0.06
+2023-06-28,Product_76,Home & Kitchen,18.0,10.35,0.17
+2023-07-10,Product_7,Toys,6.0,414.14,0.09
+2023-02-21,Product_29,Home & Kitchen,4.0,401.49,0.13
+2023-06-15,Product_11,Electronics,12.0,56.7,0.11
+2023-03-20,Product_33,Toys,19.0,290.54,0.26
+2023-01-30,Product_6,Electronics,2.0,234.67,0.27
+2023-04-16,Product_79,,17.0,63.76,0.15
+2023-02-20,Product_32,,11.0,490.38,0.1
+2023-03-22,,Home & Kitchen,11.0,111.27,0.03
+2023-05-13,Product_75,Toys,16.0,38.28,0.29
+2023-01-29,Product_58,Home & Kitchen,2.0,299.45,0.02
+2023-05-12,Product_87,Clothing,2.0,370.74,0.09
+2023-05-18,Product_26,Home & Kitchen,8.0,21.06,0.09
+2023-07-03,Product_98,,13.0,331.07,0.1
+2023-05-25,Product_46,,10.0,268.48,0.05
+2023-03-15,Product_98,Toys,8.0,56.12,0.23
+2023-01-17,Product_29,Toys,4.0,90.4,0.04
+2023-03-25,Product_4,Toys,15.0,286.15,0.19
+2023-03-10,Product_81,Books,1.0,151.7,0.04
+2023-02-03,Product_99,Electronics,11.0,469.47,0.02
+2023-01-06,Product_13,Toys,7.0,410.28,0.27
+2023-02-22,Product_39,Clothing,17.0,491.87,0.06
+2023-07-13,Product_15,,18.0,133.54,0.25
+2023-05-06,Product_29,Books,12.0,485.01,0.16
+2023-02-12,Product_29,Clothing,9.0,218.46,0.02
+2023-04-25,Product_75,Books,5.0,177.02,0.29
+2023-04-21,Product_32,Clothing,10.0,29.92,0.07
+2023-05-31,Product_2,Home & Kitchen,4.0,31.12,0.26
+2023-07-02,Product_47,Electronics,5.0,347.55,0.05
+2023-03-21,Product_78,Electronics,10.0,231.67,0.26
+2023-04-05,Product_84,Books,11.0,117.13,0.0
+2023-04-28,Product_22,Electronics,10.0,308.92,0.15
+2023-05-24,Product_75,Books,8.0,130.16,0.23
+2023-01-08,Product_27,Books,2.0,290.93,0.28
+2023-05-12,Product_67,Books,8.0,182.81,0.27
+2023-04-14,Product_81,Electronics,,412.66,0.25
+2023-05-12,Product_56,Books,5.0,411.24,0.27
+2023-07-03,Product_92,Electronics,3.0,241.29,0.06
+2023-01-25,Product_93,Books,12.0,178.66,0.09
+2023-07-14,Product_21,Toys,13.0,184.47,0.09
+2023-04-06,Product_47,Books,13.0,403.83,0.11
+2023-07-14,Product_80,Clothing,10.0,167.45,0.12
+2023-06-04,Product_59,Books,4.0,108.48,0.16
+2023-04-03,Product_84,Home & Kitchen,9.0,46.92,0.05
+2023-06-09,Product_6,Books,2.0,236.01,0.21
+2023-06-27,Product_19,Clothing,19.0,243.66,0.05
+2023-03-02,Product_57,Clothing,1.0,421.25,0.09
+2023-05-02,Product_69,Electronics,7.0,114.51,0.15
+2023-02-20,Product_3,Toys,17.0,193.59,0.24
+2023-05-27,Product_1,Books,3.0,405.16,0.22
+2023-01-21,Product_58,Electronics,3.0,412.69,0.19
+2023-01-05,,Toys,3.0,195.38,0.05
+2023-04-02,Product_15,Books,17.0,232.27,0.16
+2023-06-19,Product_34,Home & Kitchen,7.0,155.13,0.03
+2023-03-02,Product_61,Books,14.0,466.61,0.11
+2023-01-22,Product_35,Clothing,17.0,63.73,0.12
+2023-05-29,Product_64,Clothing,18.0,467.21,0.01
+2023-03-11,Product_25,Home & Kitchen,13.0,343.51,0.08
+2023-01-01,Product_24,Electronics,18.0,268.13,0.29
+2023-05-13,Product_12,Toys,4.0,21.17,0.29
+2023-01-12,Product_18,Books,1.0,240.42,0.11
+2023-03-31,Product_15,Clothing,18.0,206.84,0.01
+2023-02-15,Product_80,Electronics,1.0,84.8,0.05
+2023-02-03,Product_27,Home & Kitchen,13.0,329.92,0.12
+2023-06-26,Product_72,Clothing,,485.72,0.28
+2023-03-19,Product_60,Home & Kitchen,11.0,283.28,0.04
+2023-02-14,Product_46,Books,9.0,358.8,0.23
+2023-06-04,,Toys,9.0,38.88,0.03
+2023-03-14,Product_17,Clothing,5.0,211.75,0.29
+2023-01-26,Product_93,Clothing,1.0,62.6,0.11
+2023-02-16,Product_53,Books,17.0,308.33,0.23
+2023-05-01,Product_8,Electronics,2.0,469.55,0.1
+2023-02-25,Product_79,Toys,13.0,332.58,0.19
+2023-04-04,Product_27,Clothing,9.0,43.02,0.06
+2023-04-17,Product_46,Toys,4.0,180.56,0.04
+2023-03-04,Product_50,Clothing,5.0,277.58,0.28
+2023-02-17,Product_71,Toys,11.0,204.59,0.28
+2023-03-02,Product_3,Home & Kitchen,19.0,417.65,0.27
+2023-03-22,Product_93,Clothing,3.0,408.26,0.19
+2023-01-26,Product_64,,12.0,307.86,0.24
+2023-02-05,Product_44,,19.0,189.86,0.02
+2023-01-01,Product_53,Home & Kitchen,19.0,131.39,0.1
+2023-01-08,Product_24,Home & Kitchen,13.0,57.41,0.09
+2023-04-23,Product_60,Electronics,7.0,180.67,0.19
+2023-04-09,Product_3,Toys,15.0,209.52,0.11
+2023-06-29,Product_20,Books,7.0,339.53,0.04
+2023-02-16,Product_46,Electronics,8.0,330.79,0.18
+2023-05-07,Product_15,Toys,5.0,39.7,0.24
+2023-02-25,Product_25,Electronics,14.0,200.65,0.11
+2023-01-14,Product_94,Electronics,4.0,94.98,0.04
+2023-01-28,Product_78,Clothing,10.0,82.62,0.06
+2023-03-19,Product_71,Toys,15.0,414.51,0.07
+2023-05-10,Product_17,Books,18.0,25.75,0.09
+2023-04-19,Product_84,Clothing,13.0,212.5,0.19
+2023-06-03,Product_100,Electronics,8.0,88.26,0.18
+2023-01-14,Product_9,Electronics,,440.27,0.21
+2023-07-06,Product_38,Electronics,16.0,280.74,0.11
+2023-02-25,Product_48,Toys,19.0,119.53,0.25
+2023-04-25,Product_60,Toys,16.0,253.7,0.06
+2023-01-07,Product_63,Clothing,7.0,367.09,0.14
+2023-01-03,Product_86,Books,14.0,479.27,0.24
+2023-04-21,Product_2,Clothing,14.0,114.12,0.05
+2023-05-31,Product_88,Home & Kitchen,4.0,443.66,0.03
+2023-04-17,Product_72,Electronics,15.0,467.48,0.27
+2023-01-18,Product_11,Electronics,3.0,458.63,0.1
+2023-02-07,Product_64,Electronics,5.0,319.53,0.21
+2023-04-25,Product_77,Clothing,1.0,316.76,0.01
+2023-01-15,Product_81,Clothing,3.0,204.59,0.21
+2023-07-11,Product_72,Electronics,15.0,377.44,0.09
+2023-04-29,Product_21,Clothing,8.0,267.99,0.02
+2023-01-28,Product_18,Toys,4.0,340.33,0.18
+2023-02-08,Product_94,Toys,2.0,217.09,0.07
+2023-07-04,,Clothing,10.0,367.09,0.12
+2023-01-17,Product_82,Electronics,4.0,413.11,0.02
+2023-03-27,Product_95,,3.0,77.49,0.04
+2023-05-06,Product_38,Clothing,2.0,417.3,0.09
+2023-02-13,Product_32,Clothing,17.0,272.45,0.03
+2023-01-25,Product_11,Home & Kitchen,13.0,423.11,0.27
+2023-05-25,Product_45,Toys,5.0,218.49,0.0
+2023-01-13,Product_89,Books,9.0,192.63,0.15
+2023-01-25,Product_33,Books,6.0,457.96,0.04
+2023-03-09,Product_41,Home & Kitchen,5.0,129.33,0.09
+2023-05-18,,Clothing,10.0,422.89,0.28
+2023-03-08,Product_11,Home & Kitchen,8.0,244.59,0.05
+2023-04-19,Product_86,Home & Kitchen,7.0,259.48,0.29
+2023-05-26,Product_51,,7.0,157.69,0.06
+2023-04-21,Product_88,Toys,6.0,288.66,0.22
+2023-04-21,Product_41,Books,3.0,165.98,0.16
+2023-02-03,Product_17,Clothing,19.0,24.44,0.27
+2023-04-21,Product_76,Books,15.0,139.64,0.17
+2023-01-08,Product_46,Books,4.0,8.16,0.16
