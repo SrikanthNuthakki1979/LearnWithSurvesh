@@ -4,6 +4,31 @@
 
 A LangChain-powered application that extracts and summarizes YouTube video transcripts using AI. This project demonstrates text processing, prompt engineering, and LangChain Expression Language (LCEL) to create intelligent video summaries in multiple styles.
 
+## 📁 Project Structure
+
+This week includes two complementary student notebooks:
+
+### 1. **langsmith_demo_student.ipynb** 🔍
+A guided exploration of **LangSmith observability and monitoring**:
+- Initialize LangSmith Client and connect to the API
+- Manage and organize projects
+- Understand tracing, runs, and debugging capabilities
+- Monitor LLM performance and cost
+- Build observability into your LangChain applications
+
+**Best For**: Understanding how to observe, debug, and monitor LangChain applications in production.
+
+### 2. **YT-Transcript-Summarizer-Student.ipynb** 🎥
+The main project implementation with complete hands-on development:
+- Extract transcripts from YouTube videos using `yt-dlp`
+- Preprocess and chunk transcript text
+- Build reusable summarization components with LangChain
+- Generate summaries in multiple styles (Concise, Detailed, Structured)
+- Integrate LangSmith for end-to-end tracing
+- Handle edge cases and errors gracefully
+
+**Best For**: Building a complete YouTube summarization pipeline from scratch and understanding the full development workflow.
+
 ## ✨ Features
 
 - Extract transcripts from YouTube videos automatically
@@ -21,10 +46,54 @@ A LangChain-powered application that extracts and summarizes YouTube video trans
 - OpenAI API key
 - (Optional) LangSmith API key for tracing
 
+### 🚀 Quick Start Guide
+
+**Step 1: Get Your API Keys**
+
+1. **OpenAI API Key** (Required):
+   - Visit https://platform.openai.com/api-keys
+   - Create a new secret key
+   - Copy the key (starts with `sk-...`)
+
+2. **LangSmith API Key** (Optional - for observability):
+   - Visit https://smith.langchain.com
+   - Navigate to Settings → API Keys
+   - Create a new API key
+   - Copy the key (starts with `lsv2_...`)
+
+**Step 2: Create `.env` File**
+
+Create a `.env` file in the project directory:
+
+```env
+OPENAI_API_KEY=sk-your-key-here
+LANGSMITH_API_KEY=lsv2_your-key-here
+LANGSMITH_TRACING_V2=true
+LANGSMITH_PROJECT=YouTube-Transcript-Summarizer
+```
+
+**Step 3: Choose Your Learning Path**
+
+- **New to LangSmith?** Start with `langsmith_demo_student.ipynb` to understand observability
+- **Ready to build?** Use `YT-Transcript-Summarizer-Student.ipynb` for the full project
+- **Advanced?** Complete both and explore the integration between observability and application
+
+## 📚 Learning Objectives
+
+By the end of this week, you should be able to:
+
+- ✅ Extract and process YouTube video transcripts
+- ✅ Build text preprocessing pipelines for LLM inputs
+- ✅ Create reusable LangChain components for production applications
+- ✅ Implement observability with LangSmith for monitoring and debugging
+- ✅ Generate multiple summarization styles using prompt engineering
+- ✅ Integrate LLMs into end-to-end applications
+- ✅ Optimize token usage and manage API costs
+
 ### Required Packages
 
 ```bash
-pip install langchain langchain-community langchain-openai yt-dlp python-dotenv
+pip install langchain langchain-community langchain-openai yt-dlp python-dotenv langsmith
 ```
 
 ### Environment Setup
@@ -87,7 +156,36 @@ End-to-end function that:
 - Returns results with metadata
 - Optional LangSmith tracing for observability
 
-## 💡 How It Works
+## � Notebook-by-Notebook Breakdown
+
+### **langsmith_demo_student.ipynb** - Observability Deep Dive
+
+| Section | Topics | Skills |
+|---------|--------|--------|
+| Installation & Setup | Package management | Dependency configuration |
+| LangSmith Connection | Client initialization, authentication | API integration |
+| Project Management | Create, list, manage projects | Project organization |
+| Runs & Traces | Log and track executions | Observability fundamentals |
+| Performance Analytics | Monitor costs, latency, tokens | Production metrics |
+| Debugging & Error Tracking | Identify and fix issues | Troubleshooting patterns |
+
+**Key Takeaway**: Learn how to instrument your LangChain applications for production visibility and debugging.
+
+### **YT-Transcript-Summarizer-Student.ipynb** - Full Stack Implementation
+
+| Section | Topics | Skills |
+|---------|--------|--------|
+| Setup & Dependencies | Environment configuration | Project initialization |
+| Transcript Extraction | YouTube API, caption parsing | Data ingestion |
+| Text Processing | Cleaning, chunking, preprocessing | Data preparation |
+| LangChain Components | Prompts, chains, LCEL | Application architecture |
+| Summarization Engine | Multiple styles, prompt templates | LLM orchestration |
+| Error Handling | Graceful failures, retry logic | Robustness |
+| Integration & Testing | End-to-end workflows | Quality assurance |
+
+**Key Takeaway**: Build a complete, production-ready application that extracts, processes, and summarizes video content.
+
+## �💡 How It Works
 
 ### Workflow Diagram
 
@@ -273,14 +371,37 @@ result = chain.invoke({"input": text})
 - **Text Embeddings**: Semantic search and similarity
 - **LLM Fine-tuning**: Custom model training
 
+## 🎯 Recommended Learning Path
+
+### For Beginners:
+1. ✅ Complete **langsmith_demo_student.ipynb** first (30-45 minutes)
+   - Understand LangSmith fundamentals
+   - Learn how to create and manage projects
+   - Get comfortable with the observability workflow
+
+2. ✅ Move to **YT-Transcript-Summarizer-Student.ipynb** (60-90 minutes)
+   - Follow along section by section
+   - Test each component before moving forward
+   - Run with a real YouTube URL to see it in action
+
+3. ✅ Integrate both notebooks
+   - Add LangSmith tracing to the summarizer
+   - Monitor your requests in LangSmith dashboard
+
+### For Advanced Users:
+1. Build features on top (multi-language support, playlist processing)
+2. Create a production-ready deployment
+3. Experiment with different LLM models and prompt strategies
+
 ## 💬 Tips for Success
 
 1. **Start Small**: Test with short videos first (5 minutes)
 2. **Monitor Costs**: Keep track of API usage in OpenAI dashboard
 3. **Experiment**: Try different prompt templates and styles
 4. **Read Errors**: LLM and YouTube errors are usually descriptive
-5. **Use LangSmith**: Trace runs to debug issues
-6. **Ask Questions**: Don't hesitate to ask in live sessions!
+5. **Use LangSmith**: Trace runs to debug issues and understand bottlenecks
+6. **Follow Both Notebooks**: `langsmith_demo_student.ipynb` teaches observability; `YT-Transcript-Summarizer-Student.ipynb` teaches application building
+7. **Ask Questions**: Don't hesitate to ask in live sessions!
 
 ## 📞 Support
 
