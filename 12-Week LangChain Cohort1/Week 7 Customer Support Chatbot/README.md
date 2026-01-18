@@ -48,7 +48,7 @@ This project gives you hands-on experience with the exact architecture used by c
 - Python 3.8+
 - OpenAI API key (required for embeddings and LLM)
 - `.env` file in project root with `OPENAI_API_KEY=your_key_here`
-- **Important**: Run `python data/generate_faq.py` to create the FAQ dataset before starting the notebook
+- **Note**: The FAQ dataset (`customer_support_faq.csv`) is already provided in the project root
 
 ### 📦 Install Dependencies
 
@@ -64,14 +64,14 @@ pip install -r requirements.txt
 
 | Package | Version | Purpose |
 |---------|---------|---------|
-| `langchain` | 0.2.0 | Core LangChain framework for building LLM applications |
-| `langchain-openai` | 0.1.3 | OpenAI integration (ChatGPT, embeddings) |
-| `langchain-community` | 0.1.0 | Community tools including Chroma vector store |
-| `langchain-core` | 0.2.0 | Core abstractions (Documents, Prompts, Chains) |
-| `python-dotenv` | 1.0.0 | Load environment variables from `.env` file |
-| `pandas` | 2.0.0 | Load and manipulate CSV data |
-| `chroma-db` | 0.5.0 | Persistent vector database for embeddings |
-| `openai` | 1.3.0 | OpenAI Python SDK |
+| `langchain` | 1.0.8 | Core LangChain framework for building LLM applications |
+| `langchain-openai` | 1.0.3 | OpenAI integration (ChatGPT, embeddings) |
+| `langchain-community` | 0.4.1 | Community tools including Chroma vector store |
+| `langchain-core` | 1.0.7 | Core abstractions (Documents, Prompts, Chains) |
+| `python-dotenv` | 1.2.1 | Load environment variables from `.env` file |
+| `pandas` | 2.3.2 | Load and manipulate CSV data |
+| `chromadb` | 1.3.5 | Persistent vector database for embeddings |
+| `openai` | 2.6.0 | OpenAI Python SDK |
 
 ### 🔑 Environment Setup
 
@@ -99,15 +99,9 @@ LANGCHAIN_PROJECT=CUSTOMER_SUPPORT_PROJECT
 
 **Note**: The notebook enables LangSmith tracing by default. If you don't have a LangSmith account, it will still work but won't trace to the dashboard.
 
-**Step 3: Generate the FAQ Dataset**
+**Step 3: Dataset Ready to Use**
 
-Before running the notebook, generate the sample FAQ data:
-
-```bash
-python data/generate_faq.py
-```
-
-This creates `data/customer_support_faq.csv` with 500 realistic customer support questions and answers.
+The FAQ dataset is already provided as `customer_support_faq.csv` in the project root with 500 realistic customer support questions and answers. No generation script is needed—you can proceed directly to the notebook.
 
 ## 📚 Learning Objectives
 
@@ -201,7 +195,7 @@ print("✅ API key loaded successfully")
 ### **Step 3: Load the FAQ Dataset** 📊
 
 **What You'll Do:**
-- Load `data/customer_support_faq.csv` using Pandas
+- Load `customer_support_faq.csv` using Pandas
 - Convert each CSV row into a LangChain `Document` object
 - Include metadata: region (US/EU/Asia), channel (email/chat/phone), issue type (account/billing/technical)
 
@@ -219,7 +213,7 @@ Real-world knowledge bases come from databases, CSVs, or APIs. Learning to conve
 import pandas as pd
 from pathlib import Path
 
-csv_path = Path("data/customer_support_faq.csv")
+csv_path = Path("customer_support_faq.csv")
 df = pd.read_csv(csv_path)
 
 documents = [
@@ -248,7 +242,7 @@ print(f"Loaded {len(documents)} FAQ documents")
 
 **What You'll Do:**
 - Embed all chunks using OpenAI's `text-embedding-3-small` model
-- Store embeddings + original text in Chroma database at `data/chroma_faq/`
+- Store embeddings + original text in Chroma database at `chroma_faq/`
 - Create a `retriever` object to fetch relevant chunks for queries
 
 **Key Concepts:**
@@ -266,7 +260,7 @@ Vector databases are the backbone of modern AI applications. Chroma is productio
 ```python
 from langchain_community.vectorstores import Chroma
 
-persist_dir = "data/chroma_faq"
+persist_dir = "chroma_faq"
 
 vectorstore = Chroma.from_documents(
     documents=documents,  # Original complete Q&A pairs (NOT chunks)
@@ -288,7 +282,7 @@ for doc in results:
 
 **Production Tips:**
 - **search_kwargs={"k": 4}**: Return top 4 most similar chunks
-- **Persistence**: Delete `data/chroma_faq/` to rebuild from scratch
+- **Persistence**: Delete `chroma_faq/` folder to rebuild from scratch
 - **Scaling**: For millions of documents, consider Pinecone or Weaviate
 
 **Learning Outcome:** You'll build production-grade vector search systems and understand embedding-based retrieval.
@@ -1046,14 +1040,12 @@ Answer:
 3. Restart Jupyter kernel
 4. Verify: `print(os.getenv("OPENAI_API_KEY"))`
 
-### "No such file: data/customer_support_faq.csv"
+### "No such file: customer_support_faq.csv"
 
-**Cause:** FAQ dataset not generated
+**Cause:** FAQ dataset file not found in project root
 
 **Solution:**
-```bash
-python data/generate_faq.py
-```
+Ensure the `customer_support_faq.csv` file is in the project root directory. It should be provided with the project materials.
 
 ### "Rate limit exceeded"
 
@@ -1098,7 +1090,7 @@ Answer:"""
 
 **Solution:**
 1. Restart Jupyter kernel
-2. Delete `data/chroma_faq/` folder manually
+2. Delete `chroma_faq/` folder manually
 3. Re-run Step 5
 
 ---
