@@ -1,550 +1,963 @@
 # Week 8: Introduction to AI Agents & MCP 🤖🔌
+## Building Your First AI Agent Tools
 
-## 🎯 Session Goal
-**Build your first AI Agent Tool.**
+### 🎯 What You'll Build This Week
+By the end of this session, you'll create:
+- **A Server** that provides tools (simple_server.py)
+- **A Client** that uses those tools (simple_client.py)
+- **Real communication** between them using the MCP Protocol
 
-We are entering the era of **"Agentic AI"**. It's no longer just about chatting with LLMs; it's about **giving them hands** to do things.
-
----
-
-## 📚 What is MCP?
-
-### The Standard: Model Context Protocol (MCP)
-
-**MCP** is a standardized protocol that acts as a universal connector between AI agents and external systems, data sources, and tools.
-
-**The Analogy:**
-Just like **USB** lets you connect any device to any computer, **MCP** lets you connect any data source/tool to any AI Agent (Claude, Cursor, ChatGPT, etc.).
-
-### Why MCP Matters
-- **Standardization**: No more custom integrations for every AI platform
-- **Interoperability**: Write once, use with multiple AI agents
-- **Extensibility**: Easily add new tools and data sources
-- **Security**: Controlled access through the protocol layer
-- **Future-Proof**: The standard for AI agent tooling in 2025 and beyond
-
-### Career Relevance
-- **MCP is becoming THE standard** for AI agent integration (like USB for AI)
-- **Job Market**: Companies are actively hiring "MCP developers" and "Agent engineers"
-- **Competitive Edge**: Mastering MCP now positions you ahead in the AI job market
-- **Rapid Growth**: Used by Claude, Cursor, and rapidly expanding ecosystem
+Think of it like building a **restaurant system**: the kitchen (server) has recipes, and the waiter (client) takes orders.
 
 ---
 
-## 🏗️ MCP Architecture
+## 📚 What is MCP? (Model Context Protocol)
 
-### High-Level Overview
+### The Simple Explanation
+**MCP** is a standardized way for AI agents to talk to tools and get information. It's like a universal translator that lets different AI systems (Claude, Cursor, ChatGPT) all use the same tools.
 
-```
-┌─────────────────────────────────────────────────────────────┐
-│                      AI Agent (Client)                       │
-│                  (Claude, Cursor, etc.)                      │
-└──────────────────────────┬──────────────────────────────────┘
-                           │
-                           │ MCP Protocol
-                           │ (JSON-RPC over stdio/HTTP)
-                           │
-┌──────────────────────────┴──────────────────────────────────┐
-│              MCP Server (Tool Provider)                      │
-│         - Exposes Tools/Resources/Prompts                   │
-│         - Handles Tool Calls                                │
-│         - Returns Results                                   │
-└─────────────────────────────────────────────────────────────┘
-```
+### The Analogy That Sticks
+Just like **USB** is a universal connector that works with any computer and any device:
+- USB cable works with your laptop, phone, tablet
+- USB works with keyboards, mice, drives, printers
+- No matter what device, the protocol is the same
 
-### Key Components
+**MCP works the same way for AI:**
+- MCP servers work with Claude, Cursor, ChatGPT
+- MCP lets you connect any tool (calculator, file reader, weather API)
+- All using the same standardized protocol
 
-#### 1. **Client (AI Agent)**
-- Initiates the connection
-- Sends tool calls/queries
-- Displays results to the user
-- Manages the conversation context
-
-**Example Clients:**
-- Claude Desktop
-- Cursor IDE
-- Custom Python scripts
-- Web applications
-
-#### 2. **Server (Tool Provider)**
-- Listens for incoming connections
-- Exposes tools/resources
-- Executes requested operations
-- Sends results back to the client
-
-**Example Servers:**
-- Custom Python MCP servers
-- Node.js servers
-- Pre-built enterprise servers
-- Database connectors
-
-#### 3. **Protocol (Communication Layer)**
-- **JSON-RPC 2.0** based messaging
-- Standardized request/response format
-- Multiple transport options:
-  - **stdio** (stdin/stdout) - for local processes
-  - **HTTP/SSE** (Server-Sent Events) - for remote servers
-  - **WebSocket** - for bidirectional communication
+### Why Should You Care? 💼
+1. **Job Market**: Companies are hiring "MCP developers" RIGHT NOW
+2. **Future-Proof**: This is the emerging standard for AI tooling
+3. **Career Edge**: Most developers don't know MCP yet - you will
+4. **Real-World Applications**: Used in production by Anthropic, Replit, and more
 
 ---
 
-## 🔄 MCP Protocol Stack
+## 🏗️ MCP Architecture Explained Simply
 
-### Understanding the Protocol Layers
-
-```
-┌─────────────────────────────────────────┐
-│    Application Layer                     │
-│  (Tools, Resources, Prompts)            │
-└─────────────────────────────────────────┘
-                    ↓
-┌─────────────────────────────────────────┐
-│    Protocol Layer                        │
-│  (JSON-RPC 2.0, Request/Response)       │
-└─────────────────────────────────────────┘
-                    ↓
-┌─────────────────────────────────────────┐
-│    Transport Layer                       │
-│  (stdio, HTTP/SSE, WebSocket)           │
-└─────────────────────────────────────────┘
-                    ↓
-┌─────────────────────────────────────────┐
-│    Physical Connection                   │
-│  (Local Process, Network)                │
-└─────────────────────────────────────────┘
-```
-
-### 1. **Transport Options**
-
-#### **stdio (Standard Input/Output)** ← WEEK 8
-- Local process communication
-- Used in Week 8 example
-- Simple parent-child process model
-- Client starts server automatically
+### The Three-Part System
 
 ```
-Client Process
-    ↓
-  stdin/stdout
-    ↓
-Server Process
+┌──────────────────────────────────────────────────────────────────┐
+│                     AI Agent (Client)                             │
+│              (Claude, Cursor, or Python script)                   │
+│           "I need to do math, what tools do you have?"           │
+└────────────────────────┬─────────────────────────────────────────┘
+                         │
+                         │ MCP Protocol
+                         │ Communication (JSON-RPC over stdio/HTTP)
+                         │
+┌────────────────────────┴─────────────────────────────────────────┐
+│                    MCP Server                                     │
+│            (Your Tools - simple_server.py)                        │
+│                                                                    │
+│    Tools Provided:                                               │
+│    ✓ add_numbers(a, b)                                          │
+│    ✓ multiply_numbers(a, b)                                     │
+│    ✓ get_current_time()                                         │
+│                                                                    │
+│    Purpose: Listen for requests, execute tools, return results   │
+└──────────────────────────────────────────────────────────────────┘
 ```
 
-**When to use:**
-- Local development
-- CLI tools
-- Desktop applications
-- Tight integration with host system
+### Breaking It Down: What's Each Part?
 
-#### **HTTP/SSE (Server-Sent Events)** ← WEEK 9
-- Remote server communication
-- Client makes HTTP requests
-- Server uses SSE for streaming responses
-- Better for cloud-based systems
+#### 1. **The Server (Tool Provider)** 🔧
+This is like the **kitchen in a restaurant**.
 
-```
-Client (HTTP Client)
-    ↓
-  HTTP POST/GET
-    ↓
-Server (HTTP Server)
-```
+**What it does:**
+- Exposes tools that the AI agent can use
+- Listens for tool requests
+- Executes the requested tools
+- Sends results back
 
-**When to use:**
-- Cloud deployments
-- Multi-client scenarios
-- Remote services
-- Scalable architectures
-
-### 2. **Protocol Messages**
-
-All communication follows **JSON-RPC 2.0** standard:
-
-```json
-// Request Example: Call add_numbers tool
-{
-  "jsonrpc": "2.0",
-  "id": 1,
-  "method": "tools/call",
-  "params": {
-    "name": "add_numbers",
-    "arguments": {"a": 10, "b": 20}
-  }
-}
-
-// Response Example: Tool execution result
-{
-  "jsonrpc": "2.0",
-  "id": 1,
-  "result": {
-    "content": [
-      {
-        "type": "text",
-        "text": "30"
-      }
-    ]
-  }
-}
-
-// Error Response
-{
-  "jsonrpc": "2.0",
-  "id": 1,
-  "error": {
-    "code": -32600,
-    "message": "Invalid Request"
-  }
-}
-```
-
-### 3. **Server Initialization Handshake**
-
-When a client connects to a server, there's a handshake process:
-
-1. **Client sends**: `initialize` request with capabilities
-2. **Server responds**: With its name and version
-3. **Client sends**: `initialized` notification
-4. **Server responds**: Ready to receive tool calls
-
-```
-Client                          Server
-  │                              │
-  ├─── initialize ───────────→   │
-  │                              │
-  │   ←─── capabilities ───────  │
-  │                              │
-  ├─── initialized ──────────→   │
-  │                              │
-  ├─── list_tools ────────────→  │
-  │                              │
-  │   ←─── tools list ───────────│
-  │                              │
-  (Ready to call tools)
-```
-
----
-
-## 🛠️ Building an MCP Server
-
-### What is a Tool?
-
-A **tool** is a function that the AI agent can call. Each tool must have:
-
-1. **Name**: Unique identifier (auto-generated from function name)
-2. **Description**: What the tool does (from docstring)
-3. **Parameters**: Input schema with types and descriptions
-4. **Return Type**: Output type annotation
-5. **Implementation**: The actual function logic
-
-### Basic Server Structure
-
+**In our example (`simple_server.py`):**
 ```python
-from mcp.server.fastmcp import FastMCP
-import datetime
-
-# Create server instance
-mcp = FastMCP("Math & Time Server")
-
-# Define tools using decorator
 @mcp.tool()
 def add_numbers(a: int, b: int) -> int:
     """Add two numbers together"""
     return a + b
+```
+The server **publishes** this tool so anyone can use it.
 
+#### 2. **The Client (Tool User)** 🧑‍💼
+This is like the **waiter in a restaurant**.
+
+**What it does:**
+- Initiates the connection to the server
+- Asks "What tools do you have?"
+- Calls the tools with arguments
+- Gets results back
+- Sometimes displays them to the user
+
+**In our example (`simple_client.py`):**
+```python
+result = await session.call_tool("add_numbers", arguments={"a": 10, "b": 20})
+```
+The client **uses** the tool to get a result.
+
+#### 3. **The Protocol (Communication Layer)** 📡
+This is like the **phone system** between kitchen and waiter.
+
+**What it does:**
+- Standardizes how messages are sent
+- Uses JSON-RPC 2.0 format
+- Can use different transports: **stdio** or **HTTP**
+- Ensures client and server understand each other
+
+---
+
+## 📡 Understanding stdio - The Communication Channel
+
+### What is stdio? 💡
+
+**stdio** stands for **Standard Input/Output**. It's how programs talk to each other on your computer.
+
+Think of it like **three pipes** that connect programs:
+
+```
+┌─────────────────────────────────────────────────┐
+│         Your Terminal / Parent Process           │
+├─────────────────────────────────────────────────┤
+│                                                  │
+│  stdout ──→ [Messages OUT]                      │
+│      ↓                                           │
+│  [Program reads what you send]                  │
+│      ↑                                           │
+│  stdin ←─ [Messages IN]                         │
+│                                                  │
+│  stderr ──→ [Error/Log messages]               │
+│                                                  │
+└─────────────────────────────────────────────────┘
+```
+
+### The Three Pipes of stdio
+
+#### 1️⃣ **stdout (Standard Output)**
+- **Purpose**: Normal output from your program
+- **Used for**: Messages you WANT the user/client to see
+- **In MCP servers**: **CRITICAL!** This carries MCP protocol messages
+- **Example**: `print("Hello")` goes here
+
+```python
+# This goes to stdout
+print("Server is ready!")
+
+# This goes to stdout - MCP PROTOCOL DATA
+# (handled automatically by FastMCP.run())
+```
+
+#### 2️⃣ **stdin (Standard Input)**
+- **Purpose**: Input to your program
+- **Used for**: Messages sent TO your program
+- **In MCP servers**: Receives MCP requests from the client
+- **Example**: `input("Enter name: ")` reads from here
+
+```python
+# Client sends data to server via stdin
+# (MCP library handles this automatically)
+```
+
+#### 3️⃣ **stderr (Standard Error)**
+- **Purpose**: Logging, debugging, error messages
+- **Used for**: Messages that are NOT part of the protocol
+- **In MCP servers**: **IMPORTANT!** Use this for your debug logs!
+- **Example**: `print("Error occurred!", file=sys.stderr)`
+
+```python
+# Send logs to stderr (NOT stdout!)
+import sys
+print("Debug: Adding numbers", file=sys.stderr)
+
+# This is CRITICAL in MCP because:
+# - stdout is reserved for MCP protocol messages
+# - stderr is for your debugging/logging
+# - If you print() normally, it breaks the protocol!
+```
+
+### Why This Matters for MCP 🎯
+
+**The Rule**: In an MCP server:
+- **stdout** = ONLY MCP protocol messages (automatic with FastMCP)
+- **stderr** = Your logs, debug info, error messages
+- **stdin** = Receives MCP requests from client
+
+If you mix them:
+```python
+# ❌ WRONG - This breaks MCP!
+def add_numbers(a, b):
+    print(f"Adding {a} + {b}")  # Goes to stdout - BREAKS PROTOCOL!
+    return a + b
+
+# ✅ CORRECT - This works!
+def add_numbers(a, b):
+    print(f"Adding {a} + {b}", file=sys.stderr)  # Goes to stderr - safe!
+    return a + b
+```
+
+### Real-World Example in Our Code
+
+```python
+# From simple_server.py
 @mcp.tool()
-def multiply_numbers(a: int, b: int) -> int:
-    """Multiply two numbers"""
-    return a * b
+def add_numbers(a: int, b: int) -> int:
+    """Add two numbers together."""
+    result = a + b
+    
+    # ✅ Log to stderr (doesn't break MCP)
+    print(f"add_numbers: {a} + {b} = {result}", file=sys.stderr)
+    
+    # Actual result is returned to MCP protocol
+    return result
+```
 
+When you run this:
+```
+stdout: [MCP protocol messages - Client reads these]
+stderr: add_numbers: 10 + 20 = 30  [You see this for debugging]
+```
+
+### How stdio Works in Our Project
+
+```
+┌─────────────────────────────────────┐
+│   simple_client.py (parent)         │
+│                                     │
+│  Creates StdioServerParameters      │
+│  with command = python              │
+│  and args = ["simple_server.py"]    │
+└──────────────┬──────────────────────┘
+               │
+    Launches subprocess (child process)
+               │
+┌──────────────┴──────────────────────┐
+│  simple_server.py (subprocess)      │
+│                                     │
+│  Runs inside client process         │
+│  stdin ← receives requests          │
+│  stdout → sends responses           │
+│  stderr → logs for debugging        │
+└─────────────────────────────────────┘
+```
+
+**What happens:**
+1. Client creates a subprocess (child process)
+2. Child process runs `python simple_server.py`
+3. Parent opens pipes to child's stdio
+4. Client writes requests to child's stdin
+5. Child reads from stdin (FastMCP library does this)
+6. Child writes responses to stdout (FastMCP library does this)
+7. Client reads responses from child's stdout
+8. Any debug logs go to stderr (visible in terminal)
+
+---
+
+## 🚀 Understanding Uvicorn - HTTP Alternative (Looking Ahead)
+
+### What is Uvicorn?
+
+**Uvicorn** is an ASGI (Asynchronous Server Gateway Interface) web server written in Python.
+
+In simple terms: **It's a web server that runs Python code**.
+
+### Uvicorn vs stdio - Which to Use?
+
+#### stdio (Week 8 - What We're Using)
+```
+Client ↔ stdio ↔ Server
+```
+
+**When to use:**
+- ✅ Local development
+- ✅ CLI tools and scripts
+- ✅ Tight integration (Cursor IDE, VS Code)
+- ✅ Simple setup
+
+**How it works:**
+```python
+# Client starts server as a process
+server_params = StdioServerParameters(
+    command=sys.executable,  # Python interpreter
+    args=["simple_server.py"],  # Your script
+)
+
+# Communication via stdin/stdout pipes
+async with stdio_client(server_params) as (read, write):
+    async with ClientSession(read, write) as session:
+        await session.initialize()
+```
+
+**Real-world example:**
+- Cursor IDE running MCP servers
+- Local Python scripts calling local services
+- Development and testing
+
+#### Uvicorn + HTTP (Week 9 - What's Coming)
+```
+Client ↔ HTTP ↔ Uvicorn ↔ Your MCP Server Code
+```
+
+**When to use:**
+- ✅ Remote servers
+- ✅ Cloud deployments
+- ✅ Multiple clients connecting
+- ✅ Needs to be accessible over a network
+
+**How it works:**
+```python
+# Server runs as HTTP service
+server = HttpServerParameters(
+    url="http://localhost:8000"
+)
+
+# Communication via HTTP requests
+async with http_client(server) as client:
+    await client.call_tool("tool_name", arguments={...})
+```
+
+**Real-world example:**
+- Claude API accessing your cloud server
+- Multiple AI agents using the same server
+- Production deployments
+
+### The Full Stack with Uvicorn (Future Week)
+
+```
+┌─────────────────────────────────┐
+│      Claude (Cloud)             │
+│   or Local Python Script        │
+└───────────────┬─────────────────┘
+                │ HTTP Request
+                ↓
+┌─────────────────────────────────┐
+│     Uvicorn Web Server          │
+│   (Running on http://localhost) │
+│   (Port 8000)                   │
+└───────────────┬─────────────────┘
+                │
+                ↓
+┌─────────────────────────────────┐
+│   Your MCP Server Code          │
+│   (Tools and Logic)             │
+│                                 │
+│   @mcp.tool()                  │
+│   def your_tool(...):          │
+│       return result            │
+└─────────────────────────────────┘
+```
+
+### Key Differences Table
+
+| Feature | stdio (Week 8) | HTTP/Uvicorn (Week 9) |
+|---------|----------------|----------------------|
+| Transport | Process pipes | Network HTTP |
+| Setup | Simple | Moderate |
+| Speed | Very fast | Fast |
+| Range | Local only | Local or remote |
+| Clients | 1 at a time | Multiple concurrent |
+| Use Case | Development | Production |
+| Port Needed? | No | Yes (e.g., 8000) |
+| Firewall Issues | No | Possibly |
+
+### Why Use Uvicorn?
+
+Uvicorn is needed for HTTP-based MCP servers because:
+1. **HTTP Protocol**: Requires a web server to handle HTTP requests
+2. **Multi-client Support**: Can serve multiple clients simultaneously
+3. **Network Access**: Can be accessed over a network/internet
+4. **Separation**: Cleanly separates web server from your business logic
+5. **Scalability**: Can be deployed in production environments
+
+**In Week 8 with stdio:**
+- Client directly starts server process
+- Automatic lifecycle management
+- No separate server needed
+
+**In Week 9 with Uvicorn:**
+- You run Uvicorn as a separate service
+- Uvicorn routes HTTP requests to your MCP code
+- Client connects via HTTP URL
+- More production-like setup
+
+---
+
+## 🔄 How Communication Flows - Step by Step
+
+### The Complete Journey (stdio version - Week 8)
+
+**Step 1: Client Starts Server**
+```
+Client Script (simple_client.py)
+    ↓
+Creates StdioServerParameters
+    ↓
+Specifies: "Run simple_server.py using Python"
+    ↓
+Launches server process (subprocess)
+    ↓
+Waits for server to be ready
+```
+
+**Step 2: Client Connects**
+```
+Client
+    ↓
+Opens stdin/stdout pipes to server process
+    ↓
+Establishes bidirectional communication
+    ↓
+Server is now accessible
+```
+
+**Step 3: Handshake (Initialization)**
+```
+Client sends to server via stdout:
+    {
+        "jsonrpc": "2.0",
+        "id": 1,
+        "method": "initialize",
+        "params": { ... }
+    }
+
+Server reads from stdin
+Server processes request
+Server writes response to stdout:
+    {
+        "jsonrpc": "2.0",
+        "id": 1,
+        "result": {
+            "protocolVersion": "2024-11-05",
+            "serverInfo": { ... }
+        }
+    }
+
+Client reads from server's stdout
+Client knows server is ready ✅
+```
+
+**Step 4: Tool Discovery**
+```
+Client requests:
+    "Hey server, what tools do you have?"
+
+Server responds with:
+    [
+        {
+            "name": "add_numbers",
+            "description": "Add two numbers together",
+            "inputSchema": { ... }
+        },
+        ...
+    ]
+
+Client now knows available tools
+```
+
+**Step 5: Tool Call**
+```
+Client sends:
+    {
+        "method": "tools/call",
+        "params": {
+            "name": "add_numbers",
+            "arguments": {"a": 10, "b": 20}
+        }
+    }
+
+Server executes:
+    result = 10 + 20  # = 30
+    Logs to stderr: "Adding 10 + 20 = 30" (for debugging)
+
+Server responds:
+    {
+        "result": 30,
+        ...
+    }
+
+Client receives result: 30 ✅
+```
+
+**Step 6: Cleanup**
+```
+Client closes session
+Client closes server process
+Server shuts down
+All resources freed
+```
+
+---
+
+## 🛠️ Building MCP Servers - The Code Pattern
+
+### The Simple Template
+
+Every MCP server follows this pattern:
+
+```python
+# 1. Import what you need
+from mcp.server.fastmcp import FastMCP
+import sys  # For stderr logging
+
+# 2. Create your server
+mcp = FastMCP("Server Name Here")
+
+# 3. Define your tools using @mcp.tool() decorator
 @mcp.tool()
-def get_current_time() -> str:
-    """Get the current time in ISO format"""
-    return datetime.datetime.now().isoformat()
+def your_tool_name(param1: str, param2: int) -> str:
+    """Tool description - shown to AI agents"""
+    # Your logic here
+    result = param1 * param2  # example
+    
+    # Log to stderr for debugging (NOT stdout!)
+    print(f"Tool executed: {param1}, {param2}", file=sys.stderr)
+    
+    return result
 
-# Run the server
+# 4. Run the server
 if __name__ == "__main__":
     mcp.run()
 ```
 
-### Key Features of FastMCP
+### Key Patterns to Remember
 
-- **@mcp.tool()** decorator for easy tool registration
-- **Type hints** automatically generate parameter schemas
-- **Docstrings** become tool descriptions
-- **Async support** for long-running operations
-- **Error handling** built-in
-- **Minimal boilerplate** - focus on logic, not protocol
-
-### Advanced Tool Features
-
+#### Pattern 1: Simple Tool
 ```python
 @mcp.tool()
-def calculate_discount(
-    original_price: float,
-    discount_percent: float = 10.0
-) -> float:
-    """
-    Calculate final price after discount.
+def add(a: int, b: int) -> int:
+    """Add two integers"""
+    return a + b
+```
+
+#### Pattern 2: Tool with Default Parameters
+```python
+@mcp.tool()
+def greet(name: str, greeting: str = "Hello") -> str:
+    """Greet someone with optional greeting"""
+    return f"{greeting}, {name}!"
+```
+
+#### Pattern 3: Tool with Error Handling
+```python
+@mcp.tool()
+def divide(a: float, b: float) -> float:
+    """Safely divide two numbers
     
     Args:
-        original_price: The original price in dollars
-        discount_percent: Discount percentage (default: 10%)
-    
+        a: The dividend
+        b: The divisor (cannot be zero)
+        
     Returns:
-        Final price after discount
+        The result of a/b
+        
+    Raises:
+        ValueError: If b is zero
     """
-    discount_amount = original_price * (discount_percent / 100)
-    return original_price - discount_amount
+    if b == 0:
+        raise ValueError("Cannot divide by zero!")
+    return a / b
+```
+
+#### Pattern 4: Tool Returning Complex Data
+```python
+@mcp.tool()
+def get_user_info(user_id: int) -> dict:
+    """Get information about a user"""
+    return {
+        "id": user_id,
+        "name": "John Doe",
+        "email": "john@example.com"
+    }
+```
+
+### Type Hints - The Language Between You and AI
+
+**Type hints** are critical in MCP because they tell the AI agent:
+1. What parameters your tool needs
+2. What type each parameter should be
+3. What your tool returns
+
+```python
+# The AI reads these type hints and knows exactly how to call your tool!
+
+@mcp.tool()
+def process_data(
+    count: int,           # Must be an integer
+    price: float,         # Must be a decimal number
+    name: str,            # Must be text
+    is_valid: bool        # Must be true/false
+) -> dict:               # Returns a dictionary
+    """Process data and return results"""
+    return {
+        "processed": count,
+        "total_price": price,
+        "name": name,
+        "valid": is_valid
+    }
+```
+
+### The Critical stderr Rule in Tools
+
+**⚠️ REMEMBER: Use stderr for logging in tools!**
+
+```python
+import sys
+
+@mcp.tool()
+def calculate(a: int, b: int) -> int:
+    """Calculate something"""
+    
+    # ❌ WRONG - breaks MCP protocol
+    print(f"Starting calculation with {a} and {b}")
+    
+    # ✅ CORRECT - safe logging
+    print(f"Starting calculation with {a} and {b}", file=sys.stderr)
+    
+    result = a + b
+    
+    # ✅ CORRECT - log to stderr
+    print(f"Result: {result}", file=sys.stderr)
+    
+    # The actual result goes through MCP protocol
+    return result
+```
+
+**Why?**
+- `stdout` is where MCP protocol messages go
+- Any regular `print()` mixes with protocol data
+- This confuses the client and breaks everything
+- `stderr` is reserved for your debugging
+
+---
+
+## 📝 Our Example Server - Line by Line
+
+### simple_server.py (Complete Walkthrough)
+
+```python
+# ===== PART 1: Imports =====
+from mcp.server.fastmcp import FastMCP  # The MCP server framework
+import datetime                          # For timestamps
+import sys                               # For stderr logging
+
+# ===== PART 2: Create Server =====
+mcp = FastMCP("Math & Time Helper")
+
+# ===== PART 3: Define Tool 1 =====
+@mcp.tool()
+def add_numbers(a: int, b: int) -> int:
+    """Add two numbers together."""
+    result = a + b
+    print(f"add_numbers: {a} + {b} = {result}", file=sys.stderr)
+    return result
+
+# ===== PART 4: Define Tool 2 =====
+@mcp.tool()
+def multiply_numbers(a: int, b: int) -> int:
+    """Multiply two numbers together"""
+    result = a * b
+    print(f"multiply_numbers: {a} × {b} = {result}", file=sys.stderr)
+    return result
+
+# ===== PART 5: Define Tool 3 =====
+@mcp.tool()
+def get_current_time() -> str:
+    """Get the current time in ISO 8601 format"""
+    result = datetime.datetime.now().isoformat()
+    print(f"get_current_time(): {result}", file=sys.stderr)
+    return result
+
+# ===== PART 6: Run Server =====
+if __name__ == "__main__":
+    print("=" * 50, file=sys.stderr)
+    print("Starting Math & Time Helper Server", file=sys.stderr)
+    print("=" * 50, file=sys.stderr)
+    print("Listening for client connections...", file=sys.stderr)
+    mcp.run()
 ```
 
 ---
 
-## 📋 The Week 8 Plan
+## 👨‍💻 Our Example Client - Line by Line
+
+### simple_client.py (Complete Walkthrough)
+
+```python
+# ===== PART 1: Imports =====
+import asyncio                          # For async/await
+from mcp import ClientSession, StdioServerParameters
+from mcp.client.stdio import stdio_client
+import sys, os
+
+# ===== PART 2: Locate Server =====
+server_script = os.path.join(
+    os.path.dirname(__file__),
+    "simple_server.py"
+)
+
+# ===== PART 3: Configure Server Startup =====
+server_params = StdioServerParameters(
+    command=sys.executable,
+    args=[server_script],
+)
+
+# ===== PART 4: Define Async Client =====
+async def run_client():
+    """Main async function"""
+    print("=" * 50)
+    print("MCP Client Starting")
+    print("=" * 50)
+    
+    try:
+        # Start server process and open pipes
+        async with stdio_client(server_params) as (read, write):
+            print("\n✅ Server Process Started")
+            
+            # Create communication session
+            async with ClientSession(read, write) as session:
+                print("✅ Session Created")
+                
+                # Initialize handshake
+                print("\n📡 Initializing Connection...")
+                await session.initialize()
+                print("✅ Connected and Ready")
+                
+                # Discover tools
+                print("\n🔍 Discovering Tools...")
+                tools = await session.list_tools()
+                print(f"✅ Found {len(tools.tools)} tools")
+                
+                # Call tools
+                print("\n" + "=" * 50)
+                print("CALLING TOOLS")
+                print("=" * 50)
+                
+                # Test 1
+                print("\nTest 1: add_numbers(10, 20)")
+                result = await session.call_tool(
+                    "add_numbers",
+                    arguments={"a": 10, "b": 20}
+                )
+                print(f"Result: {result.content[0].text}")
+                
+                # Test 2
+                print("\nTest 2: multiply_numbers(5, 6)")
+                result = await session.call_tool(
+                    "multiply_numbers",
+                    arguments={"a": 5, "b": 6}
+                )
+                print(f"Result: {result.content[0].text}")
+                
+                # Test 3
+                print("\nTest 3: get_current_time()")
+                result = await session.call_tool(
+                    "get_current_time",
+                    arguments={}
+                )
+                print(f"Result: {result.content[0].text}")
+                
+                print("\n" + "=" * 50)
+                print("✅ ALL TESTS PASSED!")
+                print("=" * 50)
+                
+    except Exception as e:
+        print(f"\n❌ Error: {e}")
+        raise
+
+# ===== PART 5: Run Async Function =====
+if __name__ == "__main__":
+    asyncio.run(run_client())
+```
+
+### Understanding async/await
+
+Don't be intimidated! Here's the simple version:
+
+```
+Without async (blocking):
+    Ask server → WAIT (blocked) → Get response
+
+With async/await (non-blocking):
+    Ask server → await response (can do other things) → Response arrives
+```
+
+In our code, we use `async` and `await` because:
+- Network communication takes time
+- We don't want the program frozen waiting
+- `await` lets Python handle other tasks while waiting
+- When response arrives, execution continues
+
+---
+
+## 🎯 Step-by-Step: How to Run This Week's Project
 
 ### Step 1: Install Dependencies
 ```bash
-pip install mcp
+pip install -r requirements.txt
 ```
 
-### Step 2: Build a Simple Server (`simple_server.py`)
-Create an MCP server with three tools:
-- `add_numbers(a, b)`: Simple math operation
-- `multiply_numbers(a, b)`: Another math operation
-- `get_current_time()`: System information
+### Step 2: Files Are Created Automatically
+The Jupyter notebook uses `%%writefile` to create:
+- `simple_server.py`
+- `simple_client.py`
 
-### Step 3: Build a Client (`simple_client.py`)
-Create an async Python client that:
-- Starts the server process automatically
-- Connects via stdio transport
-- Discovers available tools
-- Calls tools with arguments
-- Displays results
-- Handles cleanup
-
-### Step 4: Run & Test
+### Step 3: Run the Client
 ```bash
 python simple_client.py
 ```
 
-**Expected Output:**
+**What happens:**
+1. Client launches
+2. Client starts server subprocess
+3. Client and server connect via stdio pipes
+4. Handshake completes
+5. Client discovers tools
+6. Client calls each tool
+7. Server executes, returns results
+8. Client displays results
+9. Cleanup and shutdown
+
+### Expected Output
 ```
-Client started
-Tools discovered:
-  - add_numbers
-  - multiply_numbers
-  - get_current_time
+==================================================
+MCP Client Starting
+==================================================
 
-Calling add_numbers(10, 20)...
+✅ Server Process Started
+✅ Session Created
+
+📡 Initializing Connection...
+✅ Connected and Ready
+
+🔍 Discovering Tools...
+✅ Found 3 tools
+   • add_numbers: Add two numbers together.
+   • multiply_numbers: Multiply two numbers together
+   • get_current_time: Get the current time...
+
+==================================================
+CALLING TOOLS
+==================================================
+
+Test 1: add_numbers(10, 20)
 Result: 30
 
-Calling multiply_numbers(5, 6)...
+Test 2: multiply_numbers(5, 6)
 Result: 30
 
-Calling get_current_time()...
+Test 3: get_current_time()
 Result: 2025-01-24T14:32:45.123456
+
+==================================================
+✅ ALL TESTS PASSED!
+==================================================
 ```
 
 ---
 
-## 🎓 Key Concepts
+## 🧠 Key Learning Points
 
-### 1. **Server vs Client**
-| Aspect | Server | Client |
-|--------|--------|--------|
-| Purpose | Provides tools | Uses tools |
-| Initiates | Listens for connections | Starts/connects |
-| Role | Tool executor | Tool caller |
-| Lifecycle | Runs until killed | Runs, calls tools, exits |
-| Examples | `simple_server.py` | `simple_client.py`, Claude |
+### What You Learned About stdio
+1. **stdout** = MCP protocol messages (ONLY)
+2. **stdin** = Incoming requests from client
+3. **stderr** = Your debug logs (safe to use)
+4. **Why it matters**: Mixing them breaks the protocol
+5. **Rule**: Always use `file=sys.stderr` for logging in tools
 
-### 2. **Tool Discovery**
-Process:
-1. Client connects to server
-2. Client queries: "What tools do you have?"
-3. Server responds: Tool schemas (name, description, parameters)
-4. Client displays/uses options
-5. Agent makes informed decisions about which tools to call
+### What You Learned About Uvicorn (Preview)
+1. **Uvicorn** = Web server for Python
+2. **HTTP-based MCP** = Uvicorn + your MCP code
+3. **Use case**: Remote servers, multiple clients
+4. **Timing**: We'll use this in Week 9
+5. **Benefit**: Production-ready architecture
 
-**Benefits:**
-- No hardcoding of available tools
-- Server can update tools dynamically
-- Client always knows current capabilities
-
-### 3. **Lifecycle Management**
-```
-Client Start
-    ↓
-Start Server Process
-    ↓
-Wait for Server Ready
-    ↓
-Initialize Connection
-    ↓
-Discover Tools
-    ↓
-Call Tools (multiple times)
-    ↓
-Cleanup & Exit
-```
-
-### 4. **Context Protocol**
-The "Context" in "Model Context Protocol":
-- Provides exact, verifiable tool specifications
-- Prevents hallucinations about tool existence
-- Ensures correct parameter usage
-- Keeps LLM "in context" with reality
-- Reduces ambiguity and errors
-
----
-
-## 💡 Real-World Analogy
-
-Think of MCP like a **Restaurant System**:
-
-```
-Customer (AI Agent)
-    │ "I want pasta with water and dessert"
-    │
-Waiter (MCP Client)
-    ├─ Knows which kitchen can make each item
-    ├─ Translates order to kitchen format
-    ├─ Knows exact portions and prices
-    │
-    ↓
-Kitchen (MCP Server)
-    ├─ Receives order in standard format
-    ├─ Prepares dishes
-    │ (executes tools: make_pasta, fill_water, make_dessert)
-    ├─ Returns prepared dishes with metadata
-    │
-    ↓
-Waiter
-    ├─ Receives dishes with timing info
-    ├─ Verifies order correctness
-    ├─ Presents to customer with recommendations
-    │
-    ↓
-Customer
-    ├─ Receives exactly what was ordered
-    ├─ Knows cost and time
-```
-
-**Without MCP:** Waiter guesses what kitchen can do, wastes time, gets wrong dishes
-**With MCP:** Waiter knows exact capabilities, seamless coordination, perfect orders
-
----
-
-## 📊 MCP Capabilities
-
-### Three Main Methods of Running MCP Servers
-
-#### 1. **stdio** (Week 8) ← WE START HERE
-```python
-# Server started as child process
-# Communication via stdin/stdout
-server = StdioServerParameters(
-    command=sys.executable,
-    args=["simple_server.py"]
-)
-```
-- **Best for:** Local development, CLI tools, tight integration
-- **Example:** Cursor IDE extensions, local Python scripts
-- **Complexity:** Simple ⭐
-
-#### 2. **HTTP with SSE** (Week 9)
-```python
-# Server runs as HTTP endpoint
-# Client makes REST calls
-server = HttpServerParameters(
-    url="http://localhost:8000"
-)
-```
-- **Best for:** Cloud services, remote servers, scalability
-- **Example:** Cloud-hosted MCP servers, multi-client services
-- **Complexity:** Medium ⭐⭐
-
-#### 3. **Custom Transport** (Advanced)
-```python
-# WebSocket, gRPC, custom protocol
-# Maximum flexibility
-```
-- **Best for:** Real-time applications, custom requirements
-- **Example:** Game servers, mission-critical systems
-- **Complexity:** High ⭐⭐⭐
-
----
-
-## 🚀 What You'll Learn This Week
-
-By the end of Week 8, you'll understand:
-
-✅ **MCP Architecture**: How clients and servers interact
-✅ **Protocol Fundamentals**: JSON-RPC 2.0, request/response cycles
-✅ **Building Servers**: Using `FastMCP` and `@mcp.tool()` decorator
-✅ **Tool Implementation**: Creating functions that agents can call
-✅ **Schema Generation**: Automatic type-based parameter schemas
-✅ **Client Communication**: Async Python client development
-✅ **Tool Discovery**: How agents discover available tools
-✅ **Process Management**: Starting and controlling server processes
-✅ **stdio Transport**: Local process communication pattern
-✅ **Error Handling**: Managing failures and edge cases
+### What You Learned About MCP
+1. **Server-Client Architecture**: Separation of concerns
+2. **Tool Registration**: Using `@mcp.tool()` decorator
+3. **Type Hints**: Tell AI agents how to use tools
+4. **stdio Transport**: Local process communication
+5. **Protocol**: JSON-RPC 2.0 over stdin/stdout
 
 ---
 
 ## 📝 Homework Exercises
 
-### Exercise 1: Add a New Tool ⭐
-Add a `subtract_numbers` function to the server:
+### Exercise 1: Add New Tools ⭐
+Add to `simple_server.py`:
 ```python
 @mcp.tool()
 def subtract_numbers(a: int, b: int) -> int:
-    """Subtract b from a and return the result"""
-    return a - b
+    """Subtract b from a"""
+    result = a - b
+    print(f"subtract: {a} - {b} = {result}", file=sys.stderr)
+    return result
+
+@mcp.tool()
+def divide_numbers(a: float, b: float) -> float:
+    """Divide a by b safely"""
+    if b == 0:
+        raise ValueError("Cannot divide by zero!")
+    result = a / b
+    print(f"divide: {a} / {b} = {result}", file=sys.stderr)
+    return result
 ```
-Update client to call this new tool and verify it works.
+
+Update `simple_client.py` to call these new tools.
 
 ### Exercise 2: Advanced Tools ⭐⭐
-Create additional tools:
+Create tools for:
 - `square(n: int) -> int`: Return n²
 - `reverse_text(text: str) -> str`: Reverse a string
-- `factorial(n: int) -> int`: Calculate factorial
+- `word_count(text: str) -> int`: Count words in text
 
-### Exercise 3: Tool with Parameters ⭐⭐
+### Exercise 3: Complex Return Types ⭐⭐
 ```python
 @mcp.tool()
-def format_time(hours: int, minutes: int = 0) -> str:
-    """Format time in HH:MM format"""
-    return f"{hours:02d}:{minutes:02d}"
+def get_stats(numbers: list) -> dict:
+    """Get statistics for a list of numbers"""
+    return {
+        "min": min(numbers),
+        "max": max(numbers),
+        "avg": sum(numbers) / len(numbers),
+        "count": len(numbers)
+    }
 ```
 
 ### Challenge: Production-Ready Tools ⭐⭐⭐
-Enhance tools with:
-- Input validation (check ranges, types)
-- Clear error messages
-- Edge case handling
-- Meaningful docstrings
-- Return value documentation
-
-**Example:**
 ```python
 @mcp.tool()
-def divide(numerator: float, denominator: float) -> float:
-    """
-    Divide numerator by denominator.
+def safe_calculate(operation: str, a: float, b: float) -> dict:
+    """Perform safe calculation
     
     Args:
-        numerator: The dividend
-        denominator: The divisor (must not be zero)
-    
+        operation: 'add', 'subtract', 'multiply', or 'divide'
+        a, b: Operands
+        
     Returns:
-        The quotient
-    
-    Raises:
-        ValueError: If denominator is zero
+        Dictionary with result and metadata
     """
-    if denominator == 0:
-        raise ValueError("Division by zero is not allowed")
-    return numerator / denominator
+    if operation == "add":
+        result = a + b
+    elif operation == "subtract":
+        result = a - b
+    elif operation == "multiply":
+        result = a * b
+    elif operation == "divide":
+        if b == 0:
+            raise ValueError("Cannot divide by zero")
+        result = a / b
+    else:
+        raise ValueError(f"Unknown operation: {operation}")
+    
+    print(f"calculate: {operation}({a}, {b}) = {result}", file=sys.stderr)
+    
+    return {
+        "operation": operation,
+        "operands": [a, b],
+        "result": result,
+        "success": True
+    }
 ```
 
 ---
@@ -552,130 +965,59 @@ def divide(numerator: float, denominator: float) -> float:
 ## 🔗 Next Steps (Week 9)
 
 Week 9 will introduce:
-- **Building the "Website Agent"**
-- **HTTP/SSE transport layer**
-- **Multiple server coordination**
-- **Real-world use cases**
-- **Production deployment**
-
-This progression teaches you:
-- Weeks 1-7: LLM fundamentals and RAG
-- **Week 8: Building tools** (today)
-- Weeks 9-12: Advanced agents and systems
+- **HTTP-based MCP Servers**
+- **Running Uvicorn**
+- **Website Agent** with multiple tools
+- **Cloud-ready deployment**
+- **Multiple client support**
 
 ---
 
-## 📚 Additional Resources
+## 🎓 Summary
 
-### Official MCP Resources
-- **MCP Spec**: [spec.modelcontextprotocol.io](https://spec.modelcontextprotocol.io)
-- **GitHub**: [Anthropic/mcp](https://github.com/anthropics/mcp)
-- **FastMCP Docs**: Check the mcp package documentation
+**This Week You Mastered:**
+- ✅ What is MCP and why it matters
+- ✅ Client-Server architecture in AI
+- ✅ Understanding stdio (stdout, stdin, stderr)
+- ✅ Building MCP servers with FastMCP
+- ✅ Tool design and type hints
+- ✅ Async Python client development
+- ✅ Running and testing MCP systems
 
-### Learning Resources
-- **JSON-RPC 2.0 Spec**: [json-rpc.org](https://www.json-rpc.org/specification)
-- **Python async/await**: [Real Python guide](https://realpython.com/async-io-python/)
-- **stdio in Python**: subprocess module documentation
+**The Big Picture:**
+```
+Weeks 1-7: Learning to USE AI (prompts, chains, memory)
+Week 8: Learning to GIVE HANDS to AI (tools & MCP)
+Weeks 9-12: Building ADVANCED AI SYSTEMS (agents, workflows)
+```
 
-### Community
-- **Discord**: MCP Community Server
-- **GitHub Issues**: Report problems and ask questions
-- **Examples**: Check MCP GitHub for community servers
+You're now learning the foundation of **modern agentic AI** - the exact pattern used by Claude, Cursor, and the next generation of AI applications.
 
 ---
 
-## 📞 Quick Reference
+## 📚 Quick Reference
 
-### Creating a Tool
+### Creating Tools
 ```python
 @mcp.tool()
-def my_tool(param1: int, param2: str) -> str:
-    """Tool description shown to agents"""
-    # Your implementation
+def my_tool(param: int) -> str:
+    """Tool description"""
+    result = process(param)
+    print(f"Log info", file=sys.stderr)  # ← Always stderr!
     return result
 ```
 
-### Server Management
+### Running
 ```bash
-# Run server (typically called by client)
-python simple_server.py
-
-# Client automatically starts server
-python simple_client.py
+python simple_client.py  # Client starts server automatically
 ```
 
-### Async Operations
-```python
-import asyncio
-
-async def main():
-    async with stdio_client(server_params) as (read, write):
-        async with ClientSession(read, write) as session:
-            await session.initialize()
-            tools = await session.list_tools()
-            result = await session.call_tool("tool_name", arguments={...})
-
-asyncio.run(main())
-```
-
-### Common Tool Patterns
-
-**Simple Calculation:**
-```python
-@mcp.tool()
-def add(a: int, b: int) -> int:
-    """Add two numbers"""
-    return a + b
-```
-
-**With Defaults:**
-```python
-@mcp.tool()
-def greet(name: str, greeting: str = "Hello") -> str:
-    """Greet someone"""
-    return f"{greeting}, {name}!"
-```
-
-**Error Handling:**
-```python
-@mcp.tool()
-def safe_divide(a: float, b: float) -> float:
-    """Safely divide two numbers"""
-    if b == 0:
-        raise ValueError("Cannot divide by zero")
-    return a / b
-```
+### Common Patterns
+- **Simple function**: Return a single value
+- **With defaults**: `param: str = "default"`
+- **Error handling**: Raise exceptions, client sees them
+- **Complex return**: Return dict or list
 
 ---
 
-## 🎯 Summary
-
-**MCP is the bridge** between AI agents and the tools they need to do real work. This week you'll:
-
-1. **Understand** the MCP architecture
-2. **Build** your first MCP server with tools
-3. **Create** an async Python client
-4. **Connect** client to server
-5. **Execute** tool calls successfully
-
-By understanding MCP now, you're learning the **foundation of modern agentic AI**—the exact pattern used by Claude, Cursor, and the next generation of AI applications.
-
-### The Big Picture
-```
-Weeks 1-7: Learning to USE AI (prompts, chains, memory)
-Week 8: Learning to TOOL AI (give agents hands)
-Weeks 9-12: Building ADVANCED AI SYSTEMS (multi-agent, workflows)
-```
-
----
-
-## 📋 Prerequisites
-
-- Python 3.8+
-- Basic understanding of async/await (we'll review)
-- Comfort with command line
-- ~30 minutes to complete
-
----
-
-**Let's build something amazing! 🚀**
+**Let's build amazing AI-powered applications! 🚀**
