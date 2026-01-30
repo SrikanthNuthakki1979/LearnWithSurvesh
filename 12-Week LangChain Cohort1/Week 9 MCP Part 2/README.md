@@ -21,7 +21,7 @@
 
 1. **Activate venv:**
    ```powershell
-   cd "d:\Mentoring\learwithsarvesh"
+   cd "<your path>"
    & .venv\Scripts\Activate.ps1
    ```
 
