@@ -1,0 +1,67 @@
+WEEK 9 STUDENT CHECKLIST
+=========================
+
+NAME: ____________________________    DATE: __________________
+
+SETUP
+-----
+[ ] Opened student_exercise folder
+[ ] Virtual environment activated
+[ ] Dependencies installed
+[ ] .env file has OPENAI_API_KEY
+
+SERVER 1 (ADDITION)
+-------------------
+[ ] Completed TODOs in 01_add_numbers_server_TODO.py
+[ ] Server running on http://localhost:8000
+[ ] No errors in terminal
+
+SERVER 2 (MULTIPLY)
+-------------------
+[ ] Completed TODOs in 02_multiply_numbers_server_TODO.py
+[ ] Server running on http://localhost:8001
+[ ] No errors in terminal
+
+SERVER 3 (TIME)
+---------------
+[ ] Completed TODOs in 03_get_current_time_server_TODO.py
+[ ] Server running on http://localhost:8002
+[ ] No errors in terminal
+
+SERVER 4 (RAG)
+--------------
+[ ] Completed TODOs in 04_rag_server_TODO.py
+[ ] Server running on http://localhost:8003
+[ ] Tools available: learn_website, ask_question
+[ ] chroma_db_mcp folder created
+
+CLIENT
+------
+[ ] Started multi_server_client.py (from parent directory)
+[ ] Client discovered all 4 servers
+[ ] LLM routing works
+
+TESTS
+-----
+[ ] Math: "What is 5 plus 3?"
+[ ] Time: "What time is it?"
+[ ] Learn: "Learn about Python from https://www.python.org"
+[ ] Ask: "What is Python used for?"
+
+UNDERSTANDING
+-------------
+[ ] I can explain why we use HTTP/SSE
+[ ] I can explain how tool routing works
+[ ] I can explain what RAG does
+[ ] I can explain where data is stored (chroma_db_mcp)
+
+BONUS
+-----
+[ ] Tried a different website
+[ ] Asked a question it didn't know
+[ ] Saw "I don't know" response
+
+SIGN-OFF
+--------
+Instructor: ________________________   Score: ____ / 20
+

@@ -1,0 +1,172 @@
+WEEK 9 QUICK REFERENCE - COPY & PASTE COMMANDS
+================================================
+
+📌 SAVE THIS FILE - YOU'LL USE IT EVERY SESSION
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🔧 ONE-TIME SETUP (First time only)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+STEP 1: Go to project directory
+  cd "d:\Mentoring\learwithsarvesh"
+
+STEP 2: Activate virtual environment
+  & .venv\Scripts\Activate.ps1
+
+STEP 3: Install dependencies (copy-paste)
+  pip install mcp langchain langchain-openai langchain-community chromadb beautifulsoup4 python-dotenv
+
+STEP 4: Create .env file in current directory with:
+  OPENAI_API_KEY=sk-YOUR_ACTUAL_KEY_HERE
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🚀 EVERY SESSION - START SERVERS (5 TERMINALS)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Open 5 PowerShell windows:
+
+TERMINAL 1 (Addition Server):
+  cd "d:\Mentoring\learwithsarvesh\12weekcrash Course\Week8 - Website Q&A Chatbot\student_exercise"
+  & ..\..\..\..\.venv\Scripts\Activate.ps1
+  python 01_add_numbers_server_TODO.py
+
+TERMINAL 2 (Multiply Server):
+  cd "d:\Mentoring\learwithsarvesh\12weekcrash Course\Week8 - Website Q&A Chatbot\student_exercise"
+  & ..\..\..\..\.venv\Scripts\Activate.ps1
+  python 02_multiply_numbers_server_TODO.py
+
+TERMINAL 3 (Time Server):
+  cd "d:\Mentoring\learwithsarvesh\12weekcrash Course\Week8 - Website Q&A Chatbot\student_exercise"
+  & ..\..\..\..\.venv\Scripts\Activate.ps1
+  python 03_get_current_time_server_TODO.py
+
+TERMINAL 4 (RAG Server):
+  cd "d:\Mentoring\learwithsarvesh\12weekcrash Course\Week8 - Website Q&A Chatbot\student_exercise"
+  & ..\..\..\..\.venv\Scripts\Activate.ps1
+  python 04_rag_server_TODO.py
+
+TERMINAL 5 (Client - START LAST after servers running):
+  cd "d:\Mentoring\learwithsarvesh\12weekcrash Course\Week8 - Website Q&A Chatbot"
+  & ..\..\..\..\.venv\Scripts\Activate.ps1
+  python multi_server_client.py
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+✅ EXPECTED OUTPUT - What You Should See
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+TERMINAL 1 should show:
+  ✅ 🚀 Starting Addition Service Server...
+  ✅ 📡 Listening on http://localhost:8000
+  ✅ 🛠️  Tool: add_numbers
+
+TERMINAL 2 should show:
+  ✅ 🚀 Starting Multiplication Service Server...
+  ✅ 📡 Listening on http://localhost:8001
+  ✅ 🛠️  Tool: multiply_numbers
+
+TERMINAL 3 should show:
+  ✅ 🚀 Starting Time Service Server...
+  ✅ 📡 Listening on http://localhost:8002
+  ✅ 🛠️  Tool: get_current_time
+
+TERMINAL 4 should show:
+  ✅ 🚀 Starting Knowledge Agent Server...
+  ✅ 📡 Listening on http://localhost:8003
+  ✅ 🛠️  Tools: learn_website, ask_question
+
+TERMINAL 5 should show:
+  ✅ Discovering tools from all servers...
+  ✅ Found: add_numbers, multiply_numbers, get_current_time, learn_website, ask_question
+  ✅ 🎤 Ask a question:
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🎯 TEST QUESTIONS TO TRY
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Type these in TERMINAL 5:
+
+Test Math:
+  What is 5 plus 3?
+  → Expected: 8 ✅
+
+Test Math 2:
+  Multiply 10 by 5
+  → Expected: 50 ✅
+
+Test Time:
+  What time is it?
+  → Expected: Current ISO timestamp ✅
+
+Test RAG Learning:
+  Learn about Python from https://www.python.org
+  → Expected: Server reads website ✅
+
+Test RAG Answer:
+  What is Python?
+  → Expected: Answer based on website ✅
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📍 PORT MAP (Important!)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+8000 = Addition Server
+8001 = Multiplication Server
+8002 = Time Server
+8003 = RAG Server
+(No port for Client - it calls the servers)
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+⚠️  TROUBLESHOOTING QUICK FIXES
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+"Port already in use" error:
+  FIX: Close other PowerShell windows or:
+  taskkill /PID <PID> /F
+
+"No module named" error:
+  FIX: Run: pip install mcp langchain langchain-openai langchain-community chromadb beautifulsoup4 python-dotenv
+
+"OpenAI API key not found" error:
+  FIX: Create .env file with OPENAI_API_KEY=sk-...
+
+"Connection refused" error:
+  FIX: Make sure you started all 4 SERVERS before running CLIENT
+
+"LLM Decision: No matching tool" error:
+  FIX: Ask more clearly (e.g., "Learn about X from URL" or "What is X?")
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+⏹️  HOW TO STOP
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+In each terminal, press:
+  Ctrl + C
+
+All servers will stop.
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📂 USEFUL WINDOWS COMMANDS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Check if port is in use:
+  netstat -ano | findstr :8000
+
+Kill process on port:
+  netstat -ano | findstr :8000 → note PID
+  taskkill /PID 1234 /F (replace 1234 with actual PID)
+
+Clear old Chroma database:
+  rmdir /s /q chroma_db_mcp
+
+List files in folder:
+  ls
+  (or dir)
+
