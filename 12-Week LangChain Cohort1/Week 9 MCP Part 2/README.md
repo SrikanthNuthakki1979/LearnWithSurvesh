@@ -17,6 +17,23 @@
 | **06_TROUBLESHOOTING.txt** | Error solutions - read if you get stuck |
 | **07_CHECKLIST.txt** | Completion tracker - verify when done |
 
+## ⚙️ System Requirements
+
+### Recommended Python Versions
+For best compatibility with MCP and all dependencies:
+
+- ✅ **Python 3.10** - Best compatibility
+- ✅ **Python 3.11** - Excellent compatibility
+- ✅ **Python 3.12** - Good compatibility
+- ⚠️ **Python 3.13** - May have issues with some packages, use 3.10-3.12 instead
+
+**Check your Python version:**
+```bash
+python --version
+```
+
+---
+
 ## ⚡ Quick Start
 
 1. **Activate venv:**
