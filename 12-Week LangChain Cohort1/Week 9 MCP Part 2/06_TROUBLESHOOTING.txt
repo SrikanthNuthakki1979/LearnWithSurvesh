@@ -1,0 +1,381 @@
+╔════════════════════════════════════════════════════════════════════════════╗
+║              WEEK 9 TROUBLESHOOTING - PROBLEMS & SOLUTIONS                  ║
+║                  Read this when something breaks!                           ║
+╚════════════════════════════════════════════════════════════════════════════╝
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🔴 PROBLEM 1: Port Already in Use
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+ERROR MESSAGE:
+  OSError: [WinError 10048] Only one usage of each socket address (protocol/IP port/IP Version) is normally permitted
+
+WHAT IT MEANS:
+  Another program is already using that port (8000, 8001, 8002, or 8003)
+
+QUICK FIX:
+  1. Close all PowerShell/terminal windows
+  2. Wait 10 seconds
+  3. Start fresh
+
+DETAILED FIX:
+  1. Open PowerShell as Administrator
+  2. Find what's using port 8000:
+     netstat -ano | findstr :8000
+     (You'll see something like: TCP 127.0.0.1:8000 LISTENING 5432)
+  3. Note the PID number (last column, e.g., 5432)
+  4. Kill the process:
+     taskkill /PID 5432 /F
+  5. Try again
+
+PREVENT THIS:
+  - Always stop servers with Ctrl+C
+  - Don't run multiple copies of the same server
+  - Close terminals properly
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🔴 PROBLEM 2: No Module Named 'mcp' (or 'langchain', 'chromadb', etc)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+ERROR MESSAGE:
+  ModuleNotFoundError: No module named 'mcp'
+  ModuleNotFoundError: No module named 'langchain'
+  ModuleNotFoundError: No module named 'chromadb'
+
+WHAT IT MEANS:
+  You didn't install the required packages
+
+QUICK FIX:
+  cd "d:\Mentoring\learwithsarvesh"
+  & .venv\Scripts\Activate.ps1
+  pip install mcp langchain langchain-openai langchain-community chromadb beautifulsoup4 python-dotenv
+
+DETAILED FIX:
+  1. Make sure you're in the right folder:
+     pwd
+     (should show: d:\Mentoring\learwithsarvesh)
+  
+  2. Activate virtual environment:
+     & .venv\Scripts\Activate.ps1
+     (terminal should show: (.venv) at the start)
+  
+  3. Install all packages:
+     pip install mcp langchain langchain-openai langchain-community chromadb beautifulsoup4 python-dotenv
+  
+  4. Wait for installation to complete
+  5. Try running the server again
+
+PREVENT THIS:
+  - Always run pip install in the correct folder
+  - Always activate venv before running servers
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🔴 PROBLEM 3: OpenAI API Key Not Found
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+ERROR MESSAGE:
+  AuthenticationError: Error 401. Invalid Authentication
+  Error: Incorrect API key provided
+  KeyError: 'OPENAI_API_KEY'
+
+WHAT IT MEANS:
+  Server can't find your OpenAI API key
+
+QUICK FIX:
+  1. In the project folder (d:\Mentoring\learwithsarvesh), create a file called .env
+  2. Open it and add:
+     OPENAI_API_KEY=sk-YOUR_ACTUAL_KEY_HERE
+  3. Replace sk-YOUR_ACTUAL_KEY_HERE with your real API key
+  4. Save and restart the server
+
+DETAILED STEPS:
+  1. Get your OpenAI API key from: https://platform.openai.com/api-keys
+  2. Open Notepad
+  3. Type (replace with your actual key):
+     OPENAI_API_KEY=sk-proj-abcdefg123456...
+  4. File → Save As
+  5. Location: d:\Mentoring\learwithsarvesh
+  6. Filename: .env (NOT .env.txt)
+  7. Save type: All Files (*)
+  8. Click Save
+
+PREVENT THIS:
+  - Always keep .env file in the main project folder
+  - Never share your .env file on GitHub
+  - Double-check your API key is correct
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🔴 PROBLEM 4: Connection Refused (Client Can't Find Servers)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+ERROR MESSAGE:
+  ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+  HTTPConnectionPool: Connection refused
+
+WHAT IT MEANS:
+  The client can't reach the servers because they're not running
+
+QUICK FIX:
+  1. Check terminal 1: Is Server 1 running? (you should see "Listening on http://localhost:8000")
+  2. Check terminal 2: Is Server 2 running? (you should see "Listening on http://localhost:8001")
+  3. Check terminal 3: Is Server 3 running? (you should see "Listening on http://localhost:8002")
+  4. Check terminal 4: Is Server 4 running? (you should see "Listening on http://localhost:8003")
+  5. If any are missing, start them!
+  6. THEN start the client in terminal 5
+
+DETAILED FIX:
+  ORDER MATTERS!
+  
+  1. Open Terminal 1: Start Server 1
+     python 1_add_numbers_server_TODO.py
+     Wait until you see "Listening on http://localhost:8000"
+  
+  2. Open Terminal 2: Start Server 2
+     python 2_multiply_numbers_server_TODO.py
+     Wait until you see "Listening on http://localhost:8001"
+  
+  3. Open Terminal 3: Start Server 3
+     python 3_get_current_time_server_TODO.py
+     Wait until you see "Listening on http://localhost:8002"
+  
+  4. Open Terminal 4: Start Server 4
+     python 4_rag_server_TODO.py
+     Wait until you see "Listening on http://localhost:8003"
+  
+  5. NOW Open Terminal 5: Start Client
+     cd .. (go to parent folder)
+     python multi_server_client.py
+     Wait until you see "Found: add_numbers, multiply_numbers, get_current_time, learn_website, ask_question"
+
+PREVENT THIS:
+  - Start servers BEFORE client
+  - Keep all 4 servers running while using client
+  - Don't close any server terminal
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🟡 PROBLEM 5: "LLM Decision: No matching tool"
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+ERROR MESSAGE:
+  No matching tool found for your question
+
+WHAT IT MEANS:
+  Claude didn't understand which tool to use
+
+QUICK FIX:
+  Ask more clearly! Instead of:
+  ❌ "Do math"
+  ✅ "What is 5 plus 3?"
+
+EXAMPLES OF GOOD QUESTIONS:
+  ✅ "What is 5 plus 3?"
+  ✅ "Multiply 10 by 20"
+  ✅ "What time is it?"
+  ✅ "Learn about Python from https://www.python.org"
+  ✅ "What is Python?"
+
+EXAMPLES OF BAD QUESTIONS:
+  ❌ "Math?"
+  ❌ "Time"
+  ❌ "Learn"
+  ❌ Very long, confusing sentences
+
+PREVENT THIS:
+  - Use clear, simple questions
+  - Include numbers or specific terms
+  - Ask one thing at a time
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🟡 PROBLEM 6: RAG Says "I don't know"
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+ERROR MESSAGE / RESPONSE:
+  "I don't know that information"
+  "I couldn't find that in the learned content"
+
+WHAT IT MEANS:
+  You asked about something RAG hasn't learned yet
+
+QUICK FIX:
+  1. Teach it first:
+     "Learn about Python from https://www.python.org"
+  2. Wait for it to complete
+  3. Then ask:
+     "What is Python?"
+
+DETAILED FIX:
+  1. First command: "Learn about Python from https://www.python.org"
+     → Client should say "Learning..." and "Stored 50 chunks"
+  2. Only THEN ask: "What is Python?"
+     → Client should answer based on website
+
+PREVENT THIS:
+  - Always run learn_website BEFORE ask_question
+  - Learn from a website before asking about that topic
+  - Don't expect RAG to know about things it hasn't learned
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🟡 PROBLEM 7: "Unable to load webpage" or SSL Error
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+ERROR MESSAGE:
+  SSLError: SSL certificate verify failed
+  HTTPError: 403 Forbidden
+  ConnectionError: Failed to load webpage
+
+WHAT IT MEANS:
+  The website can't be accessed or is blocked
+
+QUICK FIX:
+  Try a different website that's publicly accessible:
+  
+  Instead of:
+  ❌ "Learn about X from https://internal-company-site.com"
+  
+  Try:
+  ✅ "Learn about Python from https://www.python.org"
+  ✅ "Learn about AI from https://en.wikipedia.org/wiki/Artificial_intelligence"
+  ✅ "Learn about JavaScript from https://developer.mozilla.org"
+
+PUBLIC WEBSITES THAT WORK:
+  - https://www.python.org
+  - https://en.wikipedia.org/wiki/[topic]
+  - https://www.w3schools.com
+  - https://developer.mozilla.org
+
+PREVENT THIS:
+  - Use public websites only
+  - Avoid internal/private websites
+  - Check the URL is correct
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🟡 PROBLEM 8: Slow Responses or Timeouts
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+ERROR MESSAGE:
+  Timeout: request took longer than 30 seconds
+  Server didn't respond
+
+WHAT IT MEANS:
+  The operation is taking a very long time
+
+QUICK FIX:
+  Wait! This is normal for first-time operations.
+  
+  First learn from website: Takes 30-60 seconds (creating embeddings)
+  Later questions: Usually 5-10 seconds
+  
+  Just be patient!
+
+DETAILED EXPLANATION:
+  Why does it take so long?
+  1. Server downloads website (2-5 seconds)
+  2. Server breaks into chunks (1 second)
+  3. Server creates embeddings (OpenAI API call) (10-30 seconds)
+  4. Server stores in database (2 seconds)
+  
+  This is NORMAL and expected!
+
+PREVENT THIS:
+  - Don't close terminal thinking it's frozen
+  - Start with small websites (not huge PDFs)
+  - Be patient on first learn operation
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🟡 PROBLEM 9: Chroma DB Not Created
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+ERROR MESSAGE:
+  No such file or directory: './chroma_db_mcp'
+  Collection not found
+
+WHAT IT MEANS:
+  RAG server hasn't run yet, so database doesn't exist
+
+QUICK FIX:
+  1. Make sure Server 4 is running: python 4_rag_server_TODO.py
+  2. Run a learn command: "Learn about Python from https://www.python.org"
+  3. Wait for it to complete
+  4. A chroma_db_mcp folder will be created automatically
+
+PREVENT THIS:
+  - Start Server 4 before using RAG
+  - Run at least one learn_website first
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🟡 PROBLEM 10: "No such file or directory" for TODO files
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+ERROR MESSAGE:
+  No such file or directory: '1_add_numbers_server_TODO.py'
+  FileNotFoundError
+
+WHAT IT MEANS:
+  You're in the wrong folder
+
+QUICK FIX:
+  Make sure you're in the student_exercise folder:
+  
+  cd "d:\Mentoring\learwithsarvesh\12weekcrash Course\Week8 - Website Q&A Chatbot\student_exercise"
+  
+  Then run:
+  python 1_add_numbers_server_TODO.py
+
+DETAILED FIX:
+  1. Check where you are:
+     pwd
+  2. Should show: 
+     d:\Mentoring\learwithsarvesh\12weekcrash Course\Week8 - Website Q&A Chatbot\student_exercise
+  3. If not, navigate there:
+     cd "d:\Mentoring\learwithsarvesh\12weekcrash Course\Week8 - Website Q&A Chatbot\student_exercise"
+  4. List files to confirm:
+     ls
+     (you should see: 1_add_numbers_server_TODO.py, etc)
+
+PREVENT THIS:
+  - Always navigate to student_exercise folder first
+  - Use pwd to check current location
+  - Use ls to see available files
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+✅ VERIFICATION CHECKLIST - Is Everything OK?
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+□ Virtual environment activated (shows .venv at terminal start)
+□ All 4 servers running (check 4 terminals)
+□ Each server shows "Listening on http://localhost:PORT"
+□ Client started in 5th terminal
+□ Client shows "Found: add_numbers, multiply_numbers, get_current_time, learn_website, ask_question"
+□ Math questions work: "What is 5 plus 3?" → 8
+□ Time question works: "What time is it?" → timestamp
+□ Can learn from website without errors
+□ Can ask questions about learned content
+□ .env file exists with OPENAI_API_KEY
+
+If all ✅, you're good to go!
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📞 STILL STUCK?
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+1. Read the error message carefully
+2. Check above for your error type
+3. Follow the "QUICK FIX" or "DETAILED FIX"
+4. Check the "PREVENT THIS" section
+5. If still stuck, ask the instructor!
+
+Remember: Every error is normal! It's part of learning. 🚀
+
+

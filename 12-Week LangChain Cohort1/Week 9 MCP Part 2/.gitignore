@@ -1,0 +1,12 @@
+# Student-generated files (don't commit these)
+chroma_db_mcp/
+__pycache__/
+*.pyc
+*.pyo
+.env
+
+# VS Code
+.vscode/
+
+# Jupyter Notebook
+.ipynb_checkpoints/

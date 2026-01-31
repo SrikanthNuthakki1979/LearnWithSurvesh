@@ -18,7 +18,8 @@ Customer support chatbots are transforming how businesses interact with customer
 2. **Vector Databases**: Critical for semantic search in production AI systems
 3. **Embeddings**: Understanding how AI represents and searches text meaning
 4. **Persistent Storage**: Building systems that survive restarts and scale to production
-5. **Prompt Engineering**: Crafting prompts that control AI behavior in customer-facing scenarios
+5. **Conversation Memory**: Three strategies (Buffer, Window, Summary) for managing multi-turn conversations
+6. **Prompt Engineering**: Crafting prompts that control AI behavior in customer-facing scenarios
 
 ### Career Relevance
 - RAG is the #1 pattern for enterprise AI applications in 2025
@@ -34,10 +35,11 @@ This project gives you hands-on experience with the exact architecture used by c
 - **Persistent Vector Store**: Chroma database that survives kernel restarts
 - **Production-Ready RAG Pipeline**: Retriever → Prompt → LLM → Response
 - **Metadata Support**: Filter by region, channel, or issue type for targeted responses
-- **Chunking Strategy**: Optimized text splitting for better retrieval accuracy
+- **No Chunking Required**: Optimized for small, coherent FAQ documents (see detailed explanation in notebook)
 - **Conversation Memory**: Three memory strategies (Buffer, Window, Summary) for multi-turn chats
 - **Cost Optimization**: Choose memory strategy based on conversation length and budget
 - **Session Management**: Support multiple concurrent user conversations
+- **LangSmith Integration**: Optional tracing for debugging and monitoring
 
 ## 🛠️ Installation
 
@@ -46,6 +48,7 @@ This project gives you hands-on experience with the exact architecture used by c
 - Python 3.8+
 - OpenAI API key (required for embeddings and LLM)
 - `.env` file in project root with `OPENAI_API_KEY=your_key_here`
+- **Note**: The FAQ dataset (`customer_support_faq.csv`) is already provided in the project root
 
 ### 📦 Install Dependencies
 
@@ -61,14 +64,14 @@ pip install -r requirements.txt
 
 | Package | Version | Purpose |
 |---------|---------|---------|
-| `langchain` | 0.2.0 | Core LangChain framework for building LLM applications |
-| `langchain-openai` | 0.1.3 | OpenAI integration (ChatGPT, embeddings) |
-| `langchain-community` | 0.1.0 | Community tools including Chroma vector store |
-| `langchain-core` | 0.2.0 | Core abstractions (Documents, Prompts, Chains) |
-| `python-dotenv` | 1.0.0 | Load environment variables from `.env` file |
-| `pandas` | 2.0.0 | Load and manipulate CSV data |
-| `chroma-db` | 0.5.0 | Persistent vector database for embeddings |
-| `openai` | 1.3.0 | OpenAI Python SDK |
+| `langchain` | 1.0.8 | Core LangChain framework for building LLM applications |
+| `langchain-openai` | 1.0.3 | OpenAI integration (ChatGPT, embeddings) |
+| `langchain-community` | 0.4.1 | Community tools including Chroma vector store |
+| `langchain-core` | 1.0.7 | Core abstractions (Documents, Prompts, Chains) |
+| `python-dotenv` | 1.2.1 | Load environment variables from `.env` file |
+| `pandas` | 2.3.2 | Load and manipulate CSV data |
+| `chromadb` | 1.3.5 | Persistent vector database for embeddings |
+| `openai` | 2.6.0 | OpenAI Python SDK |
 
 ### 🔑 Environment Setup
 
@@ -86,24 +89,19 @@ Create a `.env` file in the `Week 7 Customer Support Chatbot/` directory:
 OPENAI_API_KEY=sk-your-key-here
 ```
 
-**Optional: Enable LangSmith Tracing** (for debugging and monitoring)
+**Optional (Recommended): Enable LangSmith Tracing** (for debugging and monitoring)
 
 ```env
 OPENAI_API_KEY=sk-your-key-here
-LANGCHAIN_API_KEY=lsv2_your-key-here
-LANGCHAIN_TRACING_V2=true
-LANGCHAIN_PROJECT=Customer-Support-Chatbot
+LANGSMITH_API_KEY=lsv2_your-key-here
+LANGCHAIN_PROJECT=CUSTOMER_SUPPORT_PROJECT
 ```
 
-**Step 3: Generate the FAQ Dataset**
+**Note**: The notebook enables LangSmith tracing by default. If you don't have a LangSmith account, it will still work but won't trace to the dashboard.
 
-Before running the notebook, generate the sample FAQ data:
+**Step 3: Dataset Ready to Use**
 
-```bash
-python data/generate_faq.py
-```
-
-This creates `data/customer_support_faq.csv` with 500 realistic customer support questions and answers.
+The FAQ dataset is already provided as `customer_support_faq.csv` in the project root with 500 realistic customer support questions and answers. No generation script is needed—you can proceed directly to the notebook.
 
 ## 📚 Learning Objectives
 
@@ -112,7 +110,7 @@ By the end of this week, you will be able to:
 - ✅ Understand RAG (Retrieval-Augmented Generation) architecture
 - ✅ Build semantic search systems using embeddings
 - ✅ Work with vector databases (Chroma) for persistent storage
-- ✅ Implement text chunking strategies for better retrieval
+- ✅ Understand when to chunk vs when to keep documents whole
 - ✅ Create production-ready LangChain chains with LCEL
 - ✅ Use metadata filtering in retrieval systems
 - ✅ Debug and optimize RAG pipelines
@@ -121,14 +119,15 @@ By the end of this week, you will be able to:
 - ✅ Compare and choose memory strategies (Buffer, Window, Summary)
 - ✅ Optimize token costs with memory management
 - ✅ Build multi-turn conversational AI systems
+- ✅ Design session-based conversation management
 
 ## 🏗️ Step-by-Step Learning Guide
 
-This session builds a **RAG FAQ chatbot with conversation memory in 10 steps**. Steps 1-7 cover the core RAG pipeline, and Steps 8-10 explore advanced conversation memory strategies.
+This session builds a **RAG FAQ chatbot with conversation memory in 10 steps**. Steps 1-6 cover the core RAG pipeline with basic memory, and Steps 7-10 explore advanced conversation memory strategies.
 
-### Core RAG Pipeline (Steps 1-7)
+### Core RAG Pipeline (Steps 1-6)
 
-The first seven steps focus on building the foundational RAG system.
+The first six steps focus on building the foundational RAG system with integrated conversation memory.
 
 ---
 
@@ -143,8 +142,9 @@ The first seven steps focus on building the foundational RAG system.
 **Key Concepts:**
 - **Embedder**: Converts text into vectors (numerical representations) for semantic similarity search
 - **LLM**: The language model that generates natural language answers
-- **RecursiveCharacterTextSplitter**: Intelligently chunks long text while preserving context
 - **Chroma**: A persistent vector database that stores embeddings and survives kernel restarts
+- **Document**: LangChain's wrapper for text content + metadata
+- **Memory Management**: Session-based conversation tracking for multi-turn interactions
 
 **Why This Matters:**
 Understanding the role of each component is crucial. The embedder creates searchable representations, the LLM generates answers, and Chroma stores knowledge persistently.
@@ -195,7 +195,7 @@ print("✅ API key loaded successfully")
 ### **Step 3: Load the FAQ Dataset** 📊
 
 **What You'll Do:**
-- Load `data/customer_support_faq.csv` using Pandas
+- Load `customer_support_faq.csv` using Pandas
 - Convert each CSV row into a LangChain `Document` object
 - Include metadata: region (US/EU/Asia), channel (email/chat/phone), issue type (account/billing/technical)
 
@@ -213,7 +213,7 @@ Real-world knowledge bases come from databases, CSVs, or APIs. Learning to conve
 import pandas as pd
 from pathlib import Path
 
-csv_path = Path("data/customer_support_faq.csv")
+csv_path = Path("customer_support_faq.csv")
 df = pd.read_csv(csv_path)
 
 documents = [
@@ -236,51 +236,13 @@ print(f"Loaded {len(documents)} FAQ documents")
 
 ---
 
-### **Step 4: Chunk Documents for Better Retrieval** ✂️
+### **Step 4: Build a Persistent Vector Store (Chroma)** 🗄️
 
-**What You'll Do:**
-- Use `RecursiveCharacterTextSplitter` to break documents into smaller chunks
-- Set `chunk_size=250` characters and `chunk_overlap=40` characters
-- Transform ~500 FAQs into ~1000+ chunks
-
-**Key Concepts:**
-- **Why Chunk?** 
-  - Shorter chunks = more precise retrieval (less noise from irrelevant text)
-  - Overcomes token limits for embeddings and context windows
-- **Chunk Overlap**: Preserves context across chunk boundaries
-- **Recursive Splitting**: Tries to split at natural boundaries (paragraphs → sentences → words)
-
-**Why This Matters:**
-Chunking strategy directly impacts retrieval quality. Too large = noisy results. Too small = missing context. This is a critical tuning parameter in production RAG systems.
-
-**Example Code Pattern:**
-```python
-from langchain_text_splitters import RecursiveCharacterTextSplitter
-
-splitter = RecursiveCharacterTextSplitter(
-    chunk_size=250,
-    chunk_overlap=40,
-    separators=["\n\n", "\n", ". ", " ", ""]
-)
-
-chunks = splitter.split_documents(documents)
-print(f"Created {len(chunks)} chunks from {len(documents)} documents")
-```
-
-**Optimization Tips:**
-- **chunk_size=250**: Good for FAQs (short Q&A pairs)
-- **chunk_overlap=40**: ~15-20% overlap maintains context
-- Experiment: Try 500/100 for longer documents
-
-**Learning Outcome:** You'll understand the tradeoffs in chunking strategies and how to optimize for your use case.
-
----
-
-### **Step 5: Build a Persistent Vector Store (Chroma)** 🗄️
+**Important Note:** This project intentionally **DOES NOT chunk** the FAQ documents. Each FAQ is already small (~100-300 words) and semantically coherent. Chunking would fragment the Q&A pairs and hurt retrieval quality. See the "Why No Chunking?" section at the end of this guide for a detailed explanation.
 
 **What You'll Do:**
 - Embed all chunks using OpenAI's `text-embedding-3-small` model
-- Store embeddings + original text in Chroma database at `data/chroma_faq/`
+- Store embeddings + original text in Chroma database at `chroma_faq/`
 - Create a `retriever` object to fetch relevant chunks for queries
 
 **Key Concepts:**
@@ -298,15 +260,15 @@ Vector databases are the backbone of modern AI applications. Chroma is productio
 ```python
 from langchain_community.vectorstores import Chroma
 
-persist_dir = "data/chroma_faq"
+persist_dir = "chroma_faq"
 
 vectorstore = Chroma.from_documents(
-    documents=chunks,
+    documents=documents,  # Original complete Q&A pairs (NOT chunks)
     embedding=embedder,
     persist_directory=persist_dir
 )
 
-retriever = vectorstore.as_retriever(search_kwargs={"k": 4})
+retriever = vectorstore.as_retriever()  # Default k=4 most similar documents
 print(f"✅ Chroma vector store created at {persist_dir}")
 ```
 
@@ -320,75 +282,113 @@ for doc in results:
 
 **Production Tips:**
 - **search_kwargs={"k": 4}**: Return top 4 most similar chunks
-- **Persistence**: Delete `data/chroma_faq/` to rebuild from scratch
+- **Persistence**: Delete `chroma_faq/` folder to rebuild from scratch
 - **Scaling**: For millions of documents, consider Pinecone or Weaviate
 
 **Learning Outcome:** You'll build production-grade vector search systems and understand embedding-based retrieval.
 
 ---
 
-### **Step 6: Build the RAG Chain** ⛓️
+### **Step 5: Build the RAG Chain with Memory** ⛓️💾
 
 **What You'll Do:**
-- Create a **Prompt Template** with `{context}` and `{question}` placeholders
-- Wire together a 4-step pipeline:
-  1. **Retrieval**: Fetch relevant chunks from vector store
-  2. **Prompt**: Format context + question into LLM prompt
-  3. **LLM**: Generate answer using GPT-4o-mini
-  4. **Parser**: Extract plain text response
+- Set up session-based conversation memory with `InMemoryChatMessageHistory`
+- Create a **Prompt Template** with `{context}`, `{question}`, and `{history}` placeholders
+- Wire together a RAG pipeline with memory:
+  1. **Session Management**: Get or create conversation history for user
+  2. **Retrieval**: Fetch relevant FAQs from vector store
+  3. **Prompt**: Format context + question + history into LLM prompt
+  4. **LLM**: Generate answer using GPT-4o-mini with conversation context
+  5. **Memory Update**: Save user question and bot answer to session history
 
 **Key Concepts:**
 - **RAG Pipeline**: Retrieval → Augmentation → Generation
+- **Session-Based Memory**: Each user gets isolated conversation history
 - **RunnableParallel**: LangChain pattern for parallel operations
-- **Prompt Template**: Structured instructions for the LLM
+- **RunnableWithMessageHistory**: Wrapper that adds memory to any chain
+- **Prompt Template**: Structured instructions for the LLM with history injection
 - **StrOutputParser**: Extracts text from LLM response objects
 
 **Why This Matters:**
-This is the core RAG architecture used in ChatGPT plugins, enterprise AI assistants, and documentation chatbots. Understanding this pattern unlocks 90% of AI applications.
+This is the core RAG architecture with memory used in ChatGPT plugins, enterprise AI assistants, and multi-turn chatbots. Understanding this pattern unlocks 90% of modern AI applications.
 
-**RAG Pipeline Flow:**
+**RAG + Memory Pipeline Flow:**
 ```
 User Question: "How do I reset my password?"
     ↓
-[Retriever] → Find top 4 FAQ chunks about password reset
+[Session Management] → Get/create conversation history for user_session_123
     ↓
-[Prompt Template] → Format: "You are a support bot. Context: {chunks}. Q: {question}"
+[Retriever] → Find top 4 relevant FAQ documents about password reset
+    ↓
+[Prompt Template] → Format: "Context: {FAQs}. History: {past messages}. Q: {question}"
     ↓
 [LLM (GPT-4o-mini)] → Generate: "To reset your password, go to..."
     ↓
-[StrOutputParser] → Return plain text answer
+[StrOutputParser] → Extract plain text answer
+    ↓
+[Memory Update] → Save user question + bot answer to session history
 ```
 
 **Example Code Pattern:**
 ```python
-from langchain_core.prompts import ChatPromptTemplate
+from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
 from langchain_core.output_parsers import StrOutputParser
 from langchain_core.runnables import RunnableParallel
+from langchain_core.runnables.history import RunnableWithMessageHistory
+from langchain_core.chat_history import InMemoryChatMessageHistory
 
+# Session-based memory store
+store = {}
+
+def get_session_history(session_id: str):
+    """Get or create conversation history for a session"""
+    if session_id not in store:
+        store[session_id] = InMemoryChatMessageHistory()
+    return store[session_id]
+
+# Prompt template with memory
 template = """You are a helpful customer support chatbot.
 Use the following context to answer the question.
-If you don't know the answer, say "I don't know."
+If you don't know, say you don't know.
 
 Context: {context}
 Question: {question}
 Answer:"""
 
-prompt = ChatPromptTemplate.from_template(template)
+prompt = ChatPromptTemplate.from_messages([
+    ("system", template),
+    MessagesPlaceholder(variable_name="history"),  # Inject conversation history
+    ("human", "{question}")
+])
 
 def format_docs(docs):
+    """Convert Document objects to plain text"""
     return "\n\n".join(doc.page_content for doc in docs)
 
-rag_chain = (
+# Build RAG chain
+base_chain = (
     RunnableParallel(
         context=lambda x: format_docs(retriever.invoke(x.get("question", ""))),
-        question=lambda x: x.get("question", "")
+        question=lambda x: x.get("question", ""),
+        history=lambda x: x.get("history", [])
     )
     | prompt
     | llm
     | StrOutputParser()
 )
 
-print("✅ RAG chain ready!")
+# Wrap with memory management
+qa_chain = RunnableWithMessageHistory(
+    base_chain,
+    get_session_history,
+    input_messages_key="question",
+    history_messages_key="history"
+)
+
+# Chat with memory
+config = {"configurable": {"session_id": "user_123"}}
+answer = qa_chain.invoke({"question": "How do I reset my password?"}, config=config)
+print(answer)
 ```
 
 **Advanced Concepts:**
@@ -401,11 +401,11 @@ print("✅ RAG chain ready!")
 - Provide examples: Few-shot prompting improves accuracy
 - Set tone: "You are a helpful..." guides LLM behavior
 
-**Learning Outcome:** You'll master LangChain Expression Language (LCEL) and build production RAG pipelines.
+**Learning Outcome:** You'll master LangChain Expression Language (LCEL) and build production RAG pipelines with integrated conversation memory.
 
 ---
 
-### **Step 7: Test with Real Questions** 🧪
+### **Step 6: Test with Real Questions** 🧪
 
 **What You'll Do:**
 - Ask the chatbot realistic customer support questions
@@ -452,13 +452,13 @@ for i, doc in enumerate(docs):
 - ✅ Are answers accurate and helpful?
 - ✅ Does it say "I don't know" for out-of-scope questions?
 
-**Learning Outcome:** You'll learn to test, debug, and evaluate RAG systems systematically.
+**Learning Outcome:** You'll learn to test, debug, and evaluate RAG systems with conversation memory systematically.
 
 ---
 
-### Advanced: Conversation Memory Strategies (Steps 8-10)
+### Advanced: Conversation Memory Strategies (Steps 7-10)
 
-After building the core RAG pipeline, the next three steps explore how to add **conversation memory** to make your chatbot context-aware across multiple turns.
+After building the core RAG pipeline with basic session memory, the next four steps explore **advanced memory strategies** for optimizing cost and context trade-offs in multi-turn conversations.
 
 ---
 
@@ -478,7 +478,9 @@ The solution? Choose a memory strategy based on your use case:
 
 ---
 
-### **Step 8: Buffer Memory (All Messages)** 💾
+### **Step 7: Buffer Memory (All Messages)** 💾
+
+**Note:** You've already implemented basic buffer memory in Step 5. This step demonstrates it explicitly and compares it to other strategies.
 
 **What You'll Do:**
 - Store ALL conversation messages in memory
@@ -533,7 +535,7 @@ for question in questions:
 
 ---
 
-### **Step 9: Window Memory (Last N Messages)** 🪟
+### **Step 8: Window Memory (Last N Messages)** 🪟
 
 **What You'll Do:**
 - Keep only the LAST N messages in memory (e.g., last 4 messages = 2 turns)
@@ -595,7 +597,7 @@ def chat_window(user_input, session_id="window_session"):
 
 ---
 
-### **Step 10: Summary Memory (LLM-Based Compression)** 📋
+### **Step 9: Summary Memory (LLM-Based Compression)** 📋
 
 **What You'll Do:**
 - Use the LLM to SUMMARIZE old conversation turns
@@ -661,6 +663,21 @@ def chat_summary(user_input, session_id="summary_session"):
 - **Hybrid approach**: Window + summary for best of both worlds
 
 **Learning Outcome:** You'll learn to build cost-efficient chatbots that handle unlimited conversation lengths.
+
+---
+
+### **Step 10: Deep Dive - Why No Chunking?** 🤔
+
+**What You'll Learn:**
+- Understand when chunking is necessary vs when it hurts retrieval quality
+- See why this project keeps FAQ documents whole (100-300 words each)
+- Learn what changes when scaling to 500K+ documents
+- Explore hierarchical chunking strategies for large-scale systems
+- Compare performance: No chunking (500 FAQs) vs Smart chunking (500K FAQs)
+
+**Key Takeaway:** Chunking is not always the answer. For small, coherent documents like FAQs, keeping them whole provides better retrieval quality and lower costs.
+
+The notebook includes a comprehensive deep-dive section explaining the decision-making process and providing code examples for when you DO need chunking at scale.
 
 ---
 
@@ -781,17 +798,35 @@ If you enabled LangSmith tracing:
 - Works across languages, synonyms, and paraphrasing
 - No keyword matching required
 
-### Chunking Strategies
+### When to Chunk vs Keep Documents Whole
+
+**This Project: No Chunking (500 FAQ documents)**
+- Each FAQ is naturally small (~100-300 words)
+- Q&A pairs are semantically coherent units
+- Chunking would fragment answers and hurt retrieval
+- 500 embeddings = low cost, fast search
+
+**When You NEED Chunking:**
+
+| Document Size | Strategy | Why? |
+|---------------|----------|------|
+| < 500 words | Keep whole | Already optimal size |
+| 500-2000 words | Optional | Chunk only if retrieval is noisy |
+| 2000-5000 words | Smart chunking | Balance context and precision |
+| > 5000 words | Hierarchical chunking | Required for manageability |
+
+**Chunking Strategies (for large documents):**
 
 | Strategy | Chunk Size | Overlap | Best For |
 |----------|-----------|---------|----------|
-| Small | 100-250 | 20-40 | FAQs, short documents |
+| Small | 100-250 | 20-40 | Precise answers from large docs |
 | Medium | 500-1000 | 50-100 | Articles, blog posts |
 | Large | 1500-2000 | 200-300 | Technical docs, books |
 
-**Tradeoff:**
-- **Small chunks**: Precise retrieval, but may lack context
-- **Large chunks**: More context, but noisier retrieval
+**Decision Rule:**
+- If document < 500 words: Keep whole
+- If document > 2KB and you have 10K+ docs: Implement chunking
+- See Step 10 deep-dive in notebook for detailed analysis
 
 ### Prompt Engineering for RAG
 
@@ -871,9 +906,9 @@ Answer:
    - Create your own FAQ CSV with columns: `question`, `answer`, `region`, `channel`, `issue`
    - Load it in Step 3 and rebuild the vector store
 
-3. **Try Different Chunk Sizes**
-   - Change `chunk_size=500` and `chunk_overlap=100`
-   - Rebuild the vector store and test retrieval quality
+3. **Experiment with Chunking**
+   - Try implementing chunking for the FAQ documents and compare results
+   - Observe how retrieval quality degrades when FAQs are fragmented
 
 ### Intermediate Challenges
 
@@ -885,38 +920,34 @@ Answer:
    )
    ```
 
-5. **Add Conversation Memory**
-   - Implement buffer memory to remember previous questions
-   - Build a multi-turn chatbot (covered in Steps 8-10)
-   - Compare all three memory strategies
+5. **Compare Memory Strategies**
+   - Test all four memory implementations (Step 5 + Steps 7-9)
+   - Compare token usage, latency, and context quality
+   - Build a comparison table with your results
 
 6. **Improve the Prompt**
    - Add few-shot examples to the prompt template
    - Experiment with different tones (friendly, formal, technical)
 
 7. **Memory Optimization**
-   - Compare token usage across Buffer, Window, and Summary memory
    - Time how long each strategy takes with 10+ questions
    - Build a hybrid: Window for recent + Summary for old messages
+   - Calculate cost differences between strategies
 
 ### Advanced Challenges
 
-7. **Hybrid Search**
 8. **Hybrid Search**
    - Combine semantic search (embeddings) with keyword search (BM25)
    - Implement re-ranking with cross-encoders
 
-8. **Answer Citations**
 9. **Answer Citations**
    - Modify the chain to return source metadata with answers
    - Show users which FAQ the answer came from
 
-9. **Streaming Responses**
 10. **Streaming Responses**
    - Use `stream()` instead of `invoke()` for real-time answer generation
    - Build a Streamlit UI with streaming chat
 
-10. **Production Deployment**
 11. **Production Deployment**
     - Wrap the chain in a FastAPI server
     - Add rate limiting and caching
@@ -944,6 +975,12 @@ Answer:
                      │
                      ▼
 ┌─────────────────────────────────────────────────────────────┐
+│              Session Management                              │
+│    Get/create conversation history for user_session_123     │
+└────────────────────┬────────────────────────────────────────┘
+                     │
+                     ▼
+┌─────────────────────────────────────────────────────────────┐
 │                  Embedding Model                             │
 │         (OpenAI text-embedding-3-small)                      │
 │    Converts question → vector [0.23, -0.45, ...]            │
@@ -952,28 +989,34 @@ Answer:
                      ▼
 ┌─────────────────────────────────────────────────────────────┐
 │                 Vector Search (Chroma)                       │
-│  Finds top-K most similar chunks from 1000+ FAQ chunks      │
-│     Returns: 4 relevant FAQ documents                       │
+│     Finds top-K most similar FAQ documents (500 total)      │
+│     Returns: 4 relevant complete Q&A pairs                  │
 └────────────────────┬────────────────────────────────────────┘
                      │
                      ▼
 ┌─────────────────────────────────────────────────────────────┐
-│                 Prompt Template                              │
-│   "You are a support bot. Context: {retrieved chunks}.      │
-│    Question: {user question}. Answer:"                      │
+│                 Prompt Template + Memory                     │
+│   "You are a support bot. Context: {FAQs}.                  │
+│    History: {past conversation}. Question: {user Q}."       │
 └────────────────────┬────────────────────────────────────────┘
                      │
                      ▼
 ┌─────────────────────────────────────────────────────────────┐
 │              LLM (GPT-4o-mini)                               │
-│   Reads prompt + context, generates natural language        │
-│   answer based on retrieved FAQ chunks                      │
+│   Reads prompt + context + history, generates answer        │
+│   based on retrieved FAQs and conversation context          │
 └────────────────────┬────────────────────────────────────────┘
                      │
                      ▼
 ┌─────────────────────────────────────────────────────────────┐
 │              String Output Parser                            │
 │         Extracts plain text response                         │
+└────────────────────┬────────────────────────────────────────┘
+                     │
+                     ▼
+┌─────────────────────────────────────────────────────────────┐
+│              Save to Memory                                  │
+│    Store user question + bot answer in session history      │
 └────────────────────┬────────────────────────────────────────┘
                      │
                      ▼
@@ -997,14 +1040,12 @@ Answer:
 3. Restart Jupyter kernel
 4. Verify: `print(os.getenv("OPENAI_API_KEY"))`
 
-### "No such file: data/customer_support_faq.csv"
+### "No such file: customer_support_faq.csv"
 
-**Cause:** FAQ dataset not generated
+**Cause:** FAQ dataset file not found in project root
 
 **Solution:**
-```bash
-python data/generate_faq.py
-```
+Ensure the `customer_support_faq.csv` file is in the project root directory. It should be provided with the project materials.
 
 ### "Rate limit exceeded"
 
@@ -1049,7 +1090,7 @@ Answer:"""
 
 **Solution:**
 1. Restart Jupyter kernel
-2. Delete `data/chroma_faq/` folder manually
+2. Delete `chroma_faq/` folder manually
 3. Re-run Step 5
 
 ---
@@ -1081,14 +1122,14 @@ Answer:"""
 
 1. **Run Cells Sequentially**: Don't skip steps—each builds on the previous
 2. **Check Outputs**: Verify each step works before moving forward
-3. **Experiment**: Try different chunk sizes, prompts, and questions
+3. **Experiment**: Try different prompts, questions, and memory strategies
 4. **Use LangSmith**: Enable tracing to see exactly what happens
 5. **Read Errors**: Error messages usually point to the exact issue
 6. **Test Edge Cases**: Try questions outside the FAQ to test "I don't know" behavior
-7. **Compare Retrievals**: Inspect what chunks are retrieved vs what you expected
-8. **Memory Strategy Testing**: Compare all three memory approaches with the same conversation
+7. **Compare Retrievals**: Inspect what documents are retrieved vs what you expected
+8. **Memory Strategy Testing**: Compare all four memory approaches (Step 5 + Steps 7-9)
 9. **Monitor Token Usage**: Track costs when testing different memory strategies
-10. **Ask Questions**: Don't hesitate to ask in live sessions!
+10. **Read the Deep Dive**: Step 10 explains chunking decisions—crucial for real projects!
 
 ---
 

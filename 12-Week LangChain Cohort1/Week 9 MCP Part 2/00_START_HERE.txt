@@ -1,0 +1,181 @@
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🚀 WEEK 9 - GETTING STARTED (5 SIMPLE STEPS)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+👈 START HERE! This file explains the 5 simple steps.
+📁 You have only 8 files - numbered 00-07 for easy flow.
+✅ Just follow the numbers and you'll succeed!
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+STEP 1: SETUP (Do this ONCE)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Open PowerShell and run these commands (copy-paste):
+
+  cd "d:\Mentoring\learwithsarvesh"
+  & .venv/Scripts/Activate.ps1
+  pip install mcp langchain langchain-openai langchain-community chromadb beautifulsoup4 python-dotenv
+
+Create a file called ".env" in this folder with:
+  OPENAI_API_KEY=sk-YOUR_KEY_HERE
+
+Replace "sk-YOUR_KEY_HERE" with your actual OpenAI key.
+
+✅ DONE with Step 1!
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+STEP 2: UNDERSTAND WHAT YOU'RE BUILDING
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+You are building 4 SERVERS:
+
+  🔢 Server 1 (Port 8000) = Addition Math
+  ✖️  Server 2 (Port 8001) = Multiplication Math  
+  ⏰ Server 3 (Port 8002) = Current Time
+  📚 Server 4 (Port 8003) = Learn From Websites
+
+All 4 servers work together through 1 CLIENT that understands questions
+and decides which server to ask.
+
+Think of it like a restaurant:
+  - Each server is a specialist chef (addition, multiply, time, knowledge)
+  - The client is the waiter who takes your order
+  - The waiter asks the right chef for what you need
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+STEP 3: COMPLETE SERVER 1 (10 minutes)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Open file: 01_add_numbers_server_TODO.py
+
+Find every line with "# TODO" and:
+  1. Read the hint
+  2. Fill in the blank line (marked with ________)
+  3. Move to next TODO
+
+That's it! Nothing complicated.
+
+Then test it:
+  python 01_add_numbers_server_TODO.py
+
+You should see:
+  ✅ Server started
+  ✅ Listening on http://localhost:8000
+  ✅ Tool: add_numbers
+  ✅ Press Ctrl+C to stop
+
+🟢 Server 1 is DONE!
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+STEP 4: COMPLETE SERVERS 2, 3, 4 (The Same Way)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+⚠️  IMPORTANT: Keep Server 1 RUNNING and open a NEW terminal!
+
+Open new PowerShell:
+  cd "d:\Mentoring\learwithsarvesh\12weekcrash Course\Week8 - Website Q&A Chatbot\student_exercise"
+  & ..\..\..\..\.venv\Scripts\Activate.ps1
+
+Complete Server 2: 02_multiply_numbers_server_TODO.py
+  python 02_multiply_numbers_server_TODO.py
+
+Open ANOTHER new PowerShell and do Server 3: 03_get_current_time_server_TODO.py
+  python 03_get_current_time_server_TODO.py
+
+Open ANOTHER new PowerShell and do Server 4: 04_rag_server_TODO.py
+  python 04_rag_server_TODO.py
+
+You should now have 4 terminals running!
+
+🟢 All 4 Servers are DONE!
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+STEP 5: RUN THE CLIENT (Test Everything)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Open a 5th terminal in the PARENT directory:
+  cd "d:\Mentoring\learwithsarvesh\12weekcrash Course\Week8 - Website Q&A Chatbot"
+  & ..\..\..\..\.venv\Scripts\Activate.ps1
+  python multi_server_client.py
+
+You'll see:
+  🎤 Ask a question:
+
+Type these questions to test:
+
+  What is 5 plus 3?
+  → Should answer: 8
+
+  Multiply 100 by 2
+  → Should answer: 200
+
+  What time is it?
+  → Should show current time
+
+  Learn about Python from https://www.python.org
+  → Should learn from website
+
+  What is Python?
+  → Should answer based on what it learned!
+
+🎉 ALL DONE!
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📚 YOUR 8 FILES (In Order)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+00_START_HERE.txt (this file)
+  → Your roadmap - explains the 5 steps
+
+01_add_numbers_server_TODO.py (Easy ⭐)
+  → First server to build (addition)
+
+02_multiply_numbers_server_TODO.py (Easy ⭐)
+  → Second server (multiplication)
+
+03_get_current_time_server_TODO.py (Medium ⭐⭐)
+  → Third server (time service)
+
+04_rag_server_TODO.py (Advanced ⭐⭐⭐)
+  → Fourth server (learning + Q&A)
+
+05_QUICK_REFERENCE.txt (Reference during work)
+  → Copy-paste commands, expected outputs
+
+06_TROUBLESHOOTING.txt (If you get stuck)
+  → Errors and how to fix them
+
+07_CHECKLIST.txt (When you're done)
+  → Verify you completed everything
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+⚠️  STUCK? READ THIS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Error: "No module named 'mcp'"
+  Fix: Did you run: pip install mcp langchain...?
+  If yes, did you activate the venv?
+
+Error: "Port already in use"
+  Fix: You might still have a server running.
+  Close all terminals and start fresh.
+
+Error: "OpenAI API key not found"
+  Fix: Create .env file with OPENAI_API_KEY=sk-...
+
+Error: "Connection refused"
+  Fix: Make sure all 4 servers are running BEFORE starting client
+
+More errors? Read: 06_TROUBLESHOOTING.txt (has all solutions)
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+That's it! You're ready to start. Begin with STEP 1. 🚀
+
