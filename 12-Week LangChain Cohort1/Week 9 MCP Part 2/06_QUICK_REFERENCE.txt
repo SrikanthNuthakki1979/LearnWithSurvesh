@@ -48,9 +48,9 @@ TERMINAL 4 (RAG Server):
   python 04_rag_server_TODO.py
 
 TERMINAL 5 (Client - START LAST after servers running):
-  cd "d:\Mentoring\learwithsarvesh\12weekcrash Course\Week8 - Website Q&A Chatbot"
+  cd "d:\Mentoring\learwithsarvesh\12weekcrash Course\Week8 - Website Q&A Chatbot\student_exercise"
   & ..\..\..\..\.venv\Scripts\Activate.ps1
-  python multi_server_client.py
+  python 05_multi_server_client_TODO.py
 
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━

@@ -37,9 +37,10 @@ SERVER 4 (RAG)
 
 CLIENT
 ------
-[ ] Started multi_server_client.py (from parent directory)
+[ ] Completed TODOs in 05_multi_server_client_TODO.py
 [ ] Client discovered all 4 servers
 [ ] LLM routing works
+[ ] Successfully tested all questions
 
 TESTS
 -----
