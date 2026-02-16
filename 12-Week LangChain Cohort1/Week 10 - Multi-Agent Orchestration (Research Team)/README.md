@@ -1,6 +1,10 @@
 # Week 10 - Multi-Agent Orchestration (Research Team)
 
-This README is written like student notes for the Phase 1 notebook. It explains each part in plain language and connects the ideas from Week 8 and Week 9 to Week 10.
+This README is written like student notes for the Phase 1 notebooks. It explains each part in plain language and connects the ideas from Week 8 and Week 9 to Week 10.
+
+**Note:** This week includes two notebooks:
+- `Phase1_Student_Notebook_to_try.ipynb` - Start here with TODOs to implement
+- `Phase1_Student_Notebook.ipynb` - Reference version with implementations
 
 ## Big Picture (Why This Week Matters)
 We move from tool calling (Weeks 8 and 9) to a structured multi-agent workflow. Instead of a single client deciding which tool to call, we build a mini team of agents connected by a graph. The key learning goal is: **routing + shared state + deterministic tools** inside a single, testable workflow.
@@ -131,6 +135,8 @@ What you should do:
 - Dependencies: LangGraph, LangChain, OpenAI.
 
 ## Getting Started
-1. Open Phase1_Student_Notebook.ipynb.
-2. Run cells in order, fill in TODOs.
+1. Choose your learning path:
+   - **Phase1_Student_Notebook_to_try.ipynb**: Start here if you want to code from scratch with TODOs.
+   - **Phase1_Student_Notebook.ipynb**: Reference this if you get stuck, as it has more complete implementations.
+2. Run cells in order, fill in TODOs (if using the _to_try version).
 3. Test with a few questions once the graph is built.
