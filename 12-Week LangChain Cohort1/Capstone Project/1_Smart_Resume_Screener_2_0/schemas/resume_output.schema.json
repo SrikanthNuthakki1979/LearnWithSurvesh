@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ResumeReport",
+  "type": "object",
+  "properties": {
+    "candidate_name": { "type": "string" },
+    "extracted_skills": { "type": "array", "items": { "type": "string" } },
+    "required_skills": { "type": "array", "items": { "type": "string" } },
+    "matched_skills": { "type": "array", "items": { "type": "string" } },
+    "missing_skills": { "type": "array", "items": { "type": "string" } },
+    "match_score": { "type": "number" }
+  },
+  "required": [
+    "candidate_name",
+    "extracted_skills",
+    "required_skills",
+    "matched_skills",
+    "missing_skills",
+    "match_score"
+  ]
+}
